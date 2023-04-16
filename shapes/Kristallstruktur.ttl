@@ -1,0 +1,41 @@
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sh:  <http://www.w3.org/ns/shacl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>. 
+@prefix : <urn:absolute/prototyp#> . 
+
+:KristallstrukturShape
+	a sh:NodeShape ;
+	sh:targetClass :Material ;
+
+	sh:not [
+		sh:and (
+			[	
+				sh:path :hat_Parameter;
+				sh:class :Kristallstruktur;
+				sh:property [
+					sh:path :hat_Wert;
+					sh:pattern "tetragonal";
+				]
+			]
+			[
+				sh:not [
+					sh:and (
+						[
+							smadi:parameterEqual1 :Gitterkonstante_a;
+							smadi:parameterEqual2 :Gitterkonstante_b;
+						]
+						[
+							sh:not [
+								smadi:parameterEqual1 :Gitterkonstante_a;
+								smadi:parameterEqual2 :Gitterkonstante_c;
+							]
+						]
+					)
+				]
+			]
+		)
+	].
+
+
+	

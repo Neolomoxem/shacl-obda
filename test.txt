@@ -1,0 +1,8 @@
+✅ <urn:absolute/prototyp#Elastomer_1>:
+ ┗━✅━N͟O͟T͟
+        ┗━❌━⬤ <urn:absolute/prototyp#hat_Parameter>> Not, minCount[1], ClassConstraint[<urn:absolute/prototyp#Blockierkraft>], 
+
+✅ <urn:absolute/prototyp#Elastomer_2>:
+ ┗━✅━N͟O͟T͟
+        ┗━❌━⬤ <urn:absolute/prototyp#hat_Parameter>> Not, minCount[1], ClassConstraint[<urn:absolute/prototyp#Blockierkraft>], 
+

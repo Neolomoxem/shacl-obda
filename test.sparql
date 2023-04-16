@@ -1,0 +1,23 @@
+
+
+# Target Query
+SELECT ?x WHERE {
+    ?x a :Parameter.
+
+    SELECT ?x WHERE {
+        ?x a :Kristallstruktur.
+    }
+    
+}
+
+# Cardinality Query
+minCount 1 hatParameter class K
+
+SELECT ?x WHERE {
+    ?x a :Parameter.
+
+    SELECT ?x WHERE {
+        ?x :hat_Parameter ?p
+    }
+    
+}

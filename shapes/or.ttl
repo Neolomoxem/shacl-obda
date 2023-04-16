@@ -1,0 +1,23 @@
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sh:  <http://www.w3.org/ns/shacl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>. 
+@prefix : <urn:absolute/prototyp#> . 
+
+
+:ProbeMaterialShapeNot
+    a sh:NodeShape ;
+    sh:targetClass :Material ;
+        
+     sh:or (
+        [
+            sh:path :hat_Parameter ;
+            sh:maxCount 4;
+            sh:minCount 4;
+        ] 
+        [
+            sh:path :hat_Parameter ;
+            sh:minCount 1;
+            sh:class :Blockierkraft
+        ]
+    ) .

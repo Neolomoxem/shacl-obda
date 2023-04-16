@@ -1,0 +1,1274 @@
+? <urn:absolute/prototyp#PIC300>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PIC155>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#M455>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#M1832>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PZT-53>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PZT-51>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PZT804>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#Elastomer_1>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PZT401>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#860>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#M524.5>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PBaS-4>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#sample_test_MSM_1>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#855>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PZT802>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#854>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#aktives_Elastomermaterial>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PZT5K1>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#Probe_m_2>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#M1334>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PZT5A4>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#NiTiCu>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#NiCo2918>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PIC241>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#Ni2MnGa>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PZT-82>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PZT-42>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PZT406>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PIC152>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#Sonox_P505>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#BaTiO3>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#Probe_m_4>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#840>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PSnN-5>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PZT507>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PIC700>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#MSM_test2>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PZT807>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#M1100>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PIC144>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PIC110>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PZT-5H>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#Sonox_P504>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#M1599>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#Elastomer_2>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#sample_dummy_stress_strain>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#Type_I>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#Ni2MnGa_sample_1>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#841>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#M202>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#M420>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#sample1_Elastomer1>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#Elastomer_3>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PZT5A2>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PZT5A1>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#M1224>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#14M-Martensit>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#881>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#S2glas>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#10M-Martensit>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PIC255>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PIC181>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#Elektrodenmaterial>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#Type_II>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#Sonox_P508>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#850>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#851>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#Sonox_P53>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#M1876>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#Sonox_P502>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PZT-5X>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PIC153>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#Elastomer_4>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PZT-43>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PIC151>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PIC184>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#NM-Martensit>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#Sonox_P5>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PZT503>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#NiTiCu_20>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#Type_III>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#Sonox_P1_LF>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#842>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PLiS-51>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PCrN-4>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#Probe_m_1>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PZT403>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PZT-52>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PZT5H1>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#material_test_MSM>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#844>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#dummy_stress_strain>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#Probe_m_5>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PIC252>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#Sonox_P4>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#Sonox_P8>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#880>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+
+? <urn:absolute/prototyp#PZT-41>:
+      |--? ifis.logic.AndNode@7c22d4f
+            |--? ifis.logic.OrNode@46e8a539
+                  |--? ifis.logic.AndNode@495083a0
+                        |--? ifis.logic.PropertyNode@5fd62371
+                        |--? ifis.logic.PropertyNode@28a0fd6c
+                  |--? ifis.logic.PropertyNode@2b62442c
+            |--? ifis.logic.OrNode@89c10b7
+                  |--? ifis.logic.PropertyNode@66629f63
+                  |--? ifis.logic.PropertyNode@841e575
+                  |--? ifis.logic.PropertyNode@72bd06ca
+            |--? ifis.logic.PropertyNode@27a5328c
+

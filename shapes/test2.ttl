@@ -1,0 +1,15 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sh:  <http://www.w3.org/ns/shacl#>.
+@prefix ex: <http://example.com/ns#>. 
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>. 
+@prefix urn: <http://fliqz.com/> .
+
+# Ist jedes Material mindestens ein Symbol?
+
+urn:SymbolShape
+	a sh:NodeShape ;
+	sh:targetClass 	<urn:absolute/prototyp#physikalische_Groesse> ;
+	sh:property [                 # _:b1
+		sh:path <urn:absolute/prototyp#hat_Symbol> ;           
+		sh:minCount 1 ;
+	] .

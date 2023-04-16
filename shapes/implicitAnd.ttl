@@ -1,0 +1,69 @@
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sh:  <http://www.w3.org/ns/shacl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>. 
+@prefix : <urn:absolute/prototyp#> . 
+
+
+:ProbeMaterialShapeNot
+    a sh:NodeShape ;
+    sh:targetClass :Material ;
+        
+    sh:property
+        [
+            sh:path :hat_Wert ;
+            sh:minCount 4 ;
+            sh:uniqueLang true;
+
+        ];
+    sh:property
+        [
+            a sh:PropertyShape ;
+            sh:path :hat_Parameter ;
+            sh:minCount 1;
+            sh:or (
+                [   
+                    a sh:PropertyShape;
+                    sh:path :hatlbnds;
+                    sh:class :Q;
+                ]
+                [   
+                    sh:maxCount 3;
+                    sh:class :Z;
+                ]
+                [
+                    sh:property [
+                        sh:minCount 1;
+                        sh:not [
+                            sh:class :K;
+
+                        ] ;
+                        sh:path :dhlfdl;
+                    ]
+                ]
+            );
+        ];
+
+    sh:not [
+        sh:or (
+            [
+                sh:and (
+                    [
+                        sh:path :ksjdb ;
+                        sh:class :R ;
+                    ]
+                    [
+                        sh:path :sdajkfbkjdfab ;
+                        sh:class :P;
+                    ]
+                )
+            ] 
+            [
+                a sh:PropertyShape ;
+                sh:path :hat_Parameter ;
+                sh:minCount 1;
+                sh:class :D
+            ]
+        ) ;
+    ].
+
