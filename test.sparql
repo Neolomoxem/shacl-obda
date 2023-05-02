@@ -12,7 +12,7 @@ SELECT ?x WHERE {
 
 # Cardinality Query
 minCount 1 hatParameter class K
-
+7
 SELECT ?x WHERE {
     ?x a :Parameter.
 
