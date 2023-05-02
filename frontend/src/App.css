@@ -1,0 +1,49 @@
+@import "~normalize.css";
+@import "~@blueprintjs/core/lib/css/blueprint.css";
+@import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
+
+:root {
+  --bright: #282c34;
+}
+
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+body, #root, .App {
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.App-header {
+  background-color: var(--bright);
+  height: 3em;
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  justify-content: space-between;
+  padding: 0 1em 0 1em;
+  
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+.scrollContainer {
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.scrolllContainer > * {
+  min-height: 100%;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  padding: 0.25em;
+}

@@ -11,7 +11,7 @@
         
     sh:property
         [
-            sh:path :hat_Wert ;
+            sh:path [sh:alternativePath (:option1 :option2)] ;
             sh:minCount 4 ;
             sh:uniqueLang true;
 
@@ -19,12 +19,12 @@
     sh:property
         [
             a sh:PropertyShape ;
-            sh:path :hat_Parameter ;
+            sh:path [sh:inversePath :option3] ;
             sh:minCount 1;
             sh:or (
                 [   
                     a sh:PropertyShape;
-                    sh:path :hatlbnds;
+                    sh:path (:option4 :option5);
                     sh:class :Q;
                 ]
                 [   

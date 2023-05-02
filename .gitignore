@@ -14,3 +14,7 @@ report.log
 .metals
 .bloop
 .vscode
+
+
+node_modules/
+build/

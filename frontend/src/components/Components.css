@@ -1,0 +1,59 @@
+
+
+.tpTitle {
+    text-transform: uppercase;
+    text-align: left;
+    padding: 0.25em;
+    font-size: small;
+    font-family: consolas;
+    background-color: var(--bright);
+}
+.tpContainer {
+    margin: 0.25em;
+    max-height: 100%;
+    border: 1px solid var(--bright);
+}
+
+.tpBody {
+    padding: 0.5em;
+    overflow: hidden;
+}
+
+/* Containers */
+
+.hrzCont *,
+.vertCont *{
+    flex: 1;
+}
+
+.hrzCont,
+.vertCont {
+    overflow: hidden;
+}
+
+
+.hrzCont {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.vertCont {
+    display: flex;
+    flex-direction: column;
+}
+
+/* InfoBar */
+
+.ibBar {
+    background: var(--bright);
+    margin: -0.5em;
+    padding: 0.5em;
+
+}
+
+.ibValue {
+    font-family: consolas;
+}

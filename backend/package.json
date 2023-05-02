@@ -1,0 +1,19 @@
+{
+  "name": "shacl-obda-runner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "nodemon --inspect=0.0.0.0 --legacy-watch src/index.js"
+  },
+  "author": "Max Winkler",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io": "^4.5.4",
+    "ws": "^8.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
