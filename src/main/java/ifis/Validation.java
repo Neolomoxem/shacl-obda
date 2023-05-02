@@ -36,7 +36,10 @@ import org.apache.jena.shacl.parser.NodeShape;
 import org.apache.jena.shacl.parser.Shape;
 import org.apache.jena.sparql.exec.RowSet;
 import org.apache.jena.sparql.exec.http.QueryExecHTTPBuilder;
+import org.apache.jena.sparql.path.P_Alt;
+import org.apache.jena.sparql.path.P_Inverse;
 import org.apache.jena.sparql.path.P_Link;
+import org.apache.jena.sparql.path.P_Seq;
 import org.apache.jena.sparql.path.Path;
 
 import ifis.SPARQLGenerator.Query;
@@ -441,11 +444,37 @@ public class Validation {
     }
     
     private void addPath(String fromVar, String toVar, Path path, Query query) {
-        // TODO support different kinds of paths
-        if (path instanceof P_Link) {
+
+        switch (path) {
+            case P_Link cpath -> {
+                query.addTriple(fromVar, wrap(cpath.getNode().getURI()), toVar);
+            }
+            case P_Alt altPath -> {
+                // TODO: handle P_Alt path
+            }
+            case P_Inverse inversePath -> {
+                // TODO: handle P_Inverse path
+                query.addTriple(toVar, inversePath.getSubPath(), fromVar)
+            }
+            case P_Seq seqPath -> {
+                // TODO: add Seq path
+            }
+            default -> {
+                // TODO: handle unknown path
+            }
+        }
+        
+
+/*         if (path instanceof P_Link) {
             var cpath = (P_Link) path;
             query.addTriple(fromVar, wrap(cpath.getNode().getURI()), toVar);
-        }
+        } else if (path instanceof P_Alt) {
+            // TODO support alt path
+        } else if (path instanceof P_Inverse) {
+            // TODO support inverse path
+        } else if (path instanceof P_Seq) {
+            // TODO support P_Seq path
+        } */
     }
 
     private Consumer<? super Constraint> addSPARQLForConstraint(PropertyNode node, Query subQuery) {
