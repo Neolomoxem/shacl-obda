@@ -57,8 +57,9 @@ public class SPARQLGenerator {
     }
 
     class Query {
-        public List<String> triples;
-        public List<String> filters;
+        public final List<String> triples;
+        public final List<String> parts;
+        public final List<String> filters;
 
 
         private final ArrayList<Query> subQueries;
@@ -69,9 +70,13 @@ public class SPARQLGenerator {
         public Query(SPARQLGenerator sg) {
             triples = new ArrayList<String>();
             filters = new ArrayList<String>();
-            subQueries = new ArrayList<>();
+            parts = new ArrayList<String>();
 
-            
+            subQueries = new ArrayList<>();
+        }
+
+        public void addPart(String part) {
+            parts.add(part);
         }
 
         public Query addTriple(String sub, String pred, String object) {
@@ -109,6 +114,30 @@ public class SPARQLGenerator {
 
         public void addSubQuery(Query query) {
             this.subQueries.add(query);
+        }
+
+
+
+        public List<String> getTriples() {
+            return triples;
+        }
+
+
+
+        public List<String> getParts() {
+            return parts;
+        }
+
+
+
+        public List<String> getFilters() {
+            return filters;
+        }
+
+
+
+        public ArrayList<Query> getSubQueries() {
+            return subQueries;
         }
                
     }
