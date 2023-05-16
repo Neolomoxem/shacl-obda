@@ -92,11 +92,17 @@ public class SPARQLGenerator {
 
         public String getSparqlString(String vars) {
             var sparql = "SELECT DISTINCT "+vars+" WHERE {";
-                       
+                
+            // Add preformatted 'parts'
+            sparql += parts
+                        .stream()
+                        .reduce("", (acc, part)-> acc + "\n" + part);
+
             // Add triples
             sparql += triples
                 .stream()
                 .reduce("", (acc, triple) -> acc + "\n" + triple + ".");
+
 
             // Add subqueries
             sparql += subQueries

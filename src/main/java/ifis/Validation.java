@@ -79,6 +79,7 @@ public class Validation {
     }
 
     
+
     /*
      * CONTROL FLOW
      */
@@ -149,6 +150,7 @@ public class Validation {
     }
 
     
+
     /*
      * LOGIC TREE METHODS
      */
@@ -243,7 +245,8 @@ public class Validation {
 
     }
     
-    
+
+
     /*
      * QUERY GENERATION
      */
@@ -282,29 +285,48 @@ public class Validation {
      * @return
      */
     private String generatePath(String fromVar, String toVar, Path path) {
-
         return switch (path) {
+            
+            /* 
+             * DIRECT PATH
+             */
             case P_Link linkPath -> {
                 // Just create a direct path from toVar to fromVar
-                yield asTriple(toVar, wrap(linkPath.getNode().getURI()), toVar);
+                yield asTriple(fromVar, wrap(linkPath.getNode().getURI()), toVar);
                 // query.addTriple(fromVar, wrap(cpath.getNode().getURI()), toVar);
             }
+            
+            /* 
+             * ALTERNATIVE PATH
+             */
             case P_Alt altPath -> {
                 // Recurse and UNION
                 yield "{ " + generatePath(fromVar, toVar, altPath.getLeft()) +
                         " }\nUNION\n{ " +
                         generatePath(fromVar, toVar, altPath.getRight()) + "}\n";
             }
-            // case P_Inverse inversePath -> {
-            // TODO: handle P_Inverse path
 
-            // }
-            // case P_Seq seqPath -> {
-            // switch (seqPath.getRight()) {
-            // case
-            // }
-            // }
+            /* 
+             * INVERSE PATH (PARENT)
+             */
+            case P_Inverse inversePath -> {
+                // Just switch toVar and fromVar
+                yield generatePath(toVar, fromVar, inversePath.getSubPath());
+            }
+            
+            /* 
+             * SEQUENCE PATH
+             */
+            case P_Seq seqPath -> {
+                // A pure seqPath is (counter-intuetively) structured like this:
+                // (((A, B), C), D) --> .getRight() is a P_Link and .getLeft() a P_Seq
+                yield 
+                    generatePath(fromVar, toVar+"L", seqPath.getLeft()) + "\n" +
+                    generatePath(toVar+"L", toVar, seqPath.getRight());
+            }
+            
             default -> {
+                // Shouldnt happen. Naturally.
                 throw new ValidationException("Weird paths are happening");
             }
         };
@@ -506,6 +528,7 @@ public class Validation {
     }
 
 
+
     /*
      * NODE POPULATION
      */
@@ -678,6 +701,7 @@ public class Validation {
     }
 
 
+
     /*
      * REPORT GENERATION
      */
@@ -729,6 +753,7 @@ public class Validation {
 
     }
 
+    // TODO Add JSON reports
 
     /*
      * HELPER FUNCTIONS
