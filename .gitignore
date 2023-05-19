@@ -19,4 +19,5 @@ ontop-cli/
 
 
 node_modules/
-build/
+
+frontend/build/
