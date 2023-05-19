@@ -21,3 +21,22 @@ SELECT ?x WHERE {
     }
     
 }
+
+SELECT DISTINCT ?x ?p WHERE {
+    ?x a <urn:absolute/prototyp#physikalische_Groesse>.
+    {
+        SELECT DISTINCT * WHERE {
+        { 
+            { 
+                { ?x <urn:absolute/prototyp#A> ?p. }
+                UNION
+                { ?x <urn:absolute/prototyp#B> ?p.}
+            }
+            UNION
+            { ?x <urn:absolute/prototyp#C> ?p.}
+        }
+        UNION
+        { ?x <urn:absolute/prototyp#D> ?p.}
+
+    }
+}

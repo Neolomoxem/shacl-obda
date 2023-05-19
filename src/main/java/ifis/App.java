@@ -18,12 +18,16 @@ public final class App {
      */
     public static void main(String[] args) throws Exception{
     
+        String filename = args[0];
+        String serviceURL = args[1];
+        // String filename = "shapes/test.ttl";
+
         // Read File        
-        Graph shapesGraph = RDFDataMgr.loadGraph("./shapes/implicitAnd.ttl");
+        Graph shapesGraph = RDFDataMgr.loadGraph(filename);
         Shapes shapes = Shapes.parse(shapesGraph);
         
         // Create Query Execution Builder on given SPARQL Endpoint, that can run the queries
-        QueryExecHTTPBuilder bob = QueryExecHTTPBuilder.service("http://127.0.0.1:8080/sparql");
+        QueryExecHTTPBuilder bob = QueryExecHTTPBuilder.service(serviceURL);
 
         // Set up Validation
         Validation validator = new Validation(shapes, bob);

@@ -5,6 +5,29 @@
 @prefix urn: <http://fliqz.com/> .
 @prefix : <urn:absolute/prototyp#> . 
 
+
+sh:PatternConstraintComponent
+	a sh:ConstraintComponent ;
+	sh:parameter [
+		sh:path sh:schnischni ;
+	] ;
+	sh:parameter [
+		sh:path sh:schnippo ;
+		sh:optional true ;
+	] ;
+	sh:validator :hasPattern .
+
+:hasPattern
+	a sh:SPARQLAskValidator ;
+	sh:message "Value does not match pattern {$pattern}" ;
+	sh:ask """
+		ASK { 
+			FILTER (!isBlank($value) && 
+				IF(bound($flags), regex(str($value), $pattern, $flags), regex(str($value), $pattern)))
+		}""" .
+
+
+
 # Ist jedes Material mindestens ein Symbol?
 
 urn:SymbolShape
@@ -13,4 +36,6 @@ urn:SymbolShape
 	sh:property [                 # _:b1
 		sh:path [sh:inversePath [sh:alternativePath (:A :B :C :D)]];           
 		sh:minCount 1 ;
+        sh:schnischni "hahah";
+        sh:schnippo true;
 	] .

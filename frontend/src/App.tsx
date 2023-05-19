@@ -14,7 +14,7 @@ import ResultPane from './components/ResultPane';
 import TitledPane from './components/TitledPane';
 
 
-const backend = process.env.REACT_APP_BACKEND_URL
+const backend = 'localhost:6777'
 
 function App() {
   const [constraint, setConstraint] = React.useState(
@@ -61,7 +61,7 @@ function App() {
     const socket = io(`ws://${backend}`);
     socket.send(constraint)
     socket.on("connect_error", () => {
-      // Dont keep trying to connect, if until the user tries again manually
+      // Dont keep trying to connect, until the user tries again manually
       socket.disconnect()
       alert("The SHACL-OBDA Runner ist not running. Please try again later.")
     })

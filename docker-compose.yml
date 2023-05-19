@@ -15,20 +15,20 @@ services:
       - gardens
     depends_on:
       - ontop-cli
-      - comunica
   
   ontop-cli:
     image: ontop/ontop-endpoint
     environment:
       ONTOP_ONTOLOGY_FILE: /opt/ontop/prototyp/prototyp.owl
       ONTOP_MAPPING_FILE: /opt/ontop/prototyp/prototyp.obda
-      ONTOP_PROPERTIES_FILE: /opt/ontop/prototyp/connection.properties
+      ONTOP_PROPERTIES_FILE: /opt/ontop/connection/connection.properties
       ONTOP_CORS_ALLOWED_ORIGINS: "*"
       ONTOP_DEV_MODE: "true"
       ONTOP_LAZY_INIT: "true"
     volumes:
-      - ./ontop-cli/prototyp:/opt/ontop/prototyp
-      - ./ontop-cli/jdbc:/opt/ontop/jdbc
+      - ./ontop-cli/smadi_prototyp:/opt/ontop/prototyp:ro
+      - ./ontop-cli/connection/:/opt/ontop/connection:ro
+      - ./ontop-cli/jdbc:/opt/ontop/jdbc:ro
     ports:
       - "8080:8080"
     networks:

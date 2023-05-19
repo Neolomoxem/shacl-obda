@@ -2,6 +2,8 @@ const io = require('socket.io');
 const childProcess = require('child_process');
 const fs = require('fs');
 
+const INFILE = "./tmp/constraint.ttl";
+
 const server = new io.Server(6777, {
   cors: {
     origin: "*",
@@ -25,7 +27,7 @@ server.on('connection', (socket) => {
 
     console.log(message)
     // TODO Fix parser to read from stdin instead od local file to avoid disk access
-    fs.writeFileSync("./tmp/constraint.ttl", message, {flag: "w+"})
+    fs.writeFileSync(INFILE, message, {flag: "w+"})
     
     sendAsJson({
       type: "code",
@@ -33,7 +35,7 @@ server.on('connection', (socket) => {
     })
     
     // run the .jar file using the child_process module
-    const jarProcess = childProcess.spawn('java', ['-jar', 'build/valid-1.0-FIXED.jar', "-r", "-f", "./tmp/constraint.ttl", "-tbox",  "http://comunica:3000/sparql", "http://ontop-cli:8080/sparql", "./out"]);
+    const jarProcess = childProcess.spawn('java', ['-jar', '--enable-preview', './build/shacl-obda.jar', INFILE, 'https://sun03.pool.ifis.uni-luebeck.de/ontop/sparql']);
 
     // listen for output from the .jar process
     // and send over socket

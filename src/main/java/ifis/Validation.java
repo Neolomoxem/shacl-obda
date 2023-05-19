@@ -13,10 +13,14 @@ import java.util.function.Consumer;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+import org.apache.commons.compress.harmony.unpack200.bytecode.RuntimeVisibleorInvisibleParameterAnnotationsAttribute.ParameterAnnotation;
+import org.apache.jena.ext.com.google.common.collect.Multimap;
 import org.apache.jena.graph.Node;
 import org.apache.jena.shacl.Shapes;
+import org.apache.jena.shacl.engine.Parameter;
 import org.apache.jena.shacl.engine.Target;
 import org.apache.jena.shacl.engine.constraint.ClassConstraint;
+import org.apache.jena.shacl.engine.constraint.ConstraintComponentSPARQL;
 import org.apache.jena.shacl.engine.constraint.ConstraintOp;
 import org.apache.jena.shacl.engine.constraint.ConstraintOpN;
 import org.apache.jena.shacl.engine.constraint.DatatypeConstraint;
@@ -29,6 +33,8 @@ import org.apache.jena.shacl.engine.constraint.ShAnd;
 import org.apache.jena.shacl.engine.constraint.ShNot;
 import org.apache.jena.shacl.engine.constraint.ShOr;
 import org.apache.jena.shacl.engine.constraint.ShXone;
+import org.apache.jena.shacl.engine.constraint.SparqlComponent;
+import org.apache.jena.shacl.engine.constraint.SparqlConstraint;
 import org.apache.jena.shacl.engine.constraint.StrMaxLengthConstraint;
 import org.apache.jena.shacl.engine.constraint.StrMinLengthConstraint;
 import org.apache.jena.shacl.parser.Constraint;
@@ -41,6 +47,8 @@ import org.apache.jena.sparql.path.P_Inverse;
 import org.apache.jena.sparql.path.P_Link;
 import org.apache.jena.sparql.path.P_Seq;
 import org.apache.jena.sparql.path.Path;
+
+import com.github.jsonldjava.shaded.com.google.common.collect.ArrayListMultimap;
 
 import ifis.SPARQLGenerator.Query;
 import ifis.logic.AndNode;
@@ -92,8 +100,6 @@ public class Validation {
 
         // Validate Rootshapes
         shapes.forEach((shape) -> validateShape((NodeShape) shape));
-
-        // Generate Report
 
         // Return Report
         return report;
@@ -506,6 +512,14 @@ public class Validation {
                             (s) -> s.filter((binding) -> binding.get("p").getLiteralDatatypeURI().equals(datatype)));
                 }
 
+                /* 
+                 * CUSTOM CONSTRAINTS
+                 */
+
+                case ConstraintComponentSPARQL customConstraint -> {
+                    handleCustomConstraint(customConstraint, node, subQuery);
+                }
+
                 /*
                  * CARDINALITY, NEGATION
                  */
@@ -525,6 +539,36 @@ public class Validation {
                 }
             }
         };
+    }
+
+    private void handleCustomConstraint(ConstraintComponentSPARQL c, PropertyNode node, Query subQuery) {
+        
+        SparqlComponent customComponent;
+        Multimap<Parameter, Node> parameterMap;
+        try {
+            /* 
+             * For some reason the actual semantics of a ConstraintComponentSPARQL are not directly accessible by default. 
+             * So lets use reflection to circumvent central java concepts!
+             */
+            var f1 = c.getClass().getDeclaredField("sparqlConstraintComponent");
+            f1.setAccessible(true);
+            customComponent = (SparqlComponent) f1.get(c);
+            
+            var f2 = c.getClass().getDeclaredField("parameterMap");
+            f2.setAccessible(true);
+            parameterMap = (Multimap<Parameter, Node>) f2.get(c);
+
+            
+            
+
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new ValidationException("Cannot force access to ConstraintComponentSPARQL's protected fields.");
+        }
+        
+        // After just a few lines of black magic we can proceed as planned
+        
     }
 
 
