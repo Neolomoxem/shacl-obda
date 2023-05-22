@@ -5,6 +5,8 @@ import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.shacl.Shapes;
 import org.apache.jena.sparql.exec.http.QueryExecHTTPBuilder;
 
+import com.google.protobuf.BoolValueOrBuilder;
+
 /**
  * Hello world!
  */
@@ -28,6 +30,7 @@ public final class App {
         
         // Create Query Execution Builder on given SPARQL Endpoint, that can run the queries
         QueryExecHTTPBuilder bob = QueryExecHTTPBuilder.service(serviceURL);
+        bob.acceptHeader("application/sparql-results+xml");
 
         // Set up Validation
         Validation validator = new Validation(shapes, bob);
