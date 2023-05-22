@@ -1,15 +1,29 @@
 FROM node:18
 
-ENV NODE_ENV=development
+ENV NODE_ENV=production
 
 WORKDIR usr/src/app/
 
+# Setup node
 COPY ["package.json", "package-lock.json*", "./"]
-
-RUN npm install
-
 COPY ["tsconfig.json", "./"]
 
-EXPOSE 6777
+RUN npm install
+RUN npm install -g serve
 
-CMD [ "npm", "start"]
+# Source files
+COPY public public/
+COPY src src/
+
+ENV REACT_APP_BACKEND_URL="sun03.pool.ifis.uni-luebeck.de/shacl-runner-api/"
+
+# Build
+RUN npm run build
+
+
+EXPOSE 6777
+EXPOSE 3000
+
+# Serve
+# CMD [ "npm", "run", "start"]
+CMD [ "serve", "-s", "build"]

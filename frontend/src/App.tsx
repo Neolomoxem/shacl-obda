@@ -14,7 +14,7 @@ import ResultPane from './components/ResultPane';
 import TitledPane from './components/TitledPane';
 
 
-const backend = 'localhost:6777'
+
 
 function App() {
   const [constraint, setConstraint] = React.useState(
@@ -58,7 +58,7 @@ function App() {
 
   const startEval = () => {
     // Open Socket to eval server and send constraint
-    const socket = io(`ws://${backend}`);
+    const socket = io("https://sun03.pool.ifis.uni-luebeck.de/");
     socket.send(constraint)
     socket.on("connect_error", () => {
       // Dont keep trying to connect, until the user tries again manually

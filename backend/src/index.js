@@ -35,7 +35,7 @@ server.on('connection', (socket) => {
     })
     
     // run the .jar file using the child_process module
-    const jarProcess = childProcess.spawn('java', ['-jar', '--enable-preview', './build/shacl-obda.jar', INFILE, 'https://sun03.pool.ifis.uni-luebeck.de/ontop/sparql']);
+    const jarProcess = childProcess.spawn('java', ['-jar', '--enable-preview', './build/shacl-obda.jar', INFILE, 'http://localhost:8080/sparql']);
 
     // listen for output from the .jar process
     // and send over socket
