@@ -30,7 +30,7 @@ public final class App {
         
         // Create Query Execution Builder on given SPARQL Endpoint, that can run the queries
         QueryExecHTTPBuilder bob = QueryExecHTTPBuilder.service(serviceURL);
-        bob.acceptHeader("application/sparql-results+xml");
+        // bob.acceptHeader("application/sparql-results+xml");
 
         // Set up Validation
         Validation validator = new Validation(shapes, bob);
