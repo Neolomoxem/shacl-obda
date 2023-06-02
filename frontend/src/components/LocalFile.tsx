@@ -11,8 +11,6 @@ const LocalFile = ({setCode}:fileProps) => {
   }
   return (
     <div className="localFile">
-      <h4>Upload Constraint</h4>
-      Please select a file containing a SHACL-Constraint.
       <input type="file" name="" id="" onChange={readConstraint} />
     </div>
   )

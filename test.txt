@@ -6,3 +6,4732 @@ a✅ <urn:absolute/prototyp#Elastomer_1>:
  ┗━✅━N͟O͟T͟
         ┗━❌━⬤ <urn:absolute/prototyp#hat_Parameter>> Not, minCount[1], ClassConstraint[<urn:absolute/prototyp#Blockierkraft>], 
 
+{
+  "head" : {
+    "vars" : [
+      "x",
+      "p"
+    ]
+  },
+  "results" : {
+    "bindings" : [
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#10M-Martensit_AustenitStart"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "A_s"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#10M-Martensit_Gitterkonstante_a"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "a"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#10M-Martensit_Gitterkonstante_b"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "b"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#10M-Martensit_Gitterkonstante_c"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#14M-Martensit_Gitterkonstante_a"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "a"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#14M-Martensit_Gitterkonstante_b"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "b"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#14M-Martensit_Gitterkonstante_c"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#840_1_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#840_1_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#840_1_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#840_1_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "Ïµ^T"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#840_2_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "g"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#840_2_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "g"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#840_2_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "g"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#840_3_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#840_3_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#841_1_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#841_1_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#841_1_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#841_1_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "Ïµ^T"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#841_2_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "g"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#841_2_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "g"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#841_2_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "g"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#841_3_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#841_3_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#842_1_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#842_1_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "Ïµ^T"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#842_2_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "g"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#842_3_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#842_3_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#844_1_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#844_1_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "Ïµ^T"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#844_2_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "g"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#844_3_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#844_3_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#850_1_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#850_1_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#850_1_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#850_1_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "Ïµ^T"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#850_2_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "g"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#850_2_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "g"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#850_2_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "g"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#850_3_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#850_3_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#851_1_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#851_1_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "Ïµ^T"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#851_2_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "g"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#851_3_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#851_3_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#854_1_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#854_1_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#854_1_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#854_1_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "Ïµ^T"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#854_2_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "g"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#854_3_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#854_3_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#855_1_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#855_1_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#855_1_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#855_1_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "Ïµ^T"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#855_2_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "g"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#855_2_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "g"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#855_2_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "g"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#855_3_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#855_3_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#860_1_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#860_1_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "Ïµ^T"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#860_2_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "g"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#880_1_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#880_1_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#880_1_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#880_1_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "Ïµ^T"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#880_2_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "g"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#880_2_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "g"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#880_2_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "g"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#880_3_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#880_3_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#881_1_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#881_1_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "Ïµ^T"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#881_2_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "g"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#881_3_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#881_3_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#Aktivierungszeit_Aktor_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "t"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#Akt_quer_St_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "A_Act,0"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#Anfangsdehnung_fuer_quasi-plastische_VerformungDrahtaktor_NiTi%236_450"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "Ïµ_ps"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#Anfangsdehnung_fuer_quasi-plastische_VerformungDrahtaktor_NiTi%236_500"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "Ïµ_ps"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#Au_Finish_Aktor_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "A_f"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#Ausgangsdicke"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d_0"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#Ausgangselektrodendicke"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d_e,0"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#Aus_laen_dummy"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "l_0"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#Aus_quer_dummy"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "A_0"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#Au_Start_Aktor_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "A_s"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#Austenit_Finish_TemperaturDrahtaktor_NiTi%236_450"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "A_f"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#Austenit_Finish_TemperaturDrahtaktor_NiTi%236_500"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "A_f"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#Austenit_Start_TemperaturDrahtaktor_NiTi%236_450"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "A_s"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#Austenit_Start_TemperaturDrahtaktor_NiTi%236_500"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "A_s"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#BaTiO3_1_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#BaTiO3_1_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#BaTiO3_1_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "d"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#BaTiO3_1_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "Ïµ^T"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#BaTiO3_2_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "g"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#BaTiO3_2_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "g"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#BaTiO3_3_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#Breite_Probe_m_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "undefined"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#Breite_Probe_m_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "undefined"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#Breite_Probe_m_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "undefined"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#Breite_Probe_m_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "undefined"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1100_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1100_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1100_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1100_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1100_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1224_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1224_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1224_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1224_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1224_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1334_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1334_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1334_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1334_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1334_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1599_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1599_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1599_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1599_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1876_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1876_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1876_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1876_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M1876_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M420_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M420_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M420_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M420_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M420_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M455_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M455_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M455_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M455_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M524.5_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M524.5_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M524.5_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M524.5_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_1_M524.5_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_BaTiO3_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M1100_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M1100_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M1100_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M1100_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M1100_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M1224_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M1224_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M1224_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M1224_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M1224_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M1334_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M1334_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M1334_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M1334_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M1599_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M1599_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M1599_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M1599_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M1876_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M1876_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M1876_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M1876_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M1876_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M202_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M202_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M202_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M202_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M420_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M420_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M420_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M420_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M420_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M455_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M455_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M455_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M455_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M524.5_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M524.5_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M524.5_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_M524.5_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PBaS-4_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PCrN-4_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PIC144_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PIC144_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PIC151_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PIC151_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PIC155_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PIC155_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PIC181_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PIC181_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PIC184_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PIC184_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PIC241_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PIC241_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PIC252_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PIC252_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PIC255_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PIC255_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PIC300_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PIC300_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PLiS-51_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PSnN-5_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT401_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT401_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT403_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT403_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT406_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT406_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT-41_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT-42_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT-43_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT503_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT503_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT507_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT507_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT-51_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT-52_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT-53_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT5A1_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT5A1_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT5A2_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT5A2_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT5A4_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT5A4_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT-5H_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT5H1_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT5H1_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT5K1_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT5K1_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT-5X_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT802_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT802_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT804_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT804_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT807_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT807_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_PZT-82_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_Sonox_P1_LF_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_Sonox_P1_LF_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_Sonox_P4_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_Sonox_P4_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_Sonox_P5_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_Sonox_P5_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_Sonox_P502_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_Sonox_P502_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_Sonox_P504_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_Sonox_P504_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_Sonox_P505_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_Sonox_P505_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_Sonox_P508_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_Sonox_P508_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_Sonox_P53_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_Sonox_P53_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_Sonox_P8_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A00_matrix_model_4_Sonox_P8_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M1100_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M1100_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M1100_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M1100_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M1100_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M1224_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M1224_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M1224_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M1224_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M1224_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M1334_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M1334_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M1334_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M1334_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M1599_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M1599_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M1599_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M1599_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M1876_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M1876_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M1876_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M1876_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M1876_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M420_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M420_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M420_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M420_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M420_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M455_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M455_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M455_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M455_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M524.5_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M524.5_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M524.5_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_1_M524.5_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_BaTiO3_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M1100_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M1100_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M1100_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M1100_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M1100_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M1224_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M1224_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M1224_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M1224_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M1224_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M1334_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M1334_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M1334_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M1334_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M1599_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M1599_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M1599_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M1599_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M1876_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M1876_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M1876_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M1876_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M1876_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M202_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M202_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M202_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M202_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M420_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M420_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M420_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M420_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M420_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M455_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M455_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M455_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M455_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M524.5_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M524.5_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M524.5_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_M524.5_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PBaS-4_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PCrN-4_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PIC144_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PIC144_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PIC151_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PIC151_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PIC155_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PIC155_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PIC181_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PIC181_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PIC184_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PIC184_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PIC241_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PIC241_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PIC252_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PIC252_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PIC255_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PIC255_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PIC300_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PIC300_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PLiS-51_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PSnN-5_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT401_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT401_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT403_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT403_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT406_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT406_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT-41_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT-42_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT-43_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT503_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT503_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT507_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT507_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT-51_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT-52_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT-53_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT5A1_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT5A1_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT5A2_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT5A2_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT5A4_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT5A4_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT-5H_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT5H1_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT5H1_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT5K1_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT5K1_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT-5X_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT802_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT802_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT804_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT804_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT807_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT807_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_PZT-82_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_Sonox_P1_LF_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_Sonox_P1_LF_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_Sonox_P4_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_Sonox_P4_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_Sonox_P5_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_Sonox_P5_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_Sonox_P502_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_Sonox_P502_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_Sonox_P504_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_Sonox_P504_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_Sonox_P505_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_Sonox_P505_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_Sonox_P508_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_Sonox_P508_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_Sonox_P53_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_Sonox_P53_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_Sonox_P8_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A01_matrix_model_4_Sonox_P8_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "s^D"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1100_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1100_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1100_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1100_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1100_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1224_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1224_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1224_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1224_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1224_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1334_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1334_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1334_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1334_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1334_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1599_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1599_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1599_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1599_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1876_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1876_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1876_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1876_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M1876_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M202_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M420_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M420_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M420_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M420_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M420_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M455_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M455_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M455_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M455_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M524.5_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M524.5_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M524.5_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M524.5_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_1_M524.5_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_4_M1100_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_4_M1100_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_4_M1100_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_4_M1100_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_4_M1100_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_4_M1224_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_4_M1224_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_4_M1224_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_4_M1224_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_4_M1224_0_5"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_4_M1334_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_4_M1334_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_4_M1334_0_3"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_4_M1334_0_4"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_4_M1599_0_1"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_4_M1599_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+it.unibz.inf.ontop.exception.OntopConnectionException: org.postgresql.util.PSQLException: ERROR: portal "C_107" does not exist
+
+
+{
+  "head" : {
+    "vars" : [
+      "x",
+      "p"
+    ]
+  },
+  "results" : {
+    "bindings" : [
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#10M-Martensit_AustenitStart"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "A_s"
+        }
+      },
+     …. Viele weitere richtige Antworten
+      {
+        "x" : {
+          "type" : "uri",
+          "value" : "urn:absolute/prototyp#cp_mod_A10_matrix_model_4_M1599_0_2"
+        },
+        "p" : {
+          "type" : "literal",
+          "value" : "c^E"
+        }
+      },
+      {
+        "x" : {
+          "type" : "uri",
+it.unibz.inf.ontop.exception.OntopConnectionException: org.postgresql.util.PSQLException: ERROR: portal "C_107" does not exist

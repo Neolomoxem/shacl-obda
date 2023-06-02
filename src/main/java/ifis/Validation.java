@@ -40,6 +40,7 @@ import org.apache.jena.shacl.engine.constraint.StrMinLengthConstraint;
 import org.apache.jena.shacl.parser.Constraint;
 import org.apache.jena.shacl.parser.NodeShape;
 import org.apache.jena.shacl.parser.Shape;
+import org.apache.jena.sparql.exec.QueryExecBuilder;
 import org.apache.jena.sparql.exec.RowSet;
 import org.apache.jena.sparql.exec.http.QueryExecHTTPBuilder;
 import org.apache.jena.sparql.path.P_Alt;
@@ -587,7 +588,7 @@ public class Validation {
         var baseQuery = sparqlGenerator.generateTargetQuery(baseTarget);
         // Get targets
         var targets = executeQuery(baseQuery).materialize();
-
+        System.out.println("Receives %d Targets".formatted(targets.getRowNumber()));
 
         /* 
          * CHECK IF ATOMS VALIDATE
@@ -816,9 +817,11 @@ public class Validation {
 
         System.out.println("Running the following query: ");
         System.out.println(sparql);
-
+        // System.out.println(endpoint.query(sparql).build().getHttpResponseContentType());
+        
         return endpoint.query(sparql).select();
     }
+    
 
     /**
      * Just concatenates the triple into a sparql statement ended with a dot.
