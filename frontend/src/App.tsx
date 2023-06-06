@@ -63,7 +63,7 @@ function App() {
 		socket.on("connect_error", () => {
 			// Dont keep trying to connect, until the user tries again manually
 			socket.disconnect()
-			alert("The SHACL-OBDA Runner ist not running. Please try again later.")
+			alert("⚠️ The SHACL-OBDA Runner ist not running. Please try again later.")
 		})
 
 		// Reset state
@@ -104,7 +104,7 @@ function App() {
 	}
 
 	return (
-		<div className="App" data-color-mode="dark">
+		<div className="flex flex-col h-full" data-color-mode="dark">
 
 			{/* HEADER */}
 			{Header(startEval, status)}
@@ -112,39 +112,50 @@ function App() {
 
 
 			{/* Main */}
-			<div className="flex flex-col">
+			<div className="flex flex-col flex-1 bg-zinc-900">
 
 				{/* TAB RIBBON */}
-				<Tabs value={tab} onChange={handleChange} id="simple-tab-0" aria-label="basic tabs example">
+				<Tabs value={tab} onChange={handleChange} id="simple-tab-0" aria-label="basic tabs example" className='px-8'>
 					<Tab label="🔗 Constraint" />
 					<Tab label="🟢 Report" />
 					<Tab label="🗒️ Log" />
 				</Tabs>
 
-				{/* CODE EDITOR */}
-				<div role="tabpanel" id="simple-tabpanel-0" hidden={tab !== 0} className='fg'>
-					<div className='bg-zinc-900 p-4 text-xs'>
-						<div>
-							Upload Constraint
+				{/* EDITOR TAB */}
+				<div role="tabpanel" id="simple-tabpanel-0" hidden={tab !== 0} >
+					
+					{/* EDITOR RIBBON */}
+					<div className='bg-zinc-700 px-8 py-4 text-xs flex items-center'>
+						<div className="flex items-center gap-4">
+							<div>
+								Upload Constraint: 
+							</div>
+							<LocalFile setCode={setConstraint} />
 						</div>
-						<LocalFile setCode={setConstraint} />
 					</div>
-					<CodeEditor
-						value={constraint}
-						language="sparql"
-						placeholder="Please enter a SHACL Constraint or load from file"
-						onChange={(evn) => setConstraint(evn.target.value)}
-						className="fg p-0 m-0 font-consolas"
-					/>
+
+					{/* CODE EDITOR */}
+					<div className="px-6 py-2 bg-zinc-800">
+						<CodeEditor
+							value={constraint}
+							language="sparql"
+							padding={0}
+							placeholder="Please enter a SHACL Constraint or load from file"
+							onChange={(evn) => setConstraint(evn.target.value)}
+							className="bg-zinc-800 font-consolas"
+						/>
+					</div>
 				</div>
 
 				{/* VALIDATION REPORT */}
 				<div role="tabpanel" id="simple-tabpanel-0" hidden={tab !== 1}>
-					<ResultPane className="validPane" title="Valid" results={valid} />
+					<div className='px-8 py-8 text-xs bg-zinc-800'>
+						The Validation report will be displayed here.
+					</div>
 				</div>
 
 				{/* EXECUTION LOGS */}
-				<div role="tabpanel" id="simple-tabpanel-2" hidden={tab !== 2}>
+				<div role="tabpanel" id="simple-tabpanel-2" hidden={tab !== 2} className='px-8 bg-zinc-800 py-4'>
 					<CodeEditor
 						value={
 							logs.reduce((prev, curr) => {
@@ -152,23 +163,12 @@ function App() {
 							})
 						}
 						language="log"
-						placeholder="Click RUN to start evaluation"
-						padding={15}
-						style={{ background: "var(--bright)", fontFamily: "monospace" }}
-						className="mainEditor"
+						placeholder="Click RUN to start evaluation."
+						style={{fontFamily: "consolas" }}
+						className='bg-zinc-800'
 						readOnly
 					/>
 				</div>
-				<div style={{ maxWidth: "15em" }}>
-					<TitledPane title='File Upload' style={{ maxWidth: "15em" }}>
-						<LocalFile setCode={setConstraint} />
-					</TitledPane>
-					<TitledPane title='Run' style={{ maxWidth: "15em" }}>
-						<InfoBar values={[{ info: "valid", value: valid.length }, { info: "invalid", value: invalid.length }]} />
-						<Button onClick={startEval}>▶ Run</Button>
-					</TitledPane>
-				</div>
-
 			</div>
 		</div>
 	);
@@ -177,7 +177,7 @@ function App() {
 export default App;
 
 export function Header(startEval: () => void, status: number) {
-	return <header className="p-4 flex justify-between items-center">
+	return <header className=" px-8 py-4 flex justify-between items-center">
 		<p className='font-bold text-xl'>SHACL-OBDA Validator ↗</p>
 		<Button onClick={startEval}>▶ Run</Button>
 
