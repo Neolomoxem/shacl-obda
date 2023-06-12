@@ -5,7 +5,7 @@ ENV NODE_ENV=production
 WORKDIR usr/src/app/
 
 # Setup node
-COPY ["package.json", "package-lock.json*", "./"]
+COPY ["package.json", "package-lock.json*", "tailwind.config.js", "./"]
 COPY ["tsconfig.json", "./"]
 
 RUN npm install
