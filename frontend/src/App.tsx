@@ -52,7 +52,7 @@ function App() {
 
 	const startEval = () => {
 		// Open Socket to eval server and send constraint
-		const socket = io("sun03.pool.ifis.uni-luebeck.de");
+		const socket = io("ws://localhost:6777");
 		socket.send(constraint)
 		socket.on("connect_error", () => {
 			// Dont keep trying to connect, until the user tries again manually
