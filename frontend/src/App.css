@@ -19,6 +19,7 @@
 body, #root, .App {
   height: 100vh;
   max-height: 100vh;
+  overflow: hidden;
 }
 
 .App-header {
