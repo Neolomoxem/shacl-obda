@@ -26,19 +26,8 @@ services:
       - ./ontop-cli/smadi_prototyp:/opt/ontop/prototyp:ro
       - ./ontop-cli/connection/:/opt/ontop/connection:ro
       - ./ontop-cli/jdbc:/opt/ontop/jdbc:ro
-    ports:
-      - "8080:8080"
-    networks:
-      - gardens
-  # comunica:
-  #   build: comunica/
-  #   volumes:
-  #     - ./ontop-cli/prototyp:/usr/comunica/prototyp/
-  #   ports:
-  #     - "3001:3000"
-  #   networks:
-  #     - gardens
-  
+    network_mode: host
+
   shacl-frontend:
     environment:
       - REACT_APP_BACKEND_URL="localhost/shacl-runner-api/"
