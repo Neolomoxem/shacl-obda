@@ -37,14 +37,8 @@ function App() {
 	);
 	const [tab, setTab] = useState(0)
 	const [logs, setLogs] = useState<string[]>([""])
-	const [valid, setValid] = useState<string[]>([""])
-	const [invalid, setInvalid] = useState<string[]>([""])
-	const [report, setReport] = useState([""])
+	const [report, setReport] = useState("")
 	const [status, setStatus] = useState<number>(0)
-	const [bowl, setBowl] = useState({
-		editorPlaceholder: "Click RUN to start evaluation",
-		computations: 0
-	})
 
 	const appendLogs = (s: string) => {
 		setLogs((before: string[]) => {
@@ -67,9 +61,8 @@ function App() {
 		})
 
 		// Reset state
-		setValid([""])
-		setInvalid([""])
 		setLogs([""])
+		setReport("");
 
 		// handle communication
 		socket.on("message", (msg_raw: string) => {
@@ -89,15 +82,7 @@ function App() {
 				case "code": setStatus(parseInt(msg.message));
 					break
 				case "result":
-					switch (msg.file) {
-						case "targets_valid.log": setValid(msg.message.split("\n"))
-							break
-						case "targets_violated.log": setInvalid(msg.message.split("\n"))
-							break
-						case "validation.log": setReport(msg.message.split("\n"))
-							break
-						default: break
-					}
+					setReport(msg.message);
 					break
 			}
 		});
@@ -150,6 +135,7 @@ function App() {
 				{/* VALIDATION REPORT */}
 				<div role="tabpanel" id="simple-tabpanel-0" hidden={tab !== 1}>
 					<div className='px-8 py-8 text-xs bg-zinc-800'>
+						{report}
 						The Validation report will be displayed here.
 					</div>
 				</div>
