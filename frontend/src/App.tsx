@@ -27,7 +27,7 @@ function App() {
 		
 		:testShape
 			a sh:NodeShape ;
-			sh:targetClass :Parameter ;
+			sh:targetClass :Material ;
 			sh:property [                 # _:b1
 				sh:path :hat_Symbol ;
 				sh:minCount 1;
@@ -36,9 +36,9 @@ function App() {
 			] .`
 	);
 	const [tab, setTab] = useState(0)
-	const [logs, setLogs] = useState<string[]>([""])
-	const [report, setReport] = useState("")
-	const [status, setStatus] = useState<number>(0)
+	const [logs, setLogs] = useState([""])
+	const [report, setReport] = useState([""])
+	const [status, setStatus] = useState(0)
 
 	const appendLogs = (s: string) => {
 		setLogs((before: string[]) => {
@@ -52,7 +52,7 @@ function App() {
 
 	const startEval = () => {
 		// Open Socket to eval server and send constraint
-		const socket = io("https://sun03.pool.ifis.uni-luebeck.de/");
+		const socket = io("sun03.pool.ifis.uni-luebeck.de");
 		socket.send(constraint)
 		socket.on("connect_error", () => {
 			// Dont keep trying to connect, until the user tries again manually
@@ -62,7 +62,7 @@ function App() {
 
 		// Reset state
 		setLogs([""])
-		setReport("");
+		setReport([""]);
 
 		// handle communication
 		socket.on("message", (msg_raw: string) => {
@@ -82,7 +82,8 @@ function App() {
 				case "code": setStatus(parseInt(msg.message));
 					break
 				case "result":
-					setReport(msg.message);
+					console.log(msg.message)
+					setReport(msg.message.split(/\n/g));
 					break
 			}
 		});
@@ -92,69 +93,80 @@ function App() {
 		<div className="flex flex-col h-full" data-color-mode="dark">
 
 			{/* HEADER */}
-			{Header(startEval, status)}
+			{Header(startEval)}
 
+			{/* STATUSBAR */}
+			<div className="w-full h-1 bg-zinc-900">
+				<div hidden={status !== 301} className='h-1'>
+					<LinearProgress hidden={false} className='h-1'/>
+				</div>
+			</div>
 
-
-			{/* Main */}
-			<div className="flex flex-col flex-1 bg-zinc-900">
-
-				{/* TAB RIBBON */}
-				<Tabs value={tab} onChange={handleChange} id="simple-tab-0" aria-label="basic tabs example" className='px-8'>
+			{/* TAB RIBBON */}
+			<Tabs value={tab} onChange={handleChange} id="simple-tab-0" aria-label="basic tabs example" className='px-8'>
 					<Tab label="🔗 Constraint" />
-					<Tab label="🟢 Report" />
+					<Tab label={status===401 ? "✅ Report" : "🕑 Report"}/>
 					<Tab label="🗒️ Log" />
 				</Tabs>
 
-				{/* EDITOR TAB */}
-				<div role="tabpanel" id="simple-tabpanel-0" hidden={tab !== 0} >
+			{/* Main */}
+			<div className="flex flex-col flex-1 bg-zinc-900 overflow-scroll">
+
+				
+				<div className="overflow-y-scroll">
 					
-					{/* EDITOR RIBBON */}
-					<div className='bg-zinc-700 px-8 py-4 text-xs flex items-center'>
-						<div className="flex items-center gap-4">
-							<div>
-								Upload Constraint: 
+					{/* EDITOR TAB */}
+					<div role="tabpanel" id="simple-tabpanel-0" hidden={tab !== 0} >
+					
+						{/* EDITOR RIBBON */}
+						<div className='bg-zinc-900 px-8 py-4 text-xs flex items-center'>
+							<div className="flex items-center gap-4">
+								<div>
+									Upload Constraint:
+								</div>
+								<LocalFile setCode={setConstraint} />
 							</div>
-							<LocalFile setCode={setConstraint} />
+						</div>
+						{/* CODE EDITOR */}
+						<div className="px-6 py-4 bg-zinc-800">
+							<CodeEditor
+								value={constraint}
+								language="sparql"
+								padding={0}
+								placeholder="Please enter a SHACL Constraint or load from file"
+								onChange={(evn) => setConstraint(evn.target.value)}
+								className="bg-zinc-800 font-consolas"
+							/>
 						</div>
 					</div>
-
-					{/* CODE EDITOR */}
-					<div className="px-6 py-2 bg-zinc-800">
+					{/* VALIDATION REPORT */}
+					<div role="tabpanel" id="simple-tabpanel-0" hidden={tab !== 1}>
+						<div className='px-8 py-8 text-xs bg-zinc-800'>
+							{report.map((entry) => {
+								return entry ? <p>{entry}</p> : <br />
+							})}
+							The Validation report will be displayed here.
+						</div>
+					</div>
+					{/* EXECUTION LOGS */}
+					<div role="tabpanel" id="simple-tabpanel-2" hidden={tab !== 2} className='px-8 bg-zinc-800 py-4'>
 						<CodeEditor
-							value={constraint}
-							language="sparql"
-							padding={0}
-							placeholder="Please enter a SHACL Constraint or load from file"
-							onChange={(evn) => setConstraint(evn.target.value)}
-							className="bg-zinc-800 font-consolas"
+							value={
+								logs.reduce((prev, curr) => {
+									return prev + "\n" + curr
+								})
+							}
+							language="log"
+							placeholder="Click RUN to start evaluation."
+							style={{fontFamily: "consolas" }}
+							className='bg-zinc-800'
+							readOnly
 						/>
 					</div>
 				</div>
-
-				{/* VALIDATION REPORT */}
-				<div role="tabpanel" id="simple-tabpanel-0" hidden={tab !== 1}>
-					<div className='px-8 py-8 text-xs bg-zinc-800'>
-						{report}
-						The Validation report will be displayed here.
-					</div>
-				</div>
-
-				{/* EXECUTION LOGS */}
-				<div role="tabpanel" id="simple-tabpanel-2" hidden={tab !== 2} className='px-8 bg-zinc-800 py-4'>
-					<CodeEditor
-						value={
-							logs.reduce((prev, curr) => {
-								return prev + "\n" + curr
-							})
-						}
-						language="log"
-						placeholder="Click RUN to start evaluation."
-						style={{fontFamily: "consolas" }}
-						className='bg-zinc-800'
-						readOnly
-					/>
-				</div>
+			</div>
+			<div className='px-8 py-4 text-zinc-500 text-xs text-right'>
+				Institut für Informationssysteme, Universität zu Lübeck
 			</div>
 		</div>
 	);
@@ -162,15 +174,12 @@ function App() {
 
 export default App;
 
-export function Header(startEval: () => void, status: number) {
-	return <header className=" px-8 py-4 flex justify-between items-center">
+export function Header(startEval: () => void) {
+	return <header className=" px-8 py-6 flex justify-between items-center mb-2">
 		<p className='font-bold text-xl'>SHACL-OBDA Validator ↗</p>
 		<Button onClick={startEval}>▶ Run</Button>
 
-		{/* STATUSBAR */}
-		<div hidden={status !== 301}>
-			<LinearProgress hidden={false} />
-		</div>
+		
 
 	</header>;
 }
