@@ -21,3 +21,6 @@ ontop-cli/
 node_modules/
 
 frontend/build/
+
+# Horrible java workaround
+build/jars/

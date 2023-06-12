@@ -3,6 +3,7 @@ const childProcess = require('child_process');
 const fs = require('fs');
 
 const INFILE = "./tmp/constraint.ttl";
+const ONTOP_URL = 'http://localhost:8080/sparql';
 
 const server = new io.Server(6777, {
   cors: {
@@ -34,8 +35,14 @@ server.on('connection', (socket) => {
       message: codes.startEval
     })
     
+    sendAsJson({
+      type: "log",
+      message: `Hallo ich verbinde mich mit ${ONTOP_URL}`
+    });
+
     // run the .jar file using the child_process module
-    const jarProcess = childProcess.spawn('java', ['-jar', '--enable-preview', './build/shacl-obda.jar', INFILE, 'http://localhost:8080/sparql']);
+    // const jarProcess = childProcess.spawn('java', ['-jar', '--enable-preview', './build/shacl-obda.jar', INFILE, ONTOP_URL]);
+    const jarProcess = childProcess.spawn('java', ['--enable-preview', '-cp', './build/jars/:./build/jars/*', 'ifis.App', INFILE, ONTOP_URL]);
 
     // listen for output from the .jar process
     // and send over socket
@@ -71,35 +78,19 @@ server.on('connection', (socket) => {
       })
       
       // read the files in the out/ directory
-      fs.readdir('out/', (err, files) => {
-        
+      fs.readFile('report.log', (err, data) => {
         if (err) {
           // sendAsJson the error over the socket.io
           sendAsJson({
-            type: "log",
+            type: "error",
             message: String(err)
           });
-
         } else {
-          // iterate over the files and read their contents
-          files.forEach(function(file) {
-            fs.readFile('out/' + file, (err, data) => {
-              
-              if (err) {
-                // sendAsJson the error over the socket.io
-                sendAsJson({
-                  type: "error",
-                  message: String(err)
-                });
-              } else {
-                // sendAsJson the file contents over the socket.io
-                sendAsJson({
-                  type: "result",
-                  file: file,
-                  message: String(data)
-                });
-              }
-            });
+          // sendAsJson the file contents over the socket.io
+          sendAsJson({
+            type: "result",
+            file: "report.log",
+            message: String(data)
           });
         }
       });
