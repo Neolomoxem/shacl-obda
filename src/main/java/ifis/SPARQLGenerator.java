@@ -75,6 +75,7 @@ public class SPARQLGenerator {
             subQueries = new ArrayList<>();
         }
 
+        /* Parts are preformatted Strings that just get added into the query*/
         public void addPart(String part) {
             parts.add(part);
         }

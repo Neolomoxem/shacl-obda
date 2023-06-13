@@ -6,36 +6,32 @@
 @prefix : <urn:absolute/prototyp#> . 
 
 
-sh:PatternConstraintComponent
+ex:LanguageConstraintComponentUsingSELECT
 	a sh:ConstraintComponent ;
 	sh:parameter [
-		sh:path sh:schnischni ;
+		sh:path ex:lang ;
+		sh:datatype xsd:string ;
+		sh:minLength 2 ;
+		sh:name "language" ;
+		sh:description "The language tag, e.g. \"de\"." ;
 	] ;
-	sh:parameter [
-		sh:path sh:schnippo ;
-		sh:optional true ;
-	] ;
-	sh:validator :hasPattern .
+	sh:labelTemplate "Values are literals with language \"{$lang}\"" ;
+	sh:propertyValidator [
+		a sh:SPARQLSelectValidator ;
+		sh:message "Values are literals with language \"{?lang}\"" ;
+		sh:select """
+			SELECT DISTINCT $this ?value
+			WHERE {
+				$this $PATH ?value .
+				FILTER (!isLiteral(?value) || !langMatches(lang(?value), $lang))
+			}
+			"""
+	] .
 
-:hasPattern
-	a sh:SPARQLAskValidator ;
-	sh:message "Value does not match pattern {$pattern}" ;
-	sh:ask """
-		ASK { 
-			FILTER (!isBlank($value) && 
-				IF(bound($flags), regex(str($value), $pattern, $flags), regex(str($value), $pattern)))
-		}""" .
-
-
-
-# Ist jedes Material mindestens ein Symbol?
-
-urn:SymbolShape
-	a sh:NodeShape ;
-	sh:targetClass 	<urn:absolute/prototyp#Material> ;
-	sh:property [                 # _:b1
-		sh:path [sh:inversePath [sh:alternativePath (:A :B :C :D)]];           
-		sh:minCount 1 ;
-        sh:schnischni "hahah";
-        sh:schnippo true;
+:A
+	a sh:NodeShape;
+	sh:targetClass :Material;
+	sh:property [
+		sh:path :hat_Parameter;
+		ex:lang "Japanisch"
 	] .
