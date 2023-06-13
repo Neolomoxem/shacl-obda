@@ -15,21 +15,21 @@ import LocalFile from './components/LocalFile';
 function App() {
 	const [constraint, setConstraint] = React.useState(
 		`@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-		@prefix sh:  <http://www.w3.org/ns/shacl#>.
-		@prefix xsd: <http://www.w3.org/2001/XMLSchema#>. 
-		@prefix : <urn:absolute/prototyp#> . 
-		
-		# Welche Parameter haben ein Symbol, welche nicht?
-		
-		:testShape
-			a sh:NodeShape ;
-			sh:targetClass :Material ;
-			sh:property [                 # _:b1
-				sh:path :hat_Symbol ;
-				sh:minCount 1;
-				sh:severity sh:Violation ;
-				sh:message "Kein Symbol!"@de ;
-			] .`
+@prefix sh:  <http://www.w3.org/ns/shacl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>. 
+@prefix : <urn:absolute/prototyp#> . 
+
+# Welche Parameter haben ein Symbol, welche nicht?
+
+:testShape
+	a sh:NodeShape ;
+	sh:targetClass :Material ;
+	sh:property [                 # _:b1
+		sh:path :hat_Symbol ;
+		sh:minCount 1;
+		sh:severity sh:Violation ;
+		sh:message "Kein Symbol!"@de ;
+	] .`
 	);
 	const [tab, setTab] = useState(0)
 	const [logs, setLogs] = useState([""])
@@ -118,20 +118,20 @@ function App() {
 						<div className='bg-zinc-900 px-8 py-4 text-xs flex items-center'>
 							<div className="flex items-center gap-4">
 								<div>
-									Upload Constraint:
+								📁 Upload Constraint:
 								</div>
 								<LocalFile setCode={setConstraint} />
 							</div>
 						</div>
 						{/* CODE EDITOR */}
-						<div className="px-6 py-4 bg-zinc-800">
+						<div className="px-8 py-4 bg-zinc-800">
 							<CodeEditor
 								value={constraint}
 								language="sparql"
 								padding={0}
 								placeholder="Please enter a SHACL Constraint or load from file"
 								onChange={(evn) => setConstraint(evn.target.value)}
-								className="bg-zinc-800 font-consolas"
+								className="bg-zinc-800 font-consolas p-0 m-0"
 							/>
 						</div>
 					</div>
