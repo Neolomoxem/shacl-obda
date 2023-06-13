@@ -1,4 +1,5 @@
 import Button from '@mui/material/Button';
+import LinearProgress from '@mui/material/LinearProgress';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import CodeEditor from '@uiw/react-textarea-code-editor';
@@ -6,12 +7,7 @@ import React, { useState } from 'react';
 import { io } from 'socket.io-client';
 import './App.css';
 import './components/Components.css';
-import InfoBar from './components/InfoBar';
-import Horizontal from './components/Layout/Horizontal';
 import LocalFile from './components/LocalFile';
-import ResultPane from './components/ResultPane';
-import TitledPane from './components/TitledPane';
-import LinearProgress from '@mui/material/LinearProgress';
 
 
 
