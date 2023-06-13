@@ -218,24 +218,6 @@ public class Validation {
 
         LogicNode node = null;
 
-        /* Dont talk to me about any of this */
-        /*
-         * if (c instanceof ShNot) {
-         * node = new NotNode(shape);
-         * node.addChild(shapeToTree(((ShNot) c).getOther()));
-         * return node;
-         * }
-         * 
-         * 
-         * 
-         * if (c instanceof ShOr) {
-         * node = new OrNode(shape);
-         * } else if (c instanceof ShAnd) {
-         * node = new AndNode(shape);
-         * } else if (c instanceof ShXone) {
-         * node = new XoneNode(shape);
-         * }
-         */
         switch (c) {
             case ShNot not -> {
                 node = new NotNode(shape);
@@ -340,122 +322,6 @@ public class Validation {
 
     }
 
-    /*
-     * private Consumer<? super Constraint> addSPARQLForConstraint(PropertyNode
-     * node, Query subQuery) {
-     * 
-     * 
-     * return (c) -> {
-     * 
-     * // Value-type Constraint Components
-     * if (c instanceof ClassConstraint) {
-     * subQuery.addTriple(
-     * "?p",
-     * "a",
-     * wrap(((ClassConstraint) c).getExpectedClass().getURI())
-     * );
-     * }
-     * 
-     * else if (c instanceof DatatypeConstraint) {
-     * var datatype = ((DatatypeConstraint) c).getDatatypeURI();
-     * 
-     * node.addBindingFilter(
-     * (s) -> s.filter((binding) ->
-     * binding.get("p").getLiteralDatatypeURI().equals(datatype))
-     * );
-     * }
-     * 
-     * 
-     * else if (c instanceof StrMinLengthConstraint) {
-     * var minLen = ((StrMinLengthConstraint) c).getMinLength();
-     * node.addBindingFilter(
-     * (s) -> s.filter(
-     * (b) -> {
-     * var val = b.get("p").getLiteralValue();
-     * if (b.get("p").getLiteralValue() instanceof String) {
-     * return ((String)val).length() >= minLen;
-     * } else {
-     * return false;
-     * }
-     * }
-     * )
-     * );
-     * }
-     * 
-     * else if (c instanceof StrMaxLengthConstraint) {
-     * var maxLen = ((StrMaxLengthConstraint) c).getMaxLength();
-     * node.addBindingFilter(
-     * (s) -> s.filter(
-     * (b) -> {
-     * var val = b.get("p").getLiteralValue();
-     * if (b.get("p").getLiteralValue() instanceof String) {
-     * return ((String)val).length() >= maxLen;
-     * } else {
-     * return false;
-     * }
-     * }
-     * )
-     * );
-     * }
-     * 
-     * else if (c instanceof PatternConstraint) {
-     * var patternString = ((PatternConstraint) c).getPattern();
-     * Pattern pattern = Pattern.compile(patternString);
-     * node.addBindingFilter(
-     * (s) -> s.filter(
-     * (b) -> {
-     * if (b.get("p").getLiteralValue() instanceof String) {
-     * return pattern.matcher((String) b.get("p").getLiteralValue()).matches();
-     * } else {
-     * return false;
-     * }
-     * }
-     * ));
-     * }
-     * 
-     * 
-     * else if (c instanceof HasValueConstraint) {
-     * var expectedVal = ((HasValueConstraint) c).getValue();
-     * node.addBindingFilter(
-     * (s) -> s.filter(
-     * (b) -> {
-     * var val = b.get("p");
-     * return val.equals(expectedVal);
-     * }
-     * )
-     * );
-     * }
-     * 
-     * else if (c instanceof InConstraint) {
-     * var list = ((InConstraint) c).getValues();
-     * node.addBindingFilter(
-     * (s) -> s.filter(
-     * (b) -> {
-     * var val = b.get("p");
-     * return list.contains(val);
-     * }
-     * )
-     * );
-     * }
-     * 
-     * else if (c instanceof MinCount) {
-     * // Do nothing
-     * }
-     * else if (c instanceof MaxCount) {
-     * // Do nothing
-     * } else if (c instanceof ShNot) {
-     * 
-     * }
-     * 
-     * 
-     * 
-     * else {
-     * // throw new ValidationException("Unsupported Constraint: "+c.toString());
-     * }
-     * 
-     * };
-     * }
-     */
     private Consumer<? super Constraint> addSPARQLForConstraint(PropertyNode node, Query subQuery) {
         return (c) -> {
             switch (c) {
@@ -479,8 +345,8 @@ public class Validation {
                     }));
                 }
                 case StrMaxLengthConstraint strMaxLengthConstraint -> {
-                    var maxLen = strMaxLengthConstraint.getMaxLength();
-                    node.addBindingFilter((s) -> s.filter((b) -> {
+                var maxLen = strMaxLengthConstraint.getMaxLength();
+                node.addBindingFilter((s) -> s.filter((b) -> {
                         var val = b.get("p").getLiteralValue();
                         return val instanceof String && ((String) val).length() >= maxLen;
                     }));
@@ -544,8 +410,8 @@ public class Validation {
 
     private void handleCustomConstraint(ConstraintComponentSPARQL c, PropertyNode node, Query subQuery) {
         
-        SparqlComponent customComponent;
-        Multimap<Parameter, Node> parameterMap;
+        SparqlComponent             customComponent;
+        Multimap<Parameter, Node>   parameterMap;
         try {
             /* 
              * For some reason the actual semantics of a ConstraintComponentSPARQL are not directly accessible by default. 
@@ -559,7 +425,24 @@ public class Validation {
             f2.setAccessible(true);
             parameterMap = (Multimap<Parameter, Node>) f2.get(c);
 
+            // The subquery already binds variable ?x with valid focus nodes
+            // we just have to replace the $this template  the custom Constraint
+            // and run it as a subquery
+            var customSelect    = sparqlGenerator.newQuery();
+            String selectString = customComponent.getQuery().serialize();
+
+            // If the custom constraint also uses variable ?x everything will go up in flames
+            // But ?x is pretty common so we transfer the problem to ?CUSTOMCONSTRAINT_x
+            // If the user tries to use that, give up.
+            if (selectString.contains("?CUSTOMCONSTRAINT_x")) throw new ValidationException("Please dont call a variable ?CUSTOMCONSTRAINT_x. Why would you?");
+            selectString.replaceAll("?x", "?CUSTOMCONSTRAINT_x");
+
+            // Per SHACL-Def: The $this template is used to bind valid focus nodes (so in our case ?x)
+            selectString.replaceAll("$this", "?x");
             
+            customSelect.addPart(selectString);
+
+            subQuery.addSubQuery(customSelect);
             
 
             
