@@ -1,19 +1,21 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>ifis</groupId>
   <artifactId>shacl-obda</artifactId>
   <version>1.0-SNAPSHOT</version>
   <repositories>
-  <repository>
-    <id>central</id>
-    <name>Maven Central</name>
-    <layout>default</layout>
-    <url>https://repo1.maven.org/maven2</url>
-    <snapshots>
-    <enabled>false</enabled>
-    </snapshots>
-  </repository>
-</repositories>
+    <repository>
+      <id>central</id>
+      <name>Maven Central</name>
+      <layout>default</layout>
+      <url>https://repo1.maven.org/maven2</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>5.6.0</junit.version>
@@ -42,12 +44,18 @@
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
-     <dependency>
+    <dependency>
       <groupId>org.apache.jena</groupId>
       <artifactId>apache-jena-libs</artifactId>
       <type>pom</type>
       <version>4.7.0</version>
-  </dependency>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-nop</artifactId>
+      <version>1.7.32</version> <!-- Replace with the latest version -->
+    </dependency>
+
   </dependencies>
   <build>
     <plugins>
@@ -107,52 +115,52 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.0</version>
         <configuration>
-            <release>20</release>
-            <compilerArgs>--enable-preview</compilerArgs>
+          <release>20</release>
+          <compilerArgs>--enable-preview</compilerArgs>
         </configuration>
-    </plugin>
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-jar-plugin</artifactId>
-      <version>3.2.0</version>
-      <configuration>
-        <archive>
-          <manifest>
-            <mainClass>ifis.App</mainClass>
-          </manifest>
-        </archive>
-      </configuration>
-    </plugin>
-    <plugin>
-      <artifactId>maven-assembly-plugin</artifactId>
-      <version>3.3.0</version>
-      <configuration>
-        <archive>
-          <manifest>
-            <mainClass>ifis.App</mainClass>
-          </manifest>
-        </archive>
-        <descriptorRefs>
-          <descriptorRef>jar-with-dependencies</descriptorRef>
-        </descriptorRefs>
-      </configuration>
-      <executions>
-        <execution>
-          <id>make-assembly</id>
-          <phase>package</phase>
-          <goals>
-            <goal>single</goal>
-          </goals>
-        </execution>
-      </executions>
-    </plugin>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>ifis.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.3.0</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>ifis.App</mainClass>
+            </manifest>
+          </archive>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+        </configuration>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${maven-surefire-plugin.version}</version>
         <configuration>
-        <argLine>--enable-preview</argLine>
-      </configuration>
+          <argLine>--enable-preview</argLine>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.jacoco</groupId>
