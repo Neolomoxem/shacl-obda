@@ -13,14 +13,11 @@ import java.util.function.Consumer;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-import org.apache.commons.compress.harmony.unpack200.bytecode.RuntimeVisibleorInvisibleParameterAnnotationsAttribute.ParameterAnnotation;
 import org.apache.jena.ext.com.google.common.collect.Multimap;
 import org.apache.jena.graph.Node;
 import org.apache.jena.graph.Node_Literal;
 import org.apache.jena.graph.Node_URI;
-import org.apache.jena.shacl.Shapes;
 import org.apache.jena.shacl.engine.Parameter;
-import org.apache.jena.shacl.engine.Target;
 import org.apache.jena.shacl.engine.constraint.ClassConstraint;
 import org.apache.jena.shacl.engine.constraint.ConstraintComponentSPARQL;
 import org.apache.jena.shacl.engine.constraint.ConstraintOp;
@@ -32,17 +29,20 @@ import org.apache.jena.shacl.engine.constraint.MaxCount;
 import org.apache.jena.shacl.engine.constraint.MinCount;
 import org.apache.jena.shacl.engine.constraint.PatternConstraint;
 import org.apache.jena.shacl.engine.constraint.ShAnd;
+import org.apache.jena.shacl.engine.constraint.ShNode;
 import org.apache.jena.shacl.engine.constraint.ShNot;
 import org.apache.jena.shacl.engine.constraint.ShOr;
 import org.apache.jena.shacl.engine.constraint.ShXone;
 import org.apache.jena.shacl.engine.constraint.SparqlComponent;
-import org.apache.jena.shacl.engine.constraint.SparqlConstraint;
 import org.apache.jena.shacl.engine.constraint.StrMaxLengthConstraint;
 import org.apache.jena.shacl.engine.constraint.StrMinLengthConstraint;
+import org.apache.jena.shacl.engine.constraint.ValueMaxExclusiveConstraint;
+import org.apache.jena.shacl.engine.constraint.ValueMaxInclusiveConstraint;
+import org.apache.jena.shacl.engine.constraint.ValueMinExclusiveConstraint;
+import org.apache.jena.shacl.engine.constraint.ValueMinInclusiveConstraint;
 import org.apache.jena.shacl.parser.Constraint;
 import org.apache.jena.shacl.parser.NodeShape;
 import org.apache.jena.shacl.parser.Shape;
-import org.apache.jena.sparql.exec.QueryExecBuilder;
 import org.apache.jena.sparql.exec.RowSet;
 import org.apache.jena.sparql.exec.http.QueryExecHTTPBuilder;
 import org.apache.jena.sparql.path.P_Alt;
@@ -50,8 +50,6 @@ import org.apache.jena.sparql.path.P_Inverse;
 import org.apache.jena.sparql.path.P_Link;
 import org.apache.jena.sparql.path.P_Seq;
 import org.apache.jena.sparql.path.Path;
-
-import com.github.jsonldjava.shaded.com.google.common.collect.ArrayListMultimap;
 
 import ifis.SPARQLGenerator.Query;
 import ifis.logic.AndNode;
@@ -63,7 +61,7 @@ import ifis.logic.XoneNode;
 
 public class Validation {
     /* The input shape(s) */
-    private final Shapes shapes;
+    private final Shape shape;
     /*
      * A list of violations which gets populated by the application of the
      * logic-tree.
@@ -75,18 +73,53 @@ public class Validation {
     private final QueryExecHTTPBuilder endpoint;
     /* The logic tree given by its root node, which behaves like an AND */
     private LogicNode tree;
+    private Set<ValidationResult> results;
+    private boolean isEvaluated = false;
+    private Query baseQuery;
+    private static int id_counter = 0;
+    private final int id;
+    private String focusVar;
+    private String valueVar;
 
-    private Target baseTarget;
+    public boolean isEvaluated() {
+        return isEvaluated;
+    }
+
+
+
+    public void setEvaluated(boolean isEvaluated) {
+        this.isEvaluated = isEvaluated;
+    }
 
     /**
      * @param shapes
      */
-    public Validation(Shapes shapes, QueryExecHTTPBuilder endpoint) {
-        this.shapes = shapes;
+    public Validation(Shape shape, QueryExecHTTPBuilder endpoint) {
+        
+        id = id_counter;
+        id_counter += 1;
+
+        valueVar = "p"+id;
+        focusVar = "x"+id;
+
+        this.shape = shape;
         this.report = new ArrayList<String>();
         this.endpoint = endpoint;
 
         sparqlGenerator = new SPARQLGenerator();
+
+        var target = shape.getTargets().stream().findFirst().orElseGet(()->null);
+
+        baseQuery = target!=null ? sparqlGenerator.generateTargetQuery(target, focusVar): null;
+        
+    }
+
+    public Validation(Shape shape, QueryExecHTTPBuilder endpoint, Query baseQuery, String focusVar) {
+        this(shape, endpoint);
+        if (this.baseQuery != null) throw new ValidationException("Do not specify targets on NodeShapes that are referenced by other shapes. Use constraint-components instead.");
+        this.baseQuery = baseQuery;
+
+        this.focusVar = focusVar;
     }
 
     
@@ -102,7 +135,9 @@ public class Validation {
     public List<String> exec() {
 
         // Validate Rootshapes
-        shapes.forEach((shape) -> validateShape((NodeShape) shape));
+        validateShape((NodeShape)this.shape);
+        
+        // shapes.forEach((shape) -> validateShape((NodeShape) shape));
 
         // Return Report
         return report;
@@ -116,15 +151,13 @@ public class Validation {
      */
     public void validateShape(NodeShape shape) {
         
-        // Set basetarget
-        baseTarget = shape.getTargets().stream().findFirst().get();
 
         /* 
          * CONSTRUCT LOGIC TREE
          */
 
         System.out.println("Building logic tree.");
-        tree = shapeToTree(shape);
+        buildTree();
         System.out.println("Done.");
 
 
@@ -133,11 +166,7 @@ public class Validation {
          */
 
         // Generate queries and fetch validating atoms per propertynode
-        if (tree instanceof PropertyNode) {
-            populateNode((PropertyNode) tree);
-        } else {
-            findAndPopulateNodes(tree);
-        }
+        populate();
         System.out.println("Nodes populated.");
 
 
@@ -146,16 +175,26 @@ public class Validation {
          */
 
         // Run Validation of Target atoms and generate Report
-        var results = validate();
+        results = validate();
         System.out.println("Validation done.");
 
+    }
 
-        /* 
-         * GENERATE REPORT
-         */
 
-        saveReport(results);
 
+    private void buildTree() {
+        tree = shapeToTree(shape);
+    }
+
+
+
+    private void populate() {
+        if (tree instanceof PropertyNode) {
+            populateNode((PropertyNode) tree);
+        } else {
+            findAndPopulateNodes(tree);
+        }
+        isEvaluated = true;
     }
 
     
@@ -187,7 +226,7 @@ public class Validation {
         var opConstraints = shape.getConstraints()
                 .stream()
                 .filter(
-                        (constraint) -> constraint instanceof ConstraintOp)
+                        (constraint) -> constraint instanceof ConstraintOp && !(constraint instanceof ShNode))
                 .collect(Collectors.toSet());
 
         if (opConstraints.size() == 0 && shape.getPropertyShapes().size() == 0) {
@@ -229,11 +268,15 @@ public class Validation {
             case ShOr x -> node = new OrNode(shape);
             case ShAnd x -> node = new AndNode(shape);
             case ShXone x -> node = new XoneNode(shape);
-            default -> throw new ValidationException("Constraint supplied to createOpNode was not a accepted.");
+            default -> throw new ValidationException(c.getClass().getSimpleName() + " not supported yet.");
         }
 
         return addChildrenToNode(node, (ConstraintOpN) c, shape);
 
+    }
+
+    public LogicNode getTreeRoot() {
+        return tree;
     }
     
 
@@ -250,7 +293,6 @@ public class Validation {
      */
     private Query generateQuery(PropertyNode node) {
         // Get Base Query (the Target definition)
-        var baseQuery = sparqlGenerator.generateTargetQuery(baseTarget);
 
         var constraints = node.getNormConstraints();
 
@@ -258,17 +300,34 @@ public class Validation {
         var subQuery = sparqlGenerator.newQuery();
 
         // Generate Path from focus node to value node
-        subQuery.addPart(generatePath("?x", "?p", node.getNormPath()));
+        subQuery.addPart(generatePath("?"+focusVar, "?"+valueVar, node.getNormPath()));
         // addPath("?x", "?p", node.getNormPath(), subQuery);
 
         // Fill subquery with constraints
         constraints
                 .stream()
                 .forEach(addSPARQLForConstraint(node, subQuery));
+                
+        subQuery.addSubQuery(baseQuery);
+        
+        // If therse a NodeShape set that up
+        constraints
+                .stream()
+                .filter((constraint)-> constraint instanceof ShNode)
+                .forEach((c) -> {
+                    var cc = (ShNode) c;
+                    var val = new Validation(cc.getOther(), endpoint, subQuery, valueVar);
+                    System.out.println("RUNNING SUB EVAL ----------------\n\n\n\n");
+                    val.buildTree();
+                    val.populate();
+                    node.tree = val.getTreeRoot();
+                    System.out.println("\n\n\n\nFINISHED ----------------");
+                });
 
-        baseQuery.addSubQuery(subQuery);
+        
 
-        return baseQuery;
+
+        return subQuery;
     }
 
     /**
@@ -333,7 +392,7 @@ public class Validation {
                  */
 
                 case ClassConstraint classConstraint -> {
-                    subQuery.addTriple("?p", "a", wrap(classConstraint.getExpectedClass().getURI()));
+                    subQuery.addTriple("?"+valueVar, "a", wrap(classConstraint.getExpectedClass().getURI()));
                 }
 
                 /*
@@ -342,14 +401,14 @@ public class Validation {
                 case StrMinLengthConstraint strMinLengthConstraint -> {
                     var minLen = strMinLengthConstraint.getMinLength();
                     node.addBindingFilter((s) -> s.filter((b) -> {
-                        var val = b.get("p").getLiteralValue();
+                        var val = b.get(valueVar).getLiteralValue();
                         return val instanceof String && ((String) val).length() >= minLen;
                     }));
                 }
                 case StrMaxLengthConstraint strMaxLengthConstraint -> {
                 var maxLen = strMaxLengthConstraint.getMaxLength();
                 node.addBindingFilter((s) -> s.filter((b) -> {
-                        var val = b.get("p").getLiteralValue();
+                        var val = b.get(valueVar).getLiteralValue();
                         return val instanceof String && ((String) val).length() >= maxLen;
                     }));
                 }
@@ -357,10 +416,75 @@ public class Validation {
                     var patternString = patternConstraint.getPattern();
                     Pattern pattern = Pattern.compile(patternString);
                     node.addBindingFilter((s) -> s.filter((b) -> {
-                        var val = b.get("p").getLiteralValue();
+                        var val = b.get(valueVar).getLiteralValue();
                         return val instanceof String && pattern.matcher((String) val).matches();
                     }));
                 }
+                /* 
+                 * VALUE RANGE CONSTRAINTS
+                 */
+
+                case ValueMinExclusiveConstraint minExC -> {
+
+                    var minVal = minExC.getNodeValue().getFloat();
+                    System.out.println(minVal);
+                    node.addBindingFilter((s) -> s.filter((b) -> {
+                        if (!b.get(valueVar).isLiteral()) return false;
+                        try {
+                            var val = Double.parseDouble(b.get(valueVar).getLiteralValue().toString());
+                            return val > minVal;
+                        } catch (Exception e) {
+                            return false;
+                        }
+
+                    }));
+                }
+                case ValueMinInclusiveConstraint minInC -> {
+
+                    var minVal = minInC.getNodeValue().getFloat();
+                    System.out.println(minVal);
+                    node.addBindingFilter((s) -> s.filter((b) -> {
+                        if (!b.get(valueVar).isLiteral()) return false;
+                        try {
+                            var val = Double.parseDouble(b.get(valueVar).getLiteralValue().toString());
+                            return val >= minVal;
+                        } catch (Exception e) {
+                            return false;
+                        }
+
+                    }));
+                }
+                case ValueMaxExclusiveConstraint maxExC -> {
+
+                    var maxVal = maxExC.getNodeValue().getFloat();
+                    System.out.println(maxVal);
+                    node.addBindingFilter((s) -> s.filter((b) -> {
+                        if (!b.get(valueVar).isLiteral()) return false;
+                        try {
+                            var val = Double.parseDouble(b.get(valueVar).getLiteralValue().toString());
+                            return val < maxVal;
+                        } catch (Exception e) {
+                            return false;
+                        }
+
+                    }));
+                }
+                case ValueMaxInclusiveConstraint maxInC -> {
+
+                    var maxVal = maxInC.getNodeValue().getFloat();
+                    System.out.println(maxVal);
+                    node.addBindingFilter((s) -> s.filter((b) -> {
+                        if (!b.get(valueVar).isLiteral()) return false;
+                        try {
+                            var val = Double.parseDouble(b.get(valueVar).getLiteralValue().toString());
+                            return val <= maxVal;
+                        } catch (Exception e) {
+                            return false;
+                        }
+
+                    }));
+                }
+
 
                 /*
                  * VALUE CONSTRAINTS
@@ -368,17 +492,17 @@ public class Validation {
 
                 case HasValueConstraint hasValueConstraint -> {
                     var expectedVal = hasValueConstraint.getValue();
-                    node.addBindingFilter((s) -> s.filter((b) -> b.get("p").equals(expectedVal)));
+                    node.addBindingFilter((s) -> s.filter((b) -> b.get(valueVar).equals(expectedVal)));
                 }
                 case InConstraint inConstraint -> {
                     var list = inConstraint.getValues();
-                    node.addBindingFilter((s) -> s.filter((b) -> list.contains(b.get("p"))));
+                    node.addBindingFilter((s) -> s.filter((b) -> list.contains(b.get(valueVar))));
                 }
 
                 case DatatypeConstraint datatypeConstraint -> {
                     var datatype = datatypeConstraint.getDatatypeURI();
                     node.addBindingFilter(
-                            (s) -> s.filter((binding) -> binding.get("p").getLiteralDatatypeURI().equals(datatype)));
+                            (s) -> s.filter((binding) -> binding.get(valueVar).getLiteralDatatypeURI().equals(datatype)));
                 }
 
                 /* 
@@ -402,9 +526,9 @@ public class Validation {
                     // DO nothing
                 }
 
-                // Everything else IS an error
+                
                 default -> {
-                    // throw new ValidationException("Unsupported Constraint: " + c.toString());
+                    throw new ValidationException("Unsupported Constraint: " + c.toString());
                 }
             }
         };
@@ -487,7 +611,6 @@ public class Validation {
          */
         // Fetch all atoms mentioned by the target definiton
         // write query
-        var baseQuery = sparqlGenerator.generateTargetQuery(baseTarget);
         // Get targets
         var targets = executeQuery(baseQuery).materialize();
         System.out.println("Receives %d Targets".formatted(targets.getRowNumber()));
@@ -503,7 +626,7 @@ public class Validation {
         // TODO: parallelize?
         return targets
                 .stream()
-                .map((binding) -> binding.get("x"))
+                .map((binding) -> binding.get(focusVar))
                 .map((atom) -> {
 
                     var valNodes = new HashSet<LogicNode>();
@@ -555,6 +678,12 @@ public class Validation {
         System.out.println("\n> Generating Query.");
         Query nodeQuery = generateQuery(node);
 
+        // TODO RIGHT NOW, BINDING FILTER DO NOT APPLY TO SUB VALIDATIONS
+        // If the node contains a refernce to a NodeShape, it has now already been populated by the sub-validation.
+        if (node.getNormConstraints().stream().filter(t -> t instanceof ShNode).findAny().isPresent()) {
+            return;
+        }
+
         // Execute Query
         System.out.println("> Running query.");
         var results_raw = executeQuery(nodeQuery);
@@ -571,27 +700,12 @@ public class Validation {
             resultsStream = filter.apply(resultsStream);
         }
 
-        // Filter Rows based on datatype
-        /*
-         * if (datatypeConstraint.isPresent()) {
-         * var datatype = ((DatatypeConstraint)
-         * datatypeConstraint.get()).getDatatypeURI();
-         * resultsStream = resultsStream
-         * .filter((binding) -> {
-         * System.out.println(datatype);
-         * System.out.println(binding.get("p").getLiteralDatatypeURI());
-         * return binding.get("p").getLiteralDatatypeURI().equals(datatype);
-         * 
-         * });
-         * 
-         * }
-         */
-
+        
         results = resultsStream.collect(Collectors.toSet());
 
         HashSet<Node> atoms = results
                 .stream()
-                .map((binding) -> binding.get("x"))
+                .map((binding) -> binding.get(focusVar))
                 .collect(Collectors.toCollection(HashSet::new));
 
         // Get min and max constraints if they are pr
@@ -605,8 +719,8 @@ public class Validation {
             var countMap = new HashMap<Node, Integer>();
             for (var res :results) {
                 countMap.put(
-                    res.get("x"),
-                    countMap.getOrDefault(res.get("x"), 0) + 1
+                    res.get(focusVar),
+                    countMap.getOrDefault(res.get(focusVar), 0) + 1
                             );
             }
             /* results
@@ -682,7 +796,7 @@ public class Validation {
         return s;
     }
 
-    private void saveReport(Set<ValidationResult> results) {
+    public void saveReport(String file) {
         System.out.println("Generating report.");
 
         // Generate stats
@@ -698,7 +812,7 @@ public class Validation {
                 .reduce("", (acc, str) -> acc + str + "\n\n\n");
 
         try {
-            Files.write(Paths.get("./report.log"), report.getBytes(StandardCharsets.UTF_8));
+            Files.write(Paths.get(file), report.getBytes(StandardCharsets.UTF_8));
 
         } catch (Exception e) {
             System.out.println("Error saving report.");
@@ -721,7 +835,7 @@ public class Validation {
      */
     private RowSet executeQuery(Query query) {
 
-        var sparql = query.getSparqlString("?x ?p");
+        var sparql = query.getSparqlString("?"+focusVar + " ?"+valueVar);
 
         System.out.println("Running the following query: ");
         System.out.println(sparql);

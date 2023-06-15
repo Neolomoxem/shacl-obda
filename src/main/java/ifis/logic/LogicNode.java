@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 import org.apache.jena.graph.Node;
 import org.apache.jena.shacl.engine.constraint.ConstraintOpN;
+import org.apache.jena.shacl.engine.constraint.ShNode;
 import org.apache.jena.shacl.parser.Constraint;
 import org.apache.jena.shacl.parser.PropertyShape;
 import org.apache.jena.shacl.parser.Shape;
@@ -35,7 +36,7 @@ public abstract class LogicNode {
         normConstraints.addAll(
             shape.getConstraints()
                 .stream()
-                .filter((constraint) -> !(constraint instanceof ConstraintOpN))
+                .filter((constraint) -> !(constraint instanceof ConstraintOpN) || constraint instanceof ShNode)
                 .collect(Collectors.toSet())
             );
 

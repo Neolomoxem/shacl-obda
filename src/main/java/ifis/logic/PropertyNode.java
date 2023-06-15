@@ -15,6 +15,7 @@ public class PropertyNode extends LogicNode {
     // If the cardinality is only constrained in MAX then the validatingAtoms
     // contain all INvalidating atoms.
     private boolean inverted;
+    public LogicNode tree;
 
     public boolean isInverted() {
         return inverted;
@@ -35,6 +36,7 @@ public class PropertyNode extends LogicNode {
     
     @Override
     public boolean validates(Node atom) {
+        if (tree != null) return tree.validates(atom);
         return validatingAtoms.contains(atom);
     }
 
@@ -47,6 +49,25 @@ public class PropertyNode extends LogicNode {
     @Override
     public boolean validatesRes(Node atom, Set<LogicNode> valNodes) {
         // See field dec
+        if (tree != null) {
+            if (!inverted) {
+                if (tree.validates(atom)) {
+                    validatesRes(atom, valNodes);
+                    valNodes.add(this);
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                if (!tree.validates(atom)) {
+                    validatesRes(atom, valNodes);
+                    valNodes.add(this);
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
         if (!inverted) {
             if (validates(atom)) {
                 valNodes.add(this);

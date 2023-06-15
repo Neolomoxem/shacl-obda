@@ -9,6 +9,9 @@ import org.apache.jena.shacl.engine.Target;
 public class SPARQLGenerator {
     
 
+    public SPARQLGenerator() {
+    }
+
     private int variableIndex = 0;
 
     public String getNewVariable(){
@@ -20,22 +23,22 @@ public class SPARQLGenerator {
         return new Query(this);
     }
 
-    public Query generateTargetQuery(Target target) {
+    public Query generateTargetQuery(Target target, String focusVar) {
 
         var query = this.newQuery();
         var tt = target.getTargetType();
 
         switch (tt) {
             case targetClass:
-                query.addTriple("?x", "a", wrap(target.getObject().toString()));
+                query.addTriple("?"+focusVar, "a", wrap(target.getObject().toString()));
                 break;
             
             case targetSubjectsOf:
-                query.addTriple("?x", wrap(target.getObject().toString()), "?o");
+                query.addTriple("?"+focusVar, wrap(target.getObject().toString()), "?o");
                 break;
             
             case targetObjectsOf:
-                query.addTriple("?s", wrap(target.getObject().toString()), "?o");
+                query.addTriple("?s", wrap(target.getObject().toString()), "?"+focusVar);
                 break;
 
             case implicitClass:

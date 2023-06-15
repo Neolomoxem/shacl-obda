@@ -1,8 +1,14 @@
 package ifis;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
 import org.apache.jena.graph.Graph;
+import org.apache.jena.graph.Node;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.shacl.Shapes;
+import org.apache.jena.shacl.parser.Shape;
 import org.apache.jena.sparql.exec.http.QueryExecHTTPBuilder;
 
 import com.google.protobuf.BoolValueOrBuilder;
@@ -33,10 +39,18 @@ public final class App {
         // bob.acceptHeader("application/sparql-results+xml");
 
         // Set up Validation
-        Validation validator = new Validation(shapes, bob);
+
         
-        // Execute Validation on Shapes
-        validator.exec();
+
+        for (var shape : shapes) {
+
+            var val = new Validation(shape, bob);
+    
+            // Execute Validation on Shapes
+            val.exec();
+
+            val.saveReport("report.log");
+        }
 
     }
 
