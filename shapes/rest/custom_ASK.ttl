@@ -1,0 +1,36 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sh:  <http://www.w3.org/ns/shacl#>.
+@prefix ex: <http://example.com/ns#>. 
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>. 
+@prefix urn: <http://fliqz.com/> .
+@prefix : <urn:absolute/prototyp#> . 
+
+
+ex:LanguageConstraintComponentUsingASK
+	a sh:ConstraintComponent ;
+	sh:parameter [
+		sh:path ex:lang ;
+		sh:datatype xsd:string ;
+		sh:minLength 2 ;
+		sh:name "language" ;
+		sh:description "The language tag, e.g. \"de\"." ;
+	] ;
+	sh:labelTemplate "Values are literals with language \"{$lang}\"" ;
+	sh:validator ex:hasLang .
+	
+ex:hasLang
+	a sh:SPARQLAskValidator ;
+	sh:message "Values are literals with language \"{$lang}\"" ;
+	sh:ask """
+		ASK {
+			FILTER (isLiteral($value) && langMatches(lang($value), $lang))
+		}
+		""" .
+
+:A
+	a sh:NodeShape;
+	sh:targetClass :Material;
+	sh:property [
+		sh:path :hat_Parameter;
+		ex:lang "Japanisch"
+	] .

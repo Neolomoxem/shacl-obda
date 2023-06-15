@@ -21,3 +21,5 @@ ontop-cli/
 node_modules/
 
 frontend/build/
+
+release_bytecode.bat

@@ -1,0 +1,31 @@
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sh:  <http://www.w3.org/ns/shacl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>. 
+@prefix : <urn:absolute/prototyp#> . 
+
+
+
+:BlockierkraftShape
+    a sh:NodeShape ;
+    sh:targetClass :Blockierkraft ;
+    sh:and (
+        [
+            sh:path [sh:inversePath :hat_Parameter];
+            sh:node :B
+        ] 
+        sh:xone (
+            [
+                sh:path :hat_Parameter;
+                sh:node 
+            ]
+        )
+    )
+
+:hat
+    a sh:NodeShape;
+    sh:property [
+        sh:path :hat_Parameter;
+        sh:class :Aktuationsquerschnitt;
+        sh:minCount 1
+    ] .

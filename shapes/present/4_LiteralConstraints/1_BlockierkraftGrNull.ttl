@@ -1,0 +1,14 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sh:  <http://www.w3.org/ns/shacl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>. 
+@prefix : <urn:absolute/prototyp#> . 
+
+# Für jedes verwendete MSM-Material müssen die drei Gitterkonstanten hinterlegt sein.
+
+:BlockierkraftGrNull
+	a sh:NodeShape ;
+	sh:targetClass :Blockierkraft;
+	sh:property [               
+		sh:path :hat_Wert;
+        sh:minExclusive 0;
+	] .

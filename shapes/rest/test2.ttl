@@ -1,0 +1,29 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sh:  <http://www.w3.org/ns/shacl#>.
+@prefix ex: <http://example.com/ns#>. 
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>. 
+@prefix urn: <http://fliqz.com/> .
+@prefix : <urn:absolute/prototyp#> . 
+
+# Ist jedes Material mindestens ein Symbol?
+
+# Eine Blockierkraft darf nicht einem Elastomermaterial zugeordnet sein.
+
+:A
+	a sh:NodeShape ;
+	sh:targetClass 	:Blockierkraft ;
+	sh:not [                 # _:b1
+		sh:path [sh:inversePath [:hat_Parameter]];           
+		sh:class :Blockierkraft;
+		sh:minCount 1 ;
+	] .
+
+:A
+	a sh:NodeShape ;
+	sh:targetClass 	:Blockierkraft ;
+	sh:not [                 # _:b1
+		sh:path :ist_Parameter_von;           
+		sh:class :Elastomermaterial;
+		sh:minCount 1 ;
+	] .
+
