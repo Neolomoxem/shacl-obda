@@ -114,7 +114,7 @@ function App() {
 					<div className='w-full h-1 bg-green-500'>
 						<div style={{
 							width:(results.invalid / (results.invalid + results.valid) * 100) + "%"
-						}} className='bg-red-500 h-full'></div>
+						}} className='dark:bg-red-500 bg-red-600 h-full'></div>
 					</div>
 				)}
 				<div hidden={status !== 301} className='h-1'>
@@ -123,7 +123,7 @@ function App() {
 			</div>
 
 			{/* TAB RIBBON */}
-			<Tabs value={tab} onChange={handleChange} id="simple-tab-0" aria-label="basic tabs example" className='px-10 bg-zinc-950'>
+			<Tabs value={tab} onChange={handleChange} id="simple-tab-0" aria-label="basic tabs example" className='px-10 dark:bg-zinc-950 bg-zinc-800 text-zinc-900'>
 					<Tab label="🔗 Constraint" />
 					<Tab label={status===401 ? "✅ Report" : (status === 501 ? "⚠️ Report":"🕑 Report")}/>
 					<Tab label="🗒️ Log" />
@@ -155,7 +155,7 @@ function App() {
 								padding={0}
 								placeholder="Please enter a SHACL Constraint or load from file"
 								onChange={(evn) => setConstraint(evn.target.value)}
-								className="dark:bg-zinc-900 font-consolas p-0 m-0 bg-white"
+								className="dark:bg-zinc-900 font-consolas p-0 m-0 bg-white text-sm"
 							/>
 						</div>
 					</div>
@@ -173,7 +173,7 @@ function App() {
 						</div>
 					</div>
 					{/* EXECUTION LOGS */}
-					<div role="tabpanel" id="simple-tabpanel-2" hidden={tab !== 2} className='px-10 dark:bg-zinc-900 py-4'>
+					<div role="tabpanel" id="simple-tabpanel-2" hidden={tab !== 2} className='px-10 dark:bg-zinc-900 py-4 bg-white'>
 						<CodeEditor
 							value={
 								logs.reduce((prev, curr) => {
@@ -183,7 +183,7 @@ function App() {
 							language="log"
 							placeholder="Click RUN to start evaluation."
 							style={{fontFamily: "consolas" }}
-							className='dark:bg-zinc-900'
+							className='dark:bg-zinc-900 bg-white'
 							readOnly
 						/>
 					</div>
