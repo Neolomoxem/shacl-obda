@@ -22,16 +22,6 @@ body, #root, .App {
   overflow: hidden;
 }
 
-.App-header {
-  background-color: var(--bright);
-  height: 3em;
-  display: flex;
-  flex-direction: row;
-  align-items: space-between;
-  justify-content: space-between;
-  padding: 0 1em 0 1em;
-  
-}
 
 .fg {
   background-color: var(--bright);

@@ -35,6 +35,7 @@ function App() {
 	const [logs, setLogs] = useState([""])
 	const [report, setReport] = useState([""])
 	const [status, setStatus] = useState(0)
+	const [results, setResults] = useState({valid: 0, invalid: 0})
 
 	const appendLogs = (s: string) => {
 		setLogs((before: string[]) => {
@@ -59,6 +60,7 @@ function App() {
 		// Reset state
 		setLogs([""])
 		setReport([""]);
+		setResults({valid: 0, invalid: 0});
 
 		// handle communication
 		socket.on("message", (msg_raw: string) => {
@@ -78,35 +80,57 @@ function App() {
 				case "code": setStatus(parseInt(msg.message));
 					break
 				case "result":
-					console.log(msg.message)
-					setReport(msg.message.split(/\n/g));
+					var split = msg.message.split(/\n/g)
+					setReport(split);
+					
+					// Naja, muss erstmal so gehen
+					var overview = split[1].split(" ");
+					console.log(results.invalid / (results.invalid + results.valid) *100)
+					setResults({invalid: parseInt(overview[6]), valid: parseInt(overview[10])})
 					break
 			}
 		});
 	}
 
 	return (
-		<div className="flex flex-col h-full" data-color-mode="dark">
+		<div className="flex flex-col h-full bg-zinc-100  dark:text-zinc-50 text-zinc-950 dark:bg-zinc-950">
 
 			{/* HEADER */}
 			{Header(startEval)}
 
 			{/* STATUSBAR */}
-			<div className="w-full h-1 bg-zinc-900">
+			<div className={"w-full h-1 " + ((status:number) => {
+				switch (status) {
+					case 0:
+						return "dark:bg-zinc-900"
+					case 501:
+						return "bg-yellow-500"
+				
+					default:
+						break;
+				}
+			})(status)}>
+				{status === 401 && (
+					<div className='w-full h-1 bg-green-500'>
+						<div style={{
+							width:(results.invalid / (results.invalid + results.valid) * 100) + "%"
+						}} className='bg-red-500 h-full'></div>
+					</div>
+				)}
 				<div hidden={status !== 301} className='h-1'>
 					<LinearProgress hidden={false} className='h-1'/>
 				</div>
 			</div>
 
 			{/* TAB RIBBON */}
-			<Tabs value={tab} onChange={handleChange} id="simple-tab-0" aria-label="basic tabs example" className='px-8'>
+			<Tabs value={tab} onChange={handleChange} id="simple-tab-0" aria-label="basic tabs example" className='px-10 bg-zinc-950'>
 					<Tab label="🔗 Constraint" />
-					<Tab label={status===401 ? "✅ Report" : "🕑 Report"}/>
+					<Tab label={status===401 ? "✅ Report" : (status === 501 ? "⚠️ Report":"🕑 Report")}/>
 					<Tab label="🗒️ Log" />
 				</Tabs>
 
 			{/* Main */}
-			<div className="flex flex-col flex-1 bg-zinc-900 overflow-scroll">
+			<div className="flex flex-col flex-1 dark:bg-zinc-950 overflow-scroll">
 
 				
 				<div className="overflow-y-scroll">
@@ -115,7 +139,7 @@ function App() {
 					<div role="tabpanel" id="simple-tabpanel-0" hidden={tab !== 0} >
 					
 						{/* EDITOR RIBBON */}
-						<div className='bg-zinc-900 px-8 py-4 text-xs flex items-center'>
+						<div className='dark:bg-zinc-900 px-10 py-4 text-xs flex items-center'>
 							<div className="flex items-center gap-4">
 								<div>
 								📁 Upload Constraint:
@@ -124,28 +148,32 @@ function App() {
 							</div>
 						</div>
 						{/* CODE EDITOR */}
-						<div className="px-8 py-4 bg-zinc-800">
+						<div className="px-10 py-4 dark:bg-zinc-900 bg-white">
 							<CodeEditor
 								value={constraint}
 								language="sparql"
 								padding={0}
 								placeholder="Please enter a SHACL Constraint or load from file"
 								onChange={(evn) => setConstraint(evn.target.value)}
-								className="bg-zinc-800 font-consolas p-0 m-0"
+								className="dark:bg-zinc-900 font-consolas p-0 m-0 bg-white"
 							/>
 						</div>
 					</div>
 					{/* VALIDATION REPORT */}
 					<div role="tabpanel" id="simple-tabpanel-0" hidden={tab !== 1}>
-						<div className='px-8 py-8 text-xs bg-zinc-800'>
-							{report.map((entry) => {
+						<div className='px-10 py-8 text-xs dark:bg-zinc-900'>
+							{status === 501 && (
+								<p className='text-red-600 dark:text-red-500'>There was an error validating your constraint. Please check the log.</p >
+								
+								)}
+							{status === 401 && report.map((entry) => {
 								return entry ? <p>{entry}</p> : <br />
 							})}
-							The Validation report will be displayed here.
+							{status < 401 && "The Validation Report will be displayed here."}
 						</div>
 					</div>
 					{/* EXECUTION LOGS */}
-					<div role="tabpanel" id="simple-tabpanel-2" hidden={tab !== 2} className='px-8 bg-zinc-800 py-4'>
+					<div role="tabpanel" id="simple-tabpanel-2" hidden={tab !== 2} className='px-10 dark:bg-zinc-900 py-4'>
 						<CodeEditor
 							value={
 								logs.reduce((prev, curr) => {
@@ -155,13 +183,13 @@ function App() {
 							language="log"
 							placeholder="Click RUN to start evaluation."
 							style={{fontFamily: "consolas" }}
-							className='bg-zinc-800'
+							className='dark:bg-zinc-900'
 							readOnly
 						/>
 					</div>
 				</div>
 			</div>
-			<div className='px-8 py-4 text-zinc-500 text-xs text-right'>
+			<div className='px-10 py-4 text-zinc-500 text-xs text-right bg-white dark:bg-zinc-950'>
 				Institut für Informationssysteme, Universität zu Lübeck
 			</div>
 		</div>
@@ -171,9 +199,9 @@ function App() {
 export default App;
 
 export function Header(startEval: () => void) {
-	return <header className=" px-8 py-6 flex justify-between items-center mb-2">
+	return <header className=" px-10 py-6 flex justify-between items-center mb-2 dark:bg-zinc-950">
 		<p className='font-bold text-xl'>SHACL-OBDA Validator ↗</p>
-		<Button onClick={startEval}>▶ Run</Button>
+		<Button onClick={startEval} color='inherit'>▶ Run</Button>
 
 		
 
