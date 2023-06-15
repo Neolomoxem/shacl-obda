@@ -16,6 +16,8 @@ import java.util.stream.Collectors;
 import org.apache.commons.compress.harmony.unpack200.bytecode.RuntimeVisibleorInvisibleParameterAnnotationsAttribute.ParameterAnnotation;
 import org.apache.jena.ext.com.google.common.collect.Multimap;
 import org.apache.jena.graph.Node;
+import org.apache.jena.graph.Node_Literal;
+import org.apache.jena.graph.Node_URI;
 import org.apache.jena.shacl.Shapes;
 import org.apache.jena.shacl.engine.Parameter;
 import org.apache.jena.shacl.engine.Target;
@@ -434,11 +436,28 @@ public class Validation {
             // If the custom constraint also uses variable ?x everything will go up in flames
             // But ?x is pretty common so we transfer the problem to ?CUSTOMCONSTRAINT_x
             // If the user tries to use that, give up.
+            System.out.println(selectString);
+            System.out.println(parameterMap);
             if (selectString.contains("?CUSTOMCONSTRAINT_x")) throw new ValidationException("Please dont call a variable ?CUSTOMCONSTRAINT_x. Why would you?");
-            selectString.replaceAll("?x", "?CUSTOMCONSTRAINT_x");
+            selectString = selectString.replaceAll("\\?x", "?CUSTOMCONSTRAINT_x");
 
             // Per SHACL-Def: The $this template is used to bind valid focus nodes (so in our case ?x)
-            selectString.replaceAll("$this", "?x");
+            selectString = selectString.replaceAll("\\?this", "?x");
+
+            // Apply parameter-map
+            for (var param : parameterMap.keys()) {
+                // TODO why is parameter map a multimap?
+                String paramValue = switch (parameterMap.get(param).stream().findFirst().get()) {
+                    case Node_Literal literal:
+                        yield "\"" + literal.getLiteral().getLexicalForm() + "\"";
+                    case Node_URI uri:
+                        yield uri.getURI();
+                    default:
+                        throw new ValidationException("Variable wrong");
+                };
+
+                selectString = selectString.replaceAll("\\?" + param.getSparqlName(), paramValue);
+            }
             
             customSelect.addPart(selectString);
 
@@ -584,11 +603,17 @@ public class Validation {
             System.out.println("> Applying cardinality-rules \n");
             // Count results in HashMap
             var countMap = new HashMap<Node, Integer>();
-            results
+            for (var res :results) {
+                countMap.put(
+                    res.get("x"),
+                    countMap.getOrDefault(res.get("x"), 0) + 1
+                            );
+            }
+            /* results
                     .stream()
                     .forEach((res) -> countMap.put(
                             res.get("x"),
-                            countMap.getOrDefault(res, 0) + 1));
+                            countMap.getOrDefault(res, 0) + 1)); */
 
             // If min, filter out
             if (minConstraint.isPresent()) {
