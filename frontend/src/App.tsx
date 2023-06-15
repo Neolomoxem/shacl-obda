@@ -13,27 +13,39 @@ import LocalFile from './components/LocalFile';
 
 
 function App() {
+	function extractValidationCounts(reportString:string) {
+		const invalidRegex = / INVALID: (\d+)/;
+		const validRegex = / VALID: (\d+)/;
+	
+		const invalidMatch = reportString.match(invalidRegex);
+		const validMatch = reportString.match(validRegex);
+	
+		const invalid = invalidMatch ? parseInt(invalidMatch[1]) : 0;
+		const valid = validMatch ? parseInt(validMatch[1]) : 0;
+		
+		console.log(invalid, valid);
+		return { invalid, valid };
+	}
+	
 	const [constraint, setConstraint] = React.useState(
 		`@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix sh:  <http://www.w3.org/ns/shacl#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>. 
 @prefix : <urn:absolute/prototyp#> . 
 
-# Welche Parameter haben ein Symbol, welche nicht?
+# Jeder Parameter braucht einen Namen
 
-:testShape
+:ParameterName
 	a sh:NodeShape ;
-	sh:targetClass :Material ;
-	sh:property [                 # _:b1
-		sh:path :hat_Symbol ;
+	sh:targetClass 	:Parameter ;
+	sh:property [                 
+		sh:path :hat_Name;           
 		sh:minCount 1;
-		sh:severity sh:Violation ;
-		sh:message "Kein Symbol!"@de ;
 	] .`
 	);
 	const [tab, setTab] = useState(0)
 	const [logs, setLogs] = useState([""])
-	const [report, setReport] = useState([""])
+	const [report, setReport] = useState("")
 	const [status, setStatus] = useState(0)
 	const [results, setResults] = useState({valid: 0, invalid: 0})
 
@@ -59,7 +71,7 @@ function App() {
 
 		// Reset state
 		setLogs([""])
-		setReport([""]);
+		setReport("");
 		setResults({valid: 0, invalid: 0});
 
 		// handle communication
@@ -80,13 +92,10 @@ function App() {
 				case "code": setStatus(parseInt(msg.message));
 					break
 				case "result":
-					var split = msg.message.split(/\n/g)
-					setReport(split);
+					setReport(msg.message);
 					
-					// Naja, muss erstmal so gehen
-					var overview = split[1].split(" ");
-					console.log(results.invalid / (results.invalid + results.valid) *100)
-					setResults({invalid: parseInt(overview[6]), valid: parseInt(overview[10])})
+					setResults(extractValidationCounts(msg.message));
+
 					break
 			}
 		});
@@ -141,12 +150,13 @@ function App() {
 						{/* EDITOR RIBBON */}
 						<div className='dark:bg-zinc-900 px-10 py-4 text-xs flex items-center'>
 							<div className="flex items-center gap-4">
-								<div>
+								<div className='flex flex-row gap-4'>
 								📁 Upload Constraint:
-								</div>
 								<LocalFile setCode={setConstraint} />
+								</div>
 							</div>
 						</div>
+
 						{/* CODE EDITOR */}
 						<div className="px-10 py-4 dark:bg-zinc-900 bg-white">
 							<CodeEditor
@@ -159,6 +169,7 @@ function App() {
 							/>
 						</div>
 					</div>
+
 					{/* VALIDATION REPORT */}
 					<div role="tabpanel" id="simple-tabpanel-0" hidden={tab !== 1}>
 						<div className='px-10 py-8 text-xs dark:bg-zinc-900'>
@@ -166,12 +177,16 @@ function App() {
 								<p className='text-red-600 dark:text-red-500'>There was an error validating your constraint. Please check the log.</p >
 								
 								)}
-							{status === 401 && report.map((entry) => {
-								return entry ? <p>{entry}</p> : <br />
-							})}
+							<p></p>
+							{status === 401 && (
+								<pre>
+									{report}
+								</pre>
+							)}
 							{status < 401 && "The Validation Report will be displayed here."}
 						</div>
 					</div>
+					
 					{/* EXECUTION LOGS */}
 					<div role="tabpanel" id="simple-tabpanel-2" hidden={tab !== 2} className='px-10 dark:bg-zinc-900 py-4 bg-white'>
 						<CodeEditor
@@ -187,6 +202,7 @@ function App() {
 							readOnly
 						/>
 					</div>
+
 				</div>
 			</div>
 			<div className='px-10 py-4 text-zinc-500 text-xs text-right bg-white dark:bg-zinc-950'>
