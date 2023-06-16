@@ -1,0 +1,17 @@
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sh:  <http://www.w3.org/ns/shacl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>. 
+@prefix : <urn:absolute/prototyp#> . 
+
+# Der Name eines Gitterkonstantenparameters muss Gitterkonstante [a, b oder c] lauten und damit genau 17 Character lang sein.
+
+:GitterName
+	a sh:NodeShape ;
+	sh:targetClass :Gitterkonstante;
+    sh:property [	
+            sh:path :hat_Name;
+            sh:pattern "^Gitterkonstante [abc]$"; # Regex pattern
+            sh:maxLength 17;
+            sh:minLength 17; # In diesem Fall unnötig, aber geht auch
+    ].
