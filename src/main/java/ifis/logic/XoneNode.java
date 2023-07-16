@@ -5,7 +5,7 @@ import java.util.Set;
 import org.apache.jena.graph.Node;
 import org.apache.jena.shacl.parser.Shape;
 
-public class XoneNode extends LogicNode{
+public class XoneNode extends SHACLNode{
 
 
     
@@ -21,13 +21,13 @@ public class XoneNode extends LogicNode{
          * the Xone validates.
          */
 
-        for (int i = 0; i<children.size(); i++) {
+        for (int i = 0; i<_children.size(); i++) {
             // If one validates, there must not be another
-            if (children.get(i).validates(atom)) {
+            if (_children.get(i).validates(atom)) {
                 // Run for all the rest
-                for (int x = i+1; x< children.size(); x++) {
+                for (int x = i+1; x< _children.size(); x++) {
                     // At least 2 validate --> false
-                    if (children.get(i).validates(atom)) return false;
+                    if (_children.get(i).validates(atom)) return false;
                 }
                 // If inner loop finishes, only one validates --> true
                 return true;
@@ -40,14 +40,14 @@ public class XoneNode extends LogicNode{
     }
 
     @Override
-    public boolean validatesRes(Node atom, Set<LogicNode> valNodes) {
+    public boolean validatesRes(Node atom, Set<SHACLNode> valNodes) {
         /* 
          * Iff exactly one child validates
          * the Xone validates.
          */
 
         // For complete reasoning, we have to traverse the whole tree, so no shortcuts.
-        var count = children
+        var count = _children
                 .stream()
                 .map((child) -> child.validatesRes(atom, valNodes))
                 .filter((res) -> res==true)

@@ -1,21 +1,21 @@
 package ifis.logic;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import org.apache.jena.graph.Node;
 import org.apache.jena.shacl.parser.Shape;
 
-import ifis.ValidationFilter;
 
-public class PropertyNode extends LogicNode {
-    private HashSet<Node> validatingAtoms;
-    // Filters to be applied in validation, these are different from sparql filters!
-    private final HashSet<ValidationFilter> bindingFilters;
+/* Represents a reachable node from a target node */
+public class ConstraintNode extends ConstrainedSHACLNode {
+
     // If the cardinality is only constrained in MAX then the validatingAtoms
     // contain all INvalidating atoms.
     private boolean inverted;
-    public LogicNode tree;
+    
+    public SHACLNode tree;
+
+
 
     public boolean isInverted() {
         return inverted;
@@ -27,27 +27,25 @@ public class PropertyNode extends LogicNode {
     }
 
 
-    public PropertyNode(Shape sourceShape) {
+    public ConstraintNode(Shape sourceShape) {
         super(sourceShape);
-        validatingAtoms = new HashSet<>();
-        bindingFilters = new HashSet<>();
     }
+
 
     
+
     @Override
     public boolean validates(Node atom) {
-        if (tree != null) return tree.validates(atom);
-        return validatingAtoms.contains(atom);
+        // TODO Auto-generated method stub
+        return false;
     }
 
-
-    public void setValidatingAtoms(HashSet<Node> validatingAtoms) {
-        this.validatingAtoms = validatingAtoms;
-    }
 
 
     @Override
-    public boolean validatesRes(Node atom, Set<LogicNode> valNodes) {
+    public boolean validatesRes(Node atom, Set<SHACLNode> valNodes) {
+
+
         // See field dec
         if (tree != null) {
             if (!inverted) {
@@ -87,33 +85,19 @@ public class PropertyNode extends LogicNode {
         
     }
 
-    public void addBindingFilter(ValidationFilter f) {
-        bindingFilters.add(f);
-    }
-
 
 
     @Override
     public String getReportString() {
         
-        return getNormConstraints()
+        return getConstraints()
                 .stream()
                 .map((c) -> c.toString())
-                .reduce("⬤ " + normPath.toString() + "> ", (acc, str) -> acc + str + ", ");
+                .reduce("⬤ " + "hallo".toString() + "> ", (acc, str) -> acc + str + ", ");
         
     }
 
 
-    public HashSet<Node> getValidatingAtoms() {
-        return validatingAtoms;
-    }
-
-
-    public HashSet<ValidationFilter> getBindingFilters() {
-        return bindingFilters;
-    }
-
-    
 
     
     

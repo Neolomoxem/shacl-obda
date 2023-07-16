@@ -5,7 +5,7 @@ import java.util.Set;
 import org.apache.jena.graph.Node;
 import org.apache.jena.shacl.parser.Shape;
 
-public class NotNode extends LogicNode {
+public class NotNode extends SHACLNode {
 
     public NotNode(Shape shape) {
         super(shape);
@@ -18,11 +18,11 @@ public class NotNode extends LogicNode {
          * then the not validates not
          */
 
-        return !children.get(0).validates(atom);
+        return !_children.get(0).validates(atom);
         
     }
     @Override
-    public boolean validatesRes(Node atom, Set<LogicNode> valNodes) {
+    public boolean validatesRes(Node atom, Set<SHACLNode> valNodes) {
         /* 
          * If child validates the node
          * then the not validates not
@@ -31,7 +31,7 @@ public class NotNode extends LogicNode {
         // For complete reasoning, we have to traverse the whole tree, so no shortcuts.
         
             
-        if (!children.get(0).validatesRes(atom, valNodes)) {
+        if (!_children.get(0).validatesRes(atom, valNodes)) {
             valNodes.add(this);
             return true;
         } else {

@@ -1,0 +1,18 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sh:  <http://www.w3.org/ns/shacl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>. 
+@prefix : <urn:absolute/prototyp#> . 
+
+# Jeder Parameter braucht einen Namen
+
+:ParameterName
+	a sh:NodeShape ;
+	sh:targetClass 	:Gitterkonstante_a;
+	sh:property [                 
+		sh:path [sh:inversePath :hat_Parameter];           
+		sh:class :MSM-Material;
+		sh:property [
+			sh:path :hat_Parameter;
+			sh:class :Gitterkonstante_b;
+		]
+	] .

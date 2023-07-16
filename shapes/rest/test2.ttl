@@ -9,21 +9,38 @@
 
 # Eine Blockierkraft darf nicht einem Elastomermaterial zugeordnet sein.
 
-:A
-	a sh:NodeShape ;
-	sh:targetClass 	:Blockierkraft ;
-	sh:not [                 # _:b1
-		sh:path [sh:inversePath [:hat_Parameter]];           
-		sh:class :Blockierkraft;
-		sh:minCount 1 ;
+:A 
+	a sh:NodeShape;
+	sh:targetClass :Material;
+	sh:property [
+		sh:path :hat_Parameter;
+		sh:class :Parameter;
+		sh:minCount 3;
+		# sh:node :B;
+		sh:or (
+			[
+				sh:path :hat_Wert;
+				sh:datatype xsd:string;
+			]
+			[
+				sh:class :MSM-Material;
+				sh:property [
+					sh:path :Abdsc;
+					sh:class :Dljkbnfk
+				]
+			]
+		);
+		sh:not [
+			sh:path :hat_Name;
+			sh:hasValue "Gitterkonstante_a";
+		]
 	] .
 
-:A
-	a sh:NodeShape ;
-	sh:targetClass 	:Blockierkraft ;
-	sh:not [                 # _:b1
-		sh:path :ist_Parameter_von;           
-		sh:class :Elastomermaterial;
-		sh:minCount 1 ;
-	] .
 
+:B
+	a sh:NodeShape;
+	sh:property [
+		sh:path :ist_Parameter_von;
+		sh:minCount 1;
+		sh:maxCount 1
+	] .

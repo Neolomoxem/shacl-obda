@@ -10,6 +10,7 @@ Spezifische Abschnitte hab ich bei den relevanten Teilen nochmal verlinkt.
 
 Das folgende Constraint legt fest, dass für jedes Objekt der Klasse `:MSM-Material` (Focus-Nodes) mindestens drei Objekte der Klasse `:Gitterkonstante` (Value-Nodes) über `hat_Parameter` (Pfad) erreichbar sein sollen.
 
+
 ```python
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix sh:  <http://www.w3.org/ns/shacl#>.

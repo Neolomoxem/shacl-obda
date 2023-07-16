@@ -1,6 +1,7 @@
 package ifis;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.apache.jena.shacl.engine.Target;
@@ -8,6 +9,8 @@ import org.apache.jena.shacl.engine.Target;
 
 public class SPARQLGenerator {
     
+    private List<String> alphabet = Arrays.asList("abcdefghijklmnopqrstuvwyz".split(""));
+
 
     public SPARQLGenerator() {
     }
@@ -15,8 +18,37 @@ public class SPARQLGenerator {
     private int variableIndex = 0;
 
     public String getNewVariable(){
+        String varname = getVarWithIndex(variableIndex);
         variableIndex++;
-        return "x" + String.valueOf(variableIndex);
+        return varname;
+    }
+
+    /** 
+     * This is seperated from getNewVariable() since we use this in getSuccessorVar()
+     */
+    private String getVarWithIndex(int varIndex) {
+        var letter = alphabet.get(variableIndex % alphabet.size());
+        var dedupIndex = variableIndex / alphabet.size();
+
+        String varname = dedupIndex == 0 ? letter : letter + String.valueOf(dedupIndex);
+        return varname;
+    }
+
+    public String getSuccessorVar(String variable) {
+        if (variable.length() == 1) {
+            return getVarWithIndex(alphabet.indexOf(variable) + 1);
+        }
+
+        // Seperate letter and number
+        String letter = String.valueOf(variable.charAt(0));
+        var number = Integer.valueOf(variable.substring(1));
+
+        // Calculate originating variableIndex
+        var oIndex = alphabet.indexOf(letter) + (number * alphabet.size() + 1);
+
+        // return the successor variable
+        return getVarWithIndex(oIndex + 1);
+        
     }
 
     public Query newQuery() {

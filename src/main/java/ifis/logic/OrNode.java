@@ -5,7 +5,7 @@ import java.util.Set;
 import org.apache.jena.graph.Node;
 import org.apache.jena.shacl.parser.Shape;
 
-public class OrNode extends LogicNode {
+public class OrNode extends SHACLNode {
 
 
 
@@ -18,7 +18,7 @@ public class OrNode extends LogicNode {
     public boolean validates(Node atom) {
         
         // If any child validates the atom, the OR is validated
-        for (var child: children) {
+        for (var child: _children) {
            if (child.validates(atom)) return true; 
         }
 
@@ -26,13 +26,13 @@ public class OrNode extends LogicNode {
     }
     
     @Override
-    public boolean validatesRes(Node atom, Set<LogicNode> valNodes) {
+    public boolean validatesRes(Node atom, Set<SHACLNode> valNodes) {
         /* 
          * if at least one child validates, the OR validates
          */
 
         // For complete reasoning, we have to traverse the whole tree, so no shortcuts.
-        var count = children
+        var count = _children
                 .stream()
                 .map((child) -> child.validatesRes(atom, valNodes))
                 .filter((res) -> res==true)

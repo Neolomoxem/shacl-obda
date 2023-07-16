@@ -7,6 +7,15 @@
 
 :Blockierkraft
     a sh:NodeShape ;
-    sh:targetClass :Blockierkraft ;
-    sh:class :Parameter .
+    sh:targetClass :MSM-Material ;
+
+    smadi:paramEq1 :G_A;
+    smadi:paramEq2 :G_B
+
+    sh:property [
+        sh:path :hat_Parameter;
+        sh:class :G_A ;
+        
+    ]
+
     
