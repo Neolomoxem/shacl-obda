@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "shacl-sparql-parser",
+			"path": "."
+		}
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "automatic"
+	}
+}

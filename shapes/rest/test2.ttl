@@ -11,15 +11,16 @@
 
 :A 
 	a sh:NodeShape;
-	sh:targetClass :Material;
+	sh:targetClass :MSM-Material;
 	sh:property [
 		sh:path :hat_Parameter;
-		sh:class :Parameter;
+		sh:class :Gitterkonstante;
 		sh:minCount 3;
 		# sh:node :B;
 		sh:or (
 			[
 				sh:path :hat_Wert;
+				sh:minCount 2;
 				sh:datatype xsd:string;
 			]
 			[

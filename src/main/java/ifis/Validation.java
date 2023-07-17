@@ -44,6 +44,7 @@ import org.apache.jena.shacl.parser.Constraint;
 import org.apache.jena.shacl.parser.NodeShape;
 import org.apache.jena.shacl.parser.PropertyShape;
 import org.apache.jena.shacl.parser.Shape;
+import org.apache.jena.sparql.engine.binding.Binding;
 import org.apache.jena.sparql.exec.RowSet;
 import org.apache.jena.sparql.exec.http.QueryExecHTTPBuilder;
 import org.apache.jena.sparql.path.P_Alt;
@@ -71,7 +72,7 @@ public class Validation {
     private Set<ValidationResult> results;          
     private boolean isEvaluated = false;
     private String focusVar;
-    private String valueVar;
+    private int indentlevel = 0;                    // Indentation Level used for prettier printing
 
     public boolean isEvaluated() {
         return isEvaluated;
@@ -127,16 +128,16 @@ public class Validation {
          * CONSTRUCT LOGIC TREE
          */
 
-        System.out.println("Building logic tree.");
+        print("Building logic tree.");
         buildTree();
-        System.out.println("Done.");
+        print("Done.");
 
         /*
          * POPULATE
          */
-        System.out.println("Populating tree.");
+        print("Populating tree.");
         populateTree(tree);
-        System.out.println("Nodes populated.");
+        print("Nodes populated.");
 
         /*
          * VALIDATE
@@ -144,7 +145,7 @@ public class Validation {
 
         // Run Validation of Target atoms and generate Report
         // results = validate();
-        System.out.println("Validation done.");
+        print("Validation done.");
 
     }
 
@@ -295,7 +296,7 @@ public class Validation {
         }
 
         // Since this lineage list is quite handy, we save it for future reference
-
+        node.setLineage(lineage);
 
         
         // Init new empty Query
@@ -304,7 +305,7 @@ public class Validation {
         // For the target-definition
         // TODO this doesnt actually work for more than one Targetdef.
         var root = lineage.get(0);
-        for (var target:root.getShape().getTargets()) {
+        for (var target:this.shape.getTargets()) {
             query.addSubQuery(sparqlGenerator.generateTargetQuery(target, focusVar));
         }
 
@@ -324,7 +325,7 @@ public class Validation {
                 }
                 case ConstraintNode cnode -> {
                     
-                    if (cnode != node) continue;
+                    
                     /* Add all the constraint logic */
                     for (var c:cnode.getConstraints()) {
                         addSPARQLForConstraint(c, node, query);
@@ -442,7 +443,7 @@ public class Validation {
             case ValueMinExclusiveConstraint minExC -> {
 
                 var minVal = minExC.getNodeValue().getFloat();
-                System.out.println(minVal);
+                print(minVal);
                 node.addBindingFilter((s) -> s.filter((b) -> {
                     if (!b.get(bindingVar).isLiteral())
                         return false;
@@ -458,7 +459,7 @@ public class Validation {
             case ValueMinInclusiveConstraint minInC -> {
 
                 var minVal = minInC.getNodeValue().getFloat();
-                System.out.println(minVal);
+                print(minVal);
                 node.addBindingFilter((s) -> s.filter((b) -> {
                     if (!b.get(bindingVar).isLiteral())
                         return false;
@@ -474,7 +475,7 @@ public class Validation {
             case ValueMaxExclusiveConstraint maxExC -> {
 
                 var maxVal = maxExC.getNodeValue().getFloat();
-                System.out.println(maxVal);
+                print(maxVal);
                 node.addBindingFilter((s) -> s.filter((b) -> {
                     if (!b.get(bindingVar).isLiteral())
                         return false;
@@ -490,7 +491,7 @@ public class Validation {
             case ValueMaxInclusiveConstraint maxInC -> {
 
                 var maxVal = maxInC.getNodeValue().getFloat();
-                System.out.println(maxVal);
+                print(maxVal);
                 node.addBindingFilter((s) -> s.filter((b) -> {
                     if (!b.get(bindingVar).isLiteral())
                         return false;
@@ -581,8 +582,8 @@ public class Validation {
             // flames
             // But ?x is pretty common so we transfer the problem to ?CUSTOMCONSTRAINT_x
             // If the user tries to use that, give up.
-            System.out.println(selectString);
-            System.out.println(parameterMap);
+            print(selectString);
+            print(parameterMap);
             if (selectString.contains("?CUSTOMCONSTRAINT_x"))
                 throw new ValidationException("Please dont call a variable ?CUSTOMCONSTRAINT_x. Why would you?");
             selectString = selectString.replaceAll("\\?x", "?CUSTOMCONSTRAINT_x");
@@ -624,8 +625,8 @@ public class Validation {
      * private void populateNode(ConstraintNode node) {
      * 
      * // generate query
-     * System.out.println("\n Populating " + node.getReportString());
-     * System.out.println("\n> Generating Query.");
+     * print("\n Populating " + node.getReportString());
+     * print("\n> Generating Query.");
      * Query nodeQuery = generateQuery(node);
      * 
      * // TODO RIGHT NOW, BINDING FILTER DO NOT APPLY TO SUB VALIDATIONS
@@ -637,17 +638,17 @@ public class Validation {
      * }
      * 
      * // Execute Query
-     * System.out.println("> Running query.");
+     * print("> Running query.");
      * var results_raw = executeQuery(nodeQuery);
      * 
      * var results = results_raw.stream().collect(Collectors.toSet());
      * var resultsStream = results.stream();
-     * System.out.println("> Recieved " + results.size() + " bindings");
+     * print("> Recieved " + results.size() + " bindings");
      * 
      * var constraints = node.getConstraints();
      * 
      * // Apply Binding filters (Datatype, Value Range, ...)
-     * System.out.println("> Applying BindingFilters.");
+     * print("> Applying BindingFilters.");
      * for (var filter : node.getBindingFilters()) {
      * resultsStream = filter.apply(resultsStream);
      * }
@@ -666,7 +667,7 @@ public class Validation {
      * 
      * // If cardinality-constrained count bindings
      * if (minConstraint.isPresent() || maxConstraint.isPresent()) {
-     * System.out.println("> Applying cardinality-rules \n");
+     * print("> Applying cardinality-rules \n");
      * // Count results in HashMap
      * var countMap = new HashMap<Node, Integer>();
      * for (var res :results) {
@@ -710,7 +711,7 @@ public class Validation {
      * // Populate node
      * node.setValidatingAtoms(atoms);
      * }
-     * System.out.println();
+     * print();
      * node.setValidatingAtoms(atoms);
      * 
      * }
@@ -752,92 +753,176 @@ public class Validation {
 
     private void populateNode(ConstrainedSHACLNode node) {
         
+        print("> Populating Node "+node.toString()+"\n");
+        indentlevel++;
+
         /* 
          * GENERATE QUERY
          */
-        
-        var query = generateQuery(node);
-        
+         
+         var query = generateQuery(node);
+         
 
         /* 
          * EXECUTE QUERY
          */
 
-        System.out.println("> Running query.");
-        
+        print("> Running query.");
+        long startTime = System.nanoTime();
         var results       = executeQuery(query);
+        long endTime = System.nanoTime();
+        long duration = (endTime - startTime);
+
+
         // Initiate strem for Bindingfilters
         var resultsStream = results.stream();
+
         
         /* 
-         * APPLY BINDING FILTERS
-         */
-
+        * APPLY BINDING FILTERS
+        */
+        
         // Apply Binding filters (Datatype, Value Range, ...)
-        System.out.println("> Applying BindingFilters.");
+        print("> Applying BindingFilters.");
         for (var filter : node.getBindingFilters()) {
-            resultsStream = filter.apply(resultsStream);
+            // resultsStream = filter.apply(resultsStream);
         }
-
+        
         // Collect stream for hashmaps
         var filteredBindings = resultsStream.toList();
         
+        print("> Received "+filteredBindings.size()+" rows in "+duration/1000000 +"ms.");
+
+        
         /* 
-         * LINK RESULTS TO BINDING VARS
+        * CONVERT BINDINGS TO LIST
+        */
+        
+
+        var bindingsListed = getBindingsListed(filteredBindings, node);
+ 
+        
+        /* 
+         * CONVERT TO FIRST LEVEL MAPPING: [a,b,c,d] => [a, b, c] -> d
          */
+       
+        var map = new HashMap<List<Node>, Set<Node>>();
+        
+        var varHir = genVarHirarchy(node);
+
+        for (var b:bindingsListed) {
+            
+            // [a,b,c,d] => [a, b, c] -> d
+            
+            var sublist = b.subList(0, varHir.size()-1);
+            var l = map.get(sublist);
+
+            if (l == null) {
+                l = new HashSet<Node>();
+                map.put(sublist, l);
+            }
+            
+            l.add(b.get(varHir.size()-1));
+        }
+
+        node.bindingMap = map;
+        
+        indentlevel--;
+
+    }
+
+    private Set<ArrayList<Node>> getBindingsListed(List<Binding> filteredBindings, SHACLNode node) {
+        long startTime2 = System.nanoTime();
+
+        var varHir = genVarHirarchy(node);
+
+        var o = filteredBindings.stream()
+            .map(b->{
+                var l = new ArrayList<Node>();
+                for (int i = varHir.size()-1; i>=0; i--) {
+                    l.add(b.get(varHir.get(i)));
+                }
+                return l;
+            }).collect(Collectors.toSet());
+        
+        long endTime2 = System.nanoTime();
+        long duration2 = (endTime2 - startTime2);
+        
+        print("> Generated Listviews in "+duration2/1000000 +"ms.");
+        return o;
+    }
+
+    private List<String> genVarHirarchy(SHACLNode node) {
+        List<String> varHirachyIM = node.getLineage()
+            .stream()
+            .filter(ancestor -> ancestor instanceof PShapeNode)
+            .map(ancestor->ancestor.getBindingVar())
+            .toList();
+
+        var varHirachy = new ArrayList<>(varHirachyIM);
+        // Add the base target var to the hirachy as top level
+        varHirachy.add(focusVar);
+
+        return varHirachy;
+    }
+
+    private HashMap<String, HashMap<Node, List<Node>>> buildHashes(List<Binding> filteredBindings, SHACLNode node) {
+        
+        
+        /* 
+         * GENERATE VAR HIRARCHY
+         */
+        var varHirachy = genVarHirarchy(node);
+        
+        
+        /* 
+         * INIT EMPTY HASHMAP PER VAR
+         */
+
         // This will hold the reachable nodes from every Binding of a variable
         var hashes = new HashMap<String, HashMap<Node, List<Node>>>();
 
-        // Init an empty hashmap for every resultvar
-        for (var bVar:results.getResultVars()) {
-            String varName = bVar.getVarName();
+        for (var bVar:varHirachy) {
+            if (bVar.equals(varHirachy.get(varHirachy.size()-1))) continue;
+            String varName = bVar;
             hashes.put(varName, new HashMap<Node, List<Node>>());
         }
 
-        // Generate Variable Hirachy
-        List<String> varHirachy = node.getLineage().stream().map((ancestor)->ancestor.getBindingVar()).toList();
-
-        // Fill hashmaps
-        // ? Idea: Take care of the variables in parallel wiht the stream, lets see
-        results.getResultVars()
+        varHirachy
             .stream()
-            .parallel()
+            // .parallel()
             .forEach((var bVar) -> {
-                
+                // The last variable doesnt get its own hashmap
+                if (bVar.equals(varHirachy.get(varHirachy.size()-1))) return;
                 // Get successor variable
-                var succVar = varHirachy.get(varHirachy.indexOf(bVar)+1);
+                var prevVar = varHirachy.get(varHirachy.indexOf(bVar)+1);
                 
                 // Get HashMap for this variable
-                var bMap = hashes.get(bVar.getVarName());
+                var bMap = hashes.get(bVar);
 
-                // Initate a new stream
+                // Initiate a new stream
                 filteredBindings.stream()
                     .forEach((b) -> {
                         // Get value of this var in binding
                         Node valueV1 = b.get(bVar);
                         // Get value of succesor var in this binding
-                        Node valueV2 = b.get(succVar);
+                        Node valueV2 = b.get(prevVar);
 
-                        var succList = bMap.get(valueV1);
+                        var prevList = bMap.get(valueV1); 
                         
                         // If there are no previous successors, create new list and link
-                        if (succList == null) {
-                            succList = new ArrayList<Node>();
-                            bMap.put(bVar, succList);
+                        if (prevList == null) {
+                            prevList = new ArrayList<Node>();
+                            bMap.put(valueV1, prevList);
                         }
 
                         // Finally, add value of successor var to list of successors.
-                        succList.add(valueV2);
+                        prevList.add(valueV2);
                                    
                     });
             });
 
-
-        // Collect filtered bindings to set
-        var filteredBindings = resultsStream.collect(Collectors.toSet());
-            
-        // Assign them to the SHACLNode
-        node.setBindings(filteredBindings);
+        return hashes;
     }
 
     private String generateReportEntry(ValidationResult res) {
@@ -866,7 +951,7 @@ public class Validation {
 
     public void saveReport(String file) {
         
-        System.out.println("Generating report.");
+        print("Generating report.");
 
         // Generate stats
         // TODO Make this more performant maybe
@@ -884,7 +969,7 @@ public class Validation {
             Files.write(Paths.get(file), report.getBytes(StandardCharsets.UTF_8));
 
         } catch (Exception e) {
-            System.out.println("Error saving report.");
+            print("Error saving report.");
         }
 
     }
@@ -903,12 +988,12 @@ public class Validation {
      * @return The filtered query results.
      */
     private RowSet executeQuery(Query query) {
+        indentlevel++;
+        var sparql = query.getSparqlString("*");
 
-        var sparql = query.getSparqlString("?" + focusVar + " ?" + valueVar);
-
-        System.out.println("Running the following query: ");
-        System.out.println(sparql);
-        System.out.println(endpoint.query(sparql).build().getHttpResponseContentType());
+        print("Running the following query: ");
+        print(sparql);
+        indentlevel--;
 
         return endpoint.query(sparql).select();
     }
@@ -971,11 +1056,22 @@ public class Validation {
      * @return intendation as a string
      */
     private String indent(int level, String toIndent) {
-        var s = " ";
-        for (int i = 0; i <= level; i++) {
-            s += "       ";
+        var s = "";
+        for (int i = 0; i < level; i++) {
+            s += "    ";
         }
         return s + toIndent;
+    }
+
+    private void print(String s){
+        for (var line:s.split("\n")){
+
+            System.out.println(indent(indentlevel, line));
+        }
+    }
+
+    private void print(Object o){
+        print(o.toString());
     }
 
 }

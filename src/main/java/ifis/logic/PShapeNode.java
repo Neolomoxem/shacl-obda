@@ -61,15 +61,7 @@ public class PShapeNode extends SHACLNode {
 
     @Override
     public boolean validatesRes(Node atom, Set<SHACLNode> valNodes) {
-        // TODO Auto-generated method stub
 
-        for (var b:bindings) {
-            
-        }
-
-        if (cardinalityConstraints.size() != 0) {
-            
-        }
         return false;
     }
     

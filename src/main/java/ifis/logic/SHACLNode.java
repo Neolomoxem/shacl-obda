@@ -1,6 +1,7 @@
 package ifis.logic;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -8,13 +9,15 @@ import java.util.Set;
 import org.apache.jena.graph.Node;
 import org.apache.jena.shacl.parser.Constraint;
 import org.apache.jena.shacl.parser.Shape;
-import org.apache.jena.sparql.engine.binding.Binding;
 
 public abstract class SHACLNode {
 
     protected final ArrayList<SHACLNode> _children;
-    protected Set<Binding> bindings = new HashSet<Binding>();
-    protected Set<String> otherVars = new HashSet<String>();
+
+
+    protected Set<Node> validAtoms;
+
+    public HashMap<List<Node>, Set<Node>> bindingMap;
  
 
     protected SHACLNode parent;
@@ -25,6 +28,32 @@ public abstract class SHACLNode {
 
     protected final Shape shape;
     private boolean populated;
+
+
+    protected HashMap<ArrayList<Node>, Set<Node>> proliferate(){
+        
+        var map = new HashMap<List<Node>, Set<Node>>();
+        
+        var varHir = genVarHirarchy( );
+
+        for (var b:bindingsListed) {
+            
+            // [a,b,c,d] => [a, b, c] -> d
+            
+            var sublist = b.subList(0, varHir.size()-1);
+            var l = map.get(sublist);
+
+            if (l == null) {
+                l = new HashSet<Node>();
+                map.put(sublist, l);
+            }
+            
+            l.add(b.get(varHir.size()-1));
+        }
+
+        node.bindingMap = map;
+
+    }
     
     
     public boolean isPopulated() {
@@ -50,9 +79,6 @@ public abstract class SHACLNode {
         return parent;
     }
 
-    public void setBindings(Set<Binding> bindings) {
-        this.bindings = bindings;
-    }
 
 
     public String getBindingVar() {
