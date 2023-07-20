@@ -11,7 +11,7 @@ import ifis.ValidationException;
 public class NotNode extends SHACLNode {
 
     
-
+    private boolean inverted = false;
     
 
     public NotNode(Shape shape) {
@@ -25,7 +25,8 @@ public class NotNode extends SHACLNode {
 
 
         if (parent instanceof AndNode && parent._children.size() != 1) {
-            // If the parent is an AndNode we can just mark these nodes as negated and leave it to be parsed 
+            // If the parent is an AndNode we can just mark these nodes as negated and leave it to be parsed
+            this.inverted = true;
             this.validBindings = childBindings;
         } else {
 
@@ -34,7 +35,10 @@ public class NotNode extends SHACLNode {
                 baseBindings.remove(b);
             }
 
+            validBindings = baseBindings;
+
         }
+
 
     }
 
@@ -48,24 +52,29 @@ public class NotNode extends SHACLNode {
         return !_children.get(0).validates(atom);
         
     }
+
     @Override
     public boolean validatesRes(Node atom, Set<SHACLNode> valNodes) {
-        /* 
-         * If child validates the node
-         * then the not validates not
-         */
+        // If valid Targets arent extracted from validBindings, do it now and memoize
+        if (validTargets.size() == 0) extractValidTargets();
+        // If this Node contains, add it to valNodes
 
-        // For complete reasoning, we have to traverse the whole tree, so no shortcuts.
-        
-            
-        if (!_children.get(0).validatesRes(atom, valNodes)) {
-            valNodes.add(this);
-            return true;
+        if (inverted) {
+            if (!validTargets.contains(atom)) valNodes.add(this);
+            // Check the children
+            for (var child:_children) child.validatesRes(atom, valNodes);
+            return !validTargets.contains(atom);
+
         } else {
+            if (validTargets.contains(atom)) valNodes.add(this);
+            // Check the children
+            for (var child:_children) child.validatesRes(atom, valNodes);
+            return validTargets.contains(atom);
 
-            return false;
         }
+
     }
+
 
     @Override
     public String getReportString() {

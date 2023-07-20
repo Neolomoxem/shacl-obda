@@ -11,6 +11,8 @@ import org.apache.jena.graph.Node;
 import org.apache.jena.shacl.parser.Constraint;
 import org.apache.jena.shacl.parser.Shape;
 
+import ifis.ValidationException;
+
 public abstract class SHACLNode {
 
     protected final ArrayList<SHACLNode> _children;
@@ -80,6 +82,19 @@ public abstract class SHACLNode {
 
     }
 
+    public void suspend(SHACLNode child) {
+        if (!_children.contains(child)) throw new ValidationException("Cant suspend a non child.");
+        if (child._children.size() > 1) throw new ValidationException("Cant suspend: child has more than one grandchild");
+
+        _children.remove(child);
+        for (var grandchild:child._children) {
+            _children.add(grandchild);
+            grandchild.setParent(this);
+
+        }
+        
+    }
+
     
     public boolean isPopulated() {
         return populated;
@@ -120,6 +135,7 @@ public abstract class SHACLNode {
 
     public String getBindingVar() {
         // Walk up the tree until you find a bindingvar in a PShapeNode
+        if (parent == null) return "targets";
         return parent.getBindingVar();
     }
 
@@ -152,10 +168,10 @@ public abstract class SHACLNode {
         if (validTargets.contains(atom)) valNodes.add(this);
         // Check the children
         for (var child:_children) child.validatesRes(atom, valNodes);
-        return true;
+        return validTargets.contains(atom);
     }
 
-    private void extractValidTargets(){
+    protected void extractValidTargets(){
         this.validTargets = validBindings.stream().map(b->b.get(0)).collect(Collectors.toSet());
     }
 

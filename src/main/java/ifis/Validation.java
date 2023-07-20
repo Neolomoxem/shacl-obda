@@ -132,6 +132,9 @@ public class Validation {
         buildTree();
         indentlevel--;
         print("Done.");
+
+        // TODO Remove this
+        // cleanUp(tree);
         
         /*
         * POPULATE
@@ -153,8 +156,8 @@ public class Validation {
         print("Finished constructing.");
 
         print("Finished eval. Writing Report (this may take some time)");
-        validate();
-        saveReport(focusVar);
+        results = validate();
+
 
     }
 
@@ -164,22 +167,40 @@ public class Validation {
      * LOGIC TREE METHODS
      */
 
+    private void cleanUp(SHACLNode node) {
+        for (var child:node.getChildren()) {
+            cleanUp(child);
+
+            if (child instanceof ConstraintNode) {
+                if (((ConstraintNode) child).getConstraints().size() ==0) {
+
+                    if (child.getChildren().size() <= 1) {
+                        node.suspend(child);
+                    }
+                }
+            }
+        }
+    }
+
     private void buildTree() {
         // Root node
         
 
+
         if (shape.getConstraints().size() + shape.getPropertyShapes().size() > 1) {
-            tree = new ConstraintNode(shape);
             var andnode = new AndNode(shape);
             var cnode = new ConstraintNode(shape);
             andnode.addChild(cnode);
             for (var child:shape.getPropertyShapes()) {
                 andnode.addChild(shapeToTree(child));
             }
+            tree = andnode;
             
         } else {
             tree = shapeToTree(shape);
         }
+
+        tree.setParent(null);
     }
 
     private SHACLNode shapeToTree(Shape shape) {
@@ -227,23 +248,46 @@ public class Validation {
             }
             case NodeShape nshape -> {
 
+
+
                 var cnode = new ConstraintNode(nshape);
 
                 
                 // If a pshape is present, transform a nodeshape to an ANDNode of a constraintnode and a pshapenode
-                if (nshape.getPropertyShapes().size() > 0) {
+                if (nshape.getPropertyShapes().size() > 0 || nshape.getConstraints().stream().filter(c->c instanceof ConstraintOp).count() > 0) {
 
                     var andnode = new AndNode(nshape);
                     
-                    for (var comp:nshape.getConstraints()) {
-                        cnode.addConstraint(comp);
+                    /* 
+                    * For all constraints of the shape
+                    */
+                    for (var comp : nshape.getConstraints()) {
+                        switch (comp) {
+                            /* 
+                            * Add junctive Constraints as children
+                            */
+                            case ConstraintOp opcomp -> {
+                                andnode.addChild(createOpNode(opcomp, nshape));
+                            }
+
+                            /* 
+                            * Add direct constraints to a child ConstraintNode
+                            */
+                            
+                            default -> {
+                                cnode.addConstraint(comp);
+                            }
+                        }
                     }
-                    andnode.addChild(cnode);
+                    if (cnode.getChildren().size() != 0) andnode.addChild(cnode);
     
                     for (var pshape : shape.getPropertyShapes()) {
                         var child = shapeToTree(pshape);
                         andnode.addChild(child);
                     }
+
+                    if (andnode.getChildren().size() == 1) yield andnode.getChildren().get(0);
+
                     yield andnode;
 
                 } else {
@@ -336,7 +380,6 @@ public class Validation {
 
         // For the target-definition
         // TODO this doesnt actually work for more than one Targetdef.
-        var root = lineage.get(0);
         for (var target:this.shape.getTargets()) {
             query.addSubQuery(sparqlGenerator.generateTargetQuery(target, focusVar));
         }
@@ -345,13 +388,15 @@ public class Validation {
         // For the rest
         var from = focusVar;
 
+        lineage.add(0, node);
+
         for (int ancestorIndex = lineage.size()-1; ancestorIndex >= 0; ancestorIndex-- ) {
             var ancestor = lineage.get(ancestorIndex);
           
             switch (ancestor) {
                 case PShapeNode pnode -> {
                     // Add path from previous to new value nodes
-                    query.addPart(generatePath(from, pnode.getBindingVar(), pnode.getPath()));
+                    query.addPart(generatePath("?"+from, "?"+pnode.getBindingVar(), pnode.getPath()));
                     from = pnode.getBindingVar();
 
                 }
@@ -382,8 +427,6 @@ public class Validation {
      * @return
      */
     private String generatePath(String fromVar, String toVar, Path path) {
-        fromVar = "?"+fromVar;
-        toVar   = "?"+toVar;
         return switch (path) {
 
             /*
@@ -653,129 +696,42 @@ public class Validation {
     }
 
 
-    /*
-     * private void populateNode(ConstraintNode node) {
-     * 
-     * // generate query
-     * print("\n Populating " + node.getReportString());
-     * print("\n> Generating Query.");
-     * Query nodeQuery = generateQuery(node);
-     * 
-     * // TODO RIGHT NOW, BINDING FILTER DO NOT APPLY TO SUB VALIDATIONS
-     * // If the node contains a refernce to a NodeShape, it has now already been
-     * populated by the sub-validation.
-     * if (node.getConstraints().stream().filter(t -> t instanceof
-     * ShNode).findAny().isPresent()) {
-     * return;
-     * }
-     * 
-     * // Execute Query
-     * print("> Running query.");
-     * var results_raw = executeQuery(nodeQuery);
-     * 
-     * var results = results_raw.stream().collect(Collectors.toSet());
-     * var resultsStream = results.stream();
-     * print("> Recieved " + results.size() + " bindings");
-     * 
-     * var constraints = node.getConstraints();
-     * 
-     * // Apply Binding filters (Datatype, Value Range, ...)
-     * print("> Applying BindingFilters.");
-     * for (var filter : node.getBindingFilters()) {
-     * resultsStream = filter.apply(resultsStream);
-     * }
-     * 
-     * 
-     * results = resultsStream.collect(Collectors.toSet());
-     * 
-     * HashSet<Node> atoms = results
-     * .stream()
-     * .map((binding) -> binding.get(focusVar))
-     * .collect(Collectors.toCollection(HashSet::new));
-     * 
-     * // Get min and max constraints if they are pr
-     * var minConstraint = get(constraints, MinCount.class);
-     * var maxConstraint = get(constraints, MaxCount.class);
-     * 
-     * // If cardinality-constrained count bindings
-     * if (minConstraint.isPresent() || maxConstraint.isPresent()) {
-     * print("> Applying cardinality-rules \n");
-     * // Count results in HashMap
-     * var countMap = new HashMap<Node, Integer>();
-     * for (var res :results) {
-     * countMap.put(
-     * res.get(focusVar),
-     * countMap.getOrDefault(res.get(focusVar), 0) + 1
-     * );
-     * }
-     * 
-     * 
-     * // If min, filter out     * if (minConstraint.isPresent()) {
-     * var minVal = ((MinCount) minConstraint.get()).getMinCount();
-     * atoms = atoms
-     * .stream()
-     * .filter((atom) -> countMap.get(atom) >= minVal)
-     * .collect(Collectors.toCollection(HashSet::new));
-     * }
-     * 
-     * // if max filter out
-     * if (maxConstraint.isPresent()) {
-     * var maxVal = ((MaxCount) maxConstraint.get()).getMaxCount();
-     * // Special case only Max Constrained
-     * if (!minConstraint.isPresent()) {
-     * // the validatingAtoms now become the invalidating atoms, if there are any
-     * node.setInverted(true);
-     * atoms = atoms
-     * .stream()
-     * .filter((atom) -> countMap.get(atom) > maxVal) // We want atoms to contain
-     * all that
-     * // invalidate
-     * .collect(Collectors.toCollection(HashSet::new));
-     * } else {
-     * atoms = atoms
-     * .stream()
-     * .filter((atom) -> countMap.get(atom) <= maxVal)
-     * .collect(Collectors.toCollection(HashSet::new));
-     * 
-     * }
-     * }
-     * 
-     * // Populate node
-     * node.setValidatingAtoms(atoms);
-     * }
-     * print();
-     * node.setValidatingAtoms(atoms);
-     * 
-     * }
-     */
-
     /* 
      * VALIDATION
      */
 
-    private void validate() {
-        // Retrieve all targets
-        var target      = shape.getTargets().iterator().next();
-        var targetQuery = sparqlGenerator.generateTargetQuery(target, focusVar);
-        var focusNodes = executeQuery(targetQuery).stream().parallel().map((b) -> {
-            return b.get(focusVar);
-        });
+     private Set<ValidationResult> validate() {
 
-        // For every Focus Node perform Validation as a LOOKUP in the
-        // populated LogicTree
+        /* 
+         * GET ALL TARGETS
+         */
+        // Fetch all atoms mentioned by the target definiton
+        // write query
+        // Get targets
+        var targets = executeQuery(sparqlGenerator.generateTargetQuery(shape.getTargets().iterator().next(), focusVar));
+        System.out.println("Receives %d Targets".formatted(targets.size()));
 
-        focusNodes.map((node) -> {
-            var atom = node.getURI();
+        /* 
+         * CHECK IF ATOMS VALIDATE
+         */
+        // For every single atom in the targets, perform 'lookup' in the sets of
+        // validationg atoms for each propertynode
 
-            var valNodes = new HashSet<SHACLNode>();
+        System.out.println("Applying validation logic for targets.");
 
-            boolean isValid = tree.validatesRes(node, valNodes);
+        // TODO: parallelize?
+        return targets
+                .stream()
+                .map((binding) -> binding.get(focusVar))
+                .map((atom) -> {
 
-            return new ValidationResult(node, null, isValid);
-        });
+                    var valNodes = new HashSet<SHACLNode>();
 
-        
+                    var res = tree.validatesRes(atom, valNodes);
 
+                    return new ValidationResult(atom, valNodes, res);
+                })
+                .collect(Collectors.toSet());
 
     }
 
@@ -816,7 +772,7 @@ public class Validation {
         // Apply Binding filters (Datatype, Value Range, ...)
         print("> Applying BindingFilters.");
         for (var filter : node.getBindingFilters()) {
-            // resultsStream = filter.apply(resultsStream);
+            resultsStream = filter.apply(resultsStream);
         }
         
         // Collect stream for hashmaps
@@ -898,7 +854,21 @@ public class Validation {
 
         var cardinalBindings = new HashSet<List<Node>>();
 
-        if (minc == null && maxc == null) return bindingsListed;
+        if (minc == null && maxc == null) {
+            
+            var bMeta = new HashSet<List<Node>>();
+
+            for (var b:bindingsListed) {
+                var sublist   = b.subList(0, numVars-1);
+                bMeta.add(sublist);
+
+            }
+            return bMeta;
+
+
+            
+
+        };
 
         /* 
          * GENERATE COUNTMAP
@@ -908,7 +878,7 @@ public class Validation {
 
         for (var b:bindingsListed) {
             
-            var sublist   = b.subList(0, numVars-2);
+            var sublist   = b.subList(0, numVars-1);
             var count     = countmap.get(sublist);
             if (count == null) {
                 count = 0;
@@ -922,7 +892,7 @@ public class Validation {
 
         if (minc == null && maxc != null) {
             for (var b:bindingsListed) {
-                var sublist   = (ArrayList<Node>)b.subList(0, numVars-2);
+                var sublist   = (ArrayList<Node>)b.subList(0, numVars-1);
                 var count     = countmap.get(sublist);
 
                 // In this case the cardinalBindings are all INVALID and need to be substracted from a baseset
@@ -935,13 +905,13 @@ public class Validation {
             Set<List<Node>> baseBindingsMeta = new HashSet<List<Node>>();
             // Shorten by one Var
             for (var b:node.getBaseBindings()) {
-                baseBindingsMeta.add(b.subList(0, numVars-2));
+                baseBindingsMeta.add(b.subList(0, numVars-1));
             }
             
             // Remove all mentioned bindings with higher count
             for (var b:cardinalBindings) {
                 var count     = countmap.get(b);
-                if (count > maxc.getMaxCount()) baseBindingsMeta.remove(b);
+                if (count > maxc.getMaxCount()) cardinalBindings.remove(b);
             }
 
             
@@ -957,26 +927,30 @@ public class Validation {
          */
         if (minc != null) {
             for (var b:bindingsListed) {
-                var sublist   = b.subList(0, numVars-2);
+                var sublist   = b.subList(0, numVars-1);
                 var count     = countmap.get(sublist);
+                if (count==null) count=0;
 
                 if (count >= minc.getMinCount()) cardinalBindings.add(sublist);
             }
         }
+
+        
 
         /* 
          * MAX FILTERING
          */
         if (maxc != null) {
             for (var b:cardinalBindings) {
-                var sublist   = (ArrayList<Node>)b.subList(0, numVars-2);
+                var sublist   = b.subList(0, numVars-2);
                 var count     = countmap.get(sublist);
+                if (count==null) count=0;
 
                 if (count > maxc.getMaxCount()) cardinalBindings.remove(sublist);
             }
         }
         
-        return bindingsListed;
+        return cardinalBindings;
     }
 
     private Set<List<Node>> getBindingsListed(List<Binding> filteredBindings, SHACLNode node) {
@@ -1079,7 +1053,7 @@ public class Validation {
 
         s += res.isValid() ? "✅ " : "❌ ";
         s += wrap(res.getAtom().getURI()) + ":\n";
-        s += drawTreeNode(tree, res, -1);
+        s += drawTreeNode(tree, res, 1);
 
         return s;
     }
@@ -1210,9 +1184,9 @@ public class Validation {
      * @return intendation as a string
      */
     private String indent(int level, String toIndent) {
-        var s = "";
+        var s = " ";
         for (int i = 0; i < level; i++) {
-            s += "    ";
+            s += "   ";
         }
         return s + toIndent;
     }

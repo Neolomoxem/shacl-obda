@@ -49,58 +49,16 @@ public class ConstraintNode extends ConstrainedSHACLNode {
 
 
 
-    @Override
-    public boolean validatesRes(Node atom, Set<SHACLNode> valNodes) {
-
-
-        // See field dec
-        if (tree != null) {
-            if (!inverted) {
-                if (tree.validates(atom)) {
-                    validatesRes(atom, valNodes);
-                    valNodes.add(this);
-                    return true;
-                } else {
-                    return false;
-                }
-            } else {
-                if (!tree.validates(atom)) {
-                    validatesRes(atom, valNodes);
-                    valNodes.add(this);
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-        }
-        if (!inverted) {
-            if (validates(atom)) {
-                valNodes.add(this);
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            if (!validates(atom)) {
-                valNodes.add(this);
-                return true;
-            } else {
-                return false;
-            }
-        }
-        
-        
-    }
-
-
 
     @Override
     public String getReportString() {
         
-        return getConstraints()
-                .stream()
-                .map((c) -> c.toString())
-                .reduce("⬤ " + "hallo".toString() + "> ", (acc, str) -> acc + str + ", ");
+        var s = new StringBuilder("⬤ > ");
+        for (var c:constraints) {
+            s.append(c.toString());
+        }
+
+        return s.toString();
         
     }
 

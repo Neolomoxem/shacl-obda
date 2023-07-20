@@ -75,26 +75,6 @@ public class AndNode extends SHACLNode {
         
     }
 
-    @Override
-    public boolean validatesRes(Node atom, Set<SHACLNode> valNodes) {
-        /* 
-         * If all children validate, the AND validates
-         */
-
-        // For complete reasoning, we have to traverse the whole tree, so no shortcuts.
-        var count = _children
-                .stream()
-                .map((child) -> child.validatesRes(atom, valNodes))
-                .filter((res) -> res==false)
-                .count();
-            
-        if (count == 0) {
-            valNodes.add(this);
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     @Override
     public String getReportString() {

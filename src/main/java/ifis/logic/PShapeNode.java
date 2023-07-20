@@ -45,9 +45,15 @@ public class PShapeNode extends SHACLNode {
 
     @Override
     protected void constructFromChildren() {
+
         if (_children.get(0).validBindings.size() == 0) return;
-        
-        var numVars = getLineage();
+        // If this is the end highest propertyshape, were finished
+
+        var childNumVars = _children.get(0).validBindings.iterator().next().size();
+
+        boolean elevate = childNumVars != 1;
+
+
         
         // We use an AndNode to do this
 
@@ -57,15 +63,12 @@ public class PShapeNode extends SHACLNode {
         }
         sub.constructFromChildren();
 
+        
 
-
-
-        var childNumVars = _children.get(0).validBindings.iterator().next().size();
-
-        validBindings = _children.get(0).validBindings
+        validBindings = elevate ? sub.validBindings
             .stream()
             .map(b->b.subList(0, childNumVars-1))
-            .collect(Collectors.toSet());
+            .collect(Collectors.toSet()) : sub.validBindings;
 
     }
 
@@ -79,8 +82,8 @@ public class PShapeNode extends SHACLNode {
 
     @Override
     public String getReportString() {
-        // TODO Auto-generated method stub
-        return null;
+        
+        return " " +  ((PropertyShape) shape).getPath().toString().replaceAll("urn:absolute/prototyp#", "") + " ?"+bindingVar;
     }
     
     @Override
@@ -92,12 +95,9 @@ public class PShapeNode extends SHACLNode {
         return true;
     }
 
-    @Override
-    public boolean validatesRes(Node atom, Set<SHACLNode> valNodes) {
-
-        return false;
-    }
     
+
+
     public Path getPath() {
         return path;
     }

@@ -19,6 +19,10 @@
 		sh:class :Gitterkonstante_b;
 		sh:minCount 1;
 		sh:maxCount 1;
+		sh:property [
+			sh:path :hat_Wert;
+			sh:minCount 1;
+		]
 	];
 	sh:property [                 # _:b1
 		sh:path :hat_Parameter;
