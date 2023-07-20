@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.regex.Pattern;
@@ -17,7 +18,6 @@ import org.apache.jena.graph.Node;
 import org.apache.jena.graph.Node_Literal;
 import org.apache.jena.graph.Node_URI;
 import org.apache.jena.shacl.engine.Parameter;
-import org.apache.jena.shacl.engine.constraint.CardinalityConstraint;
 import org.apache.jena.shacl.engine.constraint.ClassConstraint;
 import org.apache.jena.shacl.engine.constraint.ConstraintComponentSPARQL;
 import org.apache.jena.shacl.engine.constraint.ConstraintOp;
@@ -45,7 +45,6 @@ import org.apache.jena.shacl.parser.NodeShape;
 import org.apache.jena.shacl.parser.PropertyShape;
 import org.apache.jena.shacl.parser.Shape;
 import org.apache.jena.sparql.engine.binding.Binding;
-import org.apache.jena.sparql.exec.RowSet;
 import org.apache.jena.sparql.exec.http.QueryExecHTTPBuilder;
 import org.apache.jena.sparql.path.P_Alt;
 import org.apache.jena.sparql.path.P_Inverse;
@@ -125,27 +124,37 @@ public class Validation {
     public void validateShape(NodeShape shape) {
 
         /*
-         * CONSTRUCT LOGIC TREE
-         */
+        * CONSTRUCT LOGIC TREE
+        */
 
         print("Building logic tree.");
+        indentlevel++;
         buildTree();
+        indentlevel--;
         print("Done.");
-
+        
         /*
-         * POPULATE
-         */
+        * POPULATE
+        */
         print("Populating tree.");
+        indentlevel++;
         populateTree(tree);
+        indentlevel--;
         print("Nodes populated.");
-
+        
         /*
-         * VALIDATE
-         */
+        * CONSTRUCT BINDINGS IN TREE
+        */
+        
+        print("Constructing valid bindings in tree.");
+        indentlevel++;
+        tree.construct();
+        indentlevel--;
+        print("Finished constructing.");
 
-        // Run Validation of Target atoms and generate Report
-        // results = validate();
-        print("Validation done.");
+        print("Finished eval. Writing Report (this may take some time)");
+        validate();
+        saveReport(focusVar);
 
     }
 
@@ -156,12 +165,27 @@ public class Validation {
      */
 
     private void buildTree() {
-        tree = shapeToTree(shape);
+        // Root node
+        
+
+        if (shape.getConstraints().size() + shape.getPropertyShapes().size() > 1) {
+            tree = new ConstraintNode(shape);
+            var andnode = new AndNode(shape);
+            var cnode = new ConstraintNode(shape);
+            andnode.addChild(cnode);
+            for (var child:shape.getPropertyShapes()) {
+                andnode.addChild(shapeToTree(child));
+            }
+            
+        } else {
+            tree = shapeToTree(shape);
+        }
     }
 
     private SHACLNode shapeToTree(Shape shape) {
         return switch (shape) {
             case PropertyShape pshape -> {
+
                 // Create PathNode with fresh variable
                 var pnode = new PShapeNode(pshape, sparqlGenerator.getNewVariable());
                 var cnode = new ConstraintNode(pshape);
@@ -176,13 +200,6 @@ public class Validation {
                          */
                         case ConstraintOp opcomp -> {
                             pnode.addChild(createOpNode(opcomp, pshape));
-                        }
-
-                        /* 
-                         * Add cardinality constraints to shape
-                         */
-                        case CardinalityConstraint carcomp -> {
-                            pnode.addCardinalityConstraint(carcomp);
                         }
 
                         /* 
@@ -212,16 +229,31 @@ public class Validation {
 
                 var cnode = new ConstraintNode(nshape);
 
-                for (var comp:nshape.getConstraints()) {
-                    cnode.addConstraint(comp);
+                
+                // If a pshape is present, transform a nodeshape to an ANDNode of a constraintnode and a pshapenode
+                if (nshape.getPropertyShapes().size() > 0) {
+
+                    var andnode = new AndNode(nshape);
+                    
+                    for (var comp:nshape.getConstraints()) {
+                        cnode.addConstraint(comp);
+                    }
+                    andnode.addChild(cnode);
+    
+                    for (var pshape : shape.getPropertyShapes()) {
+                        var child = shapeToTree(pshape);
+                        andnode.addChild(child);
+                    }
+                    yield andnode;
+
+                } else {
+                    for (var comp:nshape.getConstraints()) {
+                        cnode.addConstraint(comp);
+                    }
+                    yield cnode;
                 }
 
-                for (var pshape : shape.getPropertyShapes()) {
-                    var child = shapeToTree(pshape);
-                    cnode.addChild(child);
-                }
-
-                yield cnode;
+                
             }
             default -> throw new ValidationException(
                     "There is a new kind of shape. If you see this error you are most likely from the future. Please note that this tool was written in 2023, back when we only knew NodeShapes and PropertyShapes! Can you imagine?");
@@ -260,13 +292,17 @@ public class Validation {
     /* We populate the leaves of the tree. */
     private void populateTree(SHACLNode node) {
         
-        if (node.get_children().size() == 0) {
+        if (node instanceof NotNode) {
+            populateBaseBindings((NotNode)node);
+        }
+
+        if (node.getChildren().size() == 0) {
             // Anchor
             populateNode((ConstrainedSHACLNode) node);
             
         } else {
             // Recurse for all child nodes.
-            for (var childNode:node.get_children()) {
+            for (var childNode:node.getChildren()) {
                 populateTree(childNode);
             }
         }
@@ -277,26 +313,22 @@ public class Validation {
      * QUERY GENERATION
      */
 
+    private void populateBaseBindings(SHACLNode node) {
+        var query = generateQuery(node);
+        var bindings = getBindingsListed(executeQuery(query).stream().collect(Collectors.toList()), node);
+        
+        node.setBaseBindings(bindings);
+    }
+
     /**
      * Generates a SPARQL query string for a property node.
      * 
      * @param node The property node for which to generate the query.
      * @return The generated SPARQL query string.
      */
-    private Query generateQuery(ConstrainedSHACLNode node) {
+    private Query generateQuery(SHACLNode node) {
         
-        /* 
-         * GENERATE LINEAGE
-         */
-        var lineage = new ArrayList<SHACLNode>();
-        SHACLNode lookAt = node;
-        while (lookAt.getParent() != null) {
-            lineage.add(lookAt.getParent());
-            lookAt = lookAt.getParent();
-        }
-
-        // Since this lineage list is quite handy, we save it for future reference
-        node.setLineage(lineage);
+        var lineage = node.getLineage();
 
         
         // Init new empty Query
@@ -328,7 +360,7 @@ public class Validation {
                     
                     /* Add all the constraint logic */
                     for (var c:cnode.getConstraints()) {
-                        addSPARQLForConstraint(c, node, query);
+                        addSPARQLForConstraint(c, cnode, query);
                     }
 
 
@@ -770,8 +802,7 @@ public class Validation {
         print("> Running query.");
         long startTime = System.nanoTime();
         var results       = executeQuery(query);
-        long endTime = System.nanoTime();
-        long duration = (endTime - startTime);
+        
 
 
         // Initiate strem for Bindingfilters
@@ -790,8 +821,7 @@ public class Validation {
         
         // Collect stream for hashmaps
         var filteredBindings = resultsStream.toList();
-        
-        print("> Received "+filteredBindings.size()+" rows in "+duration/1000000 +"ms.");
+
 
         
         /* 
@@ -800,13 +830,19 @@ public class Validation {
         
 
         var bindingsListed = getBindingsListed(filteredBindings, node);
- 
+        
+
+        /* 
+         * COUNT FOR CARDINALITY CONSTRAINTS
+         */
+
+        bindingsListed = filterCardinality(bindingsListed, node);
         
         /* 
          * CONVERT TO FIRST LEVEL MAPPING: [a,b,c,d] => [a, b, c] -> d
          */
        
-        var map = new HashMap<List<Node>, Set<Node>>();
+        /* var map = new HashMap<List<Node>, Set<Node>>();
         
         var varHir = genVarHirarchy(node);
 
@@ -823,20 +859,132 @@ public class Validation {
             }
             
             l.add(b.get(varHir.size()-1));
-        }
+        } */
 
-        node.bindingMap = map;
+        node.validBindings = bindingsListed;
         
         indentlevel--;
 
     }
 
-    private Set<ArrayList<Node>> getBindingsListed(List<Binding> filteredBindings, SHACLNode node) {
+    private Set<List<Node>> filterCardinality(Set<List<Node>> bindingsListed, ConstrainedSHACLNode node) {
+        
+        if (bindingsListed.size() == 0) return bindingsListed;
+        
+        var numVars   = bindingsListed.iterator().next().size();
+        
+        /* 
+         * APPLY CARDINALITY LOGIC
+         */
+        MaxCount maxc2 = null;
+        MinCount minc2 = null;
+
+        for (var c:node.getConstraints()) {
+            switch (c) {
+                case MinCount x -> {
+                    minc2 = x;
+                }
+                case MaxCount x -> {
+                    maxc2 = x;
+                }
+                default -> {
+                    // Do nothing
+                }
+            }
+        }
+        // Needed for lambda
+        var maxc = maxc2;
+        var minc = minc2;
+
+        var cardinalBindings = new HashSet<List<Node>>();
+
+        if (minc == null && maxc == null) return bindingsListed;
+
+        /* 
+         * GENERATE COUNTMAP
+         */
+        
+        Map<List<Node>, Integer> countmap = new HashMap<>();
+
+        for (var b:bindingsListed) {
+            
+            var sublist   = b.subList(0, numVars-2);
+            var count     = countmap.get(sublist);
+            if (count == null) {
+                count = 0;
+            }
+            countmap.put(sublist, count + 1);
+        }
+
+        /* 
+         * ONLY MAX
+         */
+
+        if (minc == null && maxc != null) {
+            for (var b:bindingsListed) {
+                var sublist   = (ArrayList<Node>)b.subList(0, numVars-2);
+                var count     = countmap.get(sublist);
+
+                // In this case the cardinalBindings are all INVALID and need to be substracted from a baseset
+                if (count > maxc.getMaxCount()) cardinalBindings.add(sublist);
+            }
+
+            // Now run basequery and subtract
+            populateBaseBindings(node);
+
+            Set<List<Node>> baseBindingsMeta = new HashSet<List<Node>>();
+            // Shorten by one Var
+            for (var b:node.getBaseBindings()) {
+                baseBindingsMeta.add(b.subList(0, numVars-2));
+            }
+            
+            // Remove all mentioned bindings with higher count
+            for (var b:cardinalBindings) {
+                var count     = countmap.get(b);
+                if (count > maxc.getMaxCount()) baseBindingsMeta.remove(b);
+            }
+
+            
+            return baseBindingsMeta;
+
+
+            
+
+        }
+
+        /* 
+         * MIN FILTERING
+         */
+        if (minc != null) {
+            for (var b:bindingsListed) {
+                var sublist   = b.subList(0, numVars-2);
+                var count     = countmap.get(sublist);
+
+                if (count >= minc.getMinCount()) cardinalBindings.add(sublist);
+            }
+        }
+
+        /* 
+         * MAX FILTERING
+         */
+        if (maxc != null) {
+            for (var b:cardinalBindings) {
+                var sublist   = (ArrayList<Node>)b.subList(0, numVars-2);
+                var count     = countmap.get(sublist);
+
+                if (count > maxc.getMaxCount()) cardinalBindings.remove(sublist);
+            }
+        }
+        
+        return bindingsListed;
+    }
+
+    private Set<List<Node>> getBindingsListed(List<Binding> filteredBindings, SHACLNode node) {
         long startTime2 = System.nanoTime();
 
         var varHir = genVarHirarchy(node);
 
-        var o = filteredBindings.stream()
+        Set<List<Node>> o = filteredBindings.stream()
             .map(b->{
                 var l = new ArrayList<Node>();
                 for (int i = varHir.size()-1; i>=0; i--) {
@@ -941,7 +1089,7 @@ public class Validation {
         var s = indent(indentlevel, "┗━");
         s += valid ? "✅━" : "❌━";
         s += node.getReportString();
-        s += node.get_children()
+        s += node.getChildren()
                 .stream()
                 .map((childNode) -> drawTreeNode(childNode, res, indentlevel + 1))
                 .reduce("", (acc, str) -> acc + "\n" + str);
@@ -987,15 +1135,21 @@ public class Validation {
      * @param query The SPARQL query to execute.
      * @return The filtered query results.
      */
-    private RowSet executeQuery(Query query) {
+    private List<Binding> executeQuery(Query query) {
         indentlevel++;
         var sparql = query.getSparqlString("*");
 
-        print("Running the following query: ");
+        print("\n------------------- Running the following query: ------------------------");
         print(sparql);
+        
+        long startTime = System.nanoTime();
+        var bindings = endpoint.query(sparql).select().stream().collect(Collectors.toList());
+        long endTime = System.nanoTime();
+        long duration = (endTime - startTime);
+        
+        print("----- Received "+bindings.size()+" rows in "+duration/1000000 +"ms. ------\n\n");
         indentlevel--;
-
-        return endpoint.query(sparql).select();
+        return bindings;
     }
 
     /**
@@ -1069,6 +1223,8 @@ public class Validation {
             System.out.println(indent(indentlevel, line));
         }
     }
+
+
 
     private void print(Object o){
         print(o.toString());

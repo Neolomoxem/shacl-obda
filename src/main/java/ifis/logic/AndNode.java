@@ -1,8 +1,8 @@
 package ifis.logic;
 
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.apache.jena.graph.Node;
@@ -31,25 +31,48 @@ public class AndNode extends SHACLNode {
 
     }
 
-    public void construct() {
-        var bindingVar = getBindingVar();
 
-        var smallestMap = _children.get(0).hashes.get(bindingVar);
+    
 
+    @Override
+    protected void constructFromChildren() {
+        
+        List<SHACLNode> notNots = new ArrayList<>();
+        List<SHACLNode> nots = new ArrayList<>();
+
+        // Parition
         for (var child:_children) {
-            var childSet = child.hashes.get(bindingVar);
-            smallestMap = smallestMap.size() < childSet.size() ? smallestMap : childSet;
-        }
+            if (child instanceof NotNode) nots.add(child);
+            else notNots.add(child);
+        } 
 
-        validAtoms = smallestMap.keySet()
-            .stream()
-            .filter((mentioned) -> {
-                for (var child:_children) {
-                    if (!child.hashes.get(bindingVar).keySet().contains(mentioned)) return false;
+
+        // Find smallest childset
+        var childWSmallestSet2 = notNots.get(0);
+
+        // We can assume that all children have had their validBindings constructed
+        for (var child:notNots) childWSmallestSet2 = child.validBindings.size() < childWSmallestSet2.validBindings.size() ? child : childWSmallestSet2;
+
+        final var childWSmallestSet = childWSmallestSet2;
+
+            
+        // Now we can construct
+        validBindings = childWSmallestSet.validBindings.stream()
+            .filter(b->{
+                // First check all notNots
+                for (var other:notNots) {
+                    if (other == childWSmallestSet) continue;
+                    if (!other.validBindings.contains(b)) return false;
+                }
+                // Then check all nots, as inverted Lists
+                for (var not:nots) {
+                    if (not.validBindings.contains(b)) return false;
                 }
                 return true;
-            }).collect(Collectors.toSet());
+            })
+            .collect(Collectors.toSet());
 
+        
     }
 
     @Override

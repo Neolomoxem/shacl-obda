@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.apache.jena.graph.Node;
 import org.apache.jena.shacl.parser.Constraint;
@@ -14,11 +15,19 @@ public abstract class SHACLNode {
 
     protected final ArrayList<SHACLNode> _children;
 
+    
 
-    protected Set<Node> validAtoms;
+    public Set<List<Node>> validBindings = new HashSet<List<Node>>();
 
-    public HashMap<List<Node>, Set<Node>> bindingMap;
- 
+    protected Set<List<Node>> baseBindings = null;
+
+    protected Set<Node> validTargets = new HashSet<Node>();
+    
+
+    public void setBaseBindings(Set<List<Node>> baseBindings) {
+        this.baseBindings = baseBindings;
+    }
+
 
     protected SHACLNode parent;
 
@@ -29,18 +38,21 @@ public abstract class SHACLNode {
     protected final Shape shape;
     private boolean populated;
 
-
-    protected HashMap<ArrayList<Node>, Set<Node>> proliferate(){
+    /* 
+     * Takes a Set of valid bindings (lists of nodes) and creates a mapping of lower varcount>: [a,b,c,d] => [a, b, c] -> [d,...]
+     */
+    protected HashMap<List<Node>, Set<Node>> reMap(){
         
         var map = new HashMap<List<Node>, Set<Node>>();
         
-        var varHir = genVarHirarchy( );
+        // This could be a lot faster but its only dependet on the shape input so who cares
+        var numVars = getLineage().size()+1;
 
-        for (var b:bindingsListed) {
+        for (var b:validBindings) {
             
             // [a,b,c,d] => [a, b, c] -> d
             
-            var sublist = b.subList(0, varHir.size()-1);
+            var sublist = b.subList(0, numVars-1);
             var l = map.get(sublist);
 
             if (l == null) {
@@ -48,13 +60,26 @@ public abstract class SHACLNode {
                 map.put(sublist, l);
             }
             
-            l.add(b.get(varHir.size()-1));
+            l.add(b.get(numVars-1));
         }
 
-        node.bindingMap = map;
+        return map;
 
     }
-    
+
+    protected abstract void constructFromChildren();
+
+    public void construct() {
+        // First of all construct all children
+        for (var child:_children) {
+            child.construct();
+        }
+
+        // Then construct this node from their bindings
+        constructFromChildren();
+
+    }
+
     
     public boolean isPopulated() {
         return populated;
@@ -65,6 +90,18 @@ public abstract class SHACLNode {
     }
 
     public List<SHACLNode> getLineage() {
+        if (lineage == null) {
+            /* 
+            * GENERATE LINEAGE
+            */
+            lineage = new ArrayList<SHACLNode>();
+            SHACLNode lookAt = this;
+            while (lookAt.getParent() != null) {
+                lineage.add(lookAt.getParent());
+                lookAt = lookAt.getParent();
+            }
+        }
+
         return lineage;
     }
 
@@ -108,9 +145,21 @@ public abstract class SHACLNode {
     public abstract boolean validates(Node atom);
 
     // A bit slower, meta information for Report
-    public abstract boolean validatesRes(Node atom, Set<SHACLNode> valNodes);
+    public boolean validatesRes(Node atom, Set<SHACLNode> valNodes) {
+        // If valid Targets arent extracted from validBindings, do it now and memoize
+        if (validTargets.size() == 0) extractValidTargets();
+        // If this Node contains, add it to valNodes
+        if (validTargets.contains(atom)) valNodes.add(this);
+        // Check the children
+        for (var child:_children) child.validatesRes(atom, valNodes);
+        return true;
+    }
 
-    public ArrayList<SHACLNode> get_children() {
+    private void extractValidTargets(){
+        this.validTargets = validBindings.stream().map(b->b.get(0)).collect(Collectors.toSet());
+    }
+
+    public ArrayList<SHACLNode> getChildren() {
         return _children;
     }
 
@@ -120,6 +169,26 @@ public abstract class SHACLNode {
 
 
     public abstract String getReportString();
+
+    public ArrayList<SHACLNode> get_children() {
+        return _children;
+    }
+
+    public Set<List<Node>> getValidBindings() {
+        return validBindings;
+    }
+
+    public void setValidBindings(Set<List<Node>> validBindings) {
+        this.validBindings = validBindings;
+    }
+
+    public Set<List<Node>> getBaseBindings() {
+        return baseBindings;
+    }
+
+    public void setParent(SHACLNode parent) {
+        this.parent = parent;
+    }
 
 
     

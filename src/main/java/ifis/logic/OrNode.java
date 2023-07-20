@@ -27,28 +27,19 @@ public class OrNode extends SHACLNode {
     }
 
     
-    public void construct() {
-        var bindingVar = getBindingVar();
-
-        var smallestMap = _children.get(0).hashes.get(bindingVar);
-
-        for (var child:_children) {
-            var childSet = child.hashes.get(bindingVar);
-            smallestMap = smallestMap.size() < childSet.size() ? smallestMap : childSet;
-        }
-
-        validAtoms = smallestMap.keySet()
-            .stream()
-            .filter((mentioned) -> {
-                for (var child:_children) {
-                    if (!child.hashes.get(bindingVar).keySet().contains(mentioned)) return false;
-                }
-                return true;
-            }).collect(Collectors.toSet());
-
-    }
 
     
+    
+
+    
+    @Override
+    protected void constructFromChildren() {       
+        // We can assume that all children have had their validBindings constructed
+        for (var child:_children) {
+            validBindings.addAll(child.validBindings);
+        }        
+    }
+
     @Override
     public boolean validatesRes(Node atom, Set<SHACLNode> valNodes) {
         /* 

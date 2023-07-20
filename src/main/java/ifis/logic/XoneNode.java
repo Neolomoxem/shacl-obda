@@ -7,8 +7,14 @@ import org.apache.jena.shacl.parser.Shape;
 
 public class XoneNode extends SHACLNode{
 
-
     
+    
+
+    @Override
+    protected void constructFromChildren() {
+        // TODO Auto-generated method stub
+        
+    }
 
     public XoneNode(Shape shape) {
         super(shape);

@@ -31,8 +31,15 @@ public class ConstraintNode extends ConstrainedSHACLNode {
         super(sourceShape);
     }
 
-
     
+    
+
+    @Override
+    protected void constructFromChildren() {
+        
+        
+    }
+
 
     @Override
     public boolean validates(Node atom) {
