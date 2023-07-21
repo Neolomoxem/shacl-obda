@@ -17,6 +17,31 @@ const codes = {
   error: 501,
 }
 
+const custom = `
+
+:paramEquality
+	a sh:ConstraintComponent ;
+	sh:parameter [
+		sh:path :paramEqual1 ;
+	] ;
+	sh:parameter [
+		sh:path :paramEqual2 ;
+	] ;
+	sh:labelTemplate "Values are literals with language \"{$lang}\"" ;
+	sh:propertyValidator [
+		a sh:SPARQLSelectValidator ;
+		sh:message "Values are literals with language \"{?lang}\"" ;
+		sh:select """
+			SELECT DISTINCT $this ?value
+			WHERE {
+				$this $PATH ?value .
+				FILTER (!isLiteral(?value) || !langMatches(lang(?value), $lang))
+			}
+			"""
+	] .
+  \n\n\n\n
+`
+
 console.log("Waiting for connections on port 6777");
 console.log(process.cwd())
 
@@ -28,7 +53,7 @@ server.on('connection', (socket) => {
 
     console.log(message)
     // TODO Fix parser to read from stdin instead od local file to avoid disk access
-    fs.writeFileSync(INFILE, message, {flag: "w+"})
+    fs.writeFileSync(INFILE, message + custom, {flag: "w+"})
     
     sendAsJson({
       type: "code",

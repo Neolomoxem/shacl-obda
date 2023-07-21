@@ -96,6 +96,7 @@ public class PShapeNode extends SHACLNode {
     @Override
     public String getReportString() {
         
+        if (path instanceof StringPath) return " " +  (((StringPath)path).value.replaceAll("urn:absolute/prototyp#", "")) + " ?"+bindingVar; 
         return " " +  ((PropertyShape) shape).getPath().toString().replaceAll("urn:absolute/prototyp#", "") + " ?"+bindingVar;
     }
     
