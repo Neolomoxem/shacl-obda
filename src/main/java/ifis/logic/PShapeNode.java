@@ -35,12 +35,25 @@ public class PShapeNode extends SHACLNode {
         // New empty list of cardinality constraints
         this.cardinalityConstraints = new HashSet<CardinalityConstraint>();
         // The Path to reach this new bindingVar
+        
         this.path = shape.getPath();
 
         // Its the task of the Validation to fill the correct constraints and children
         }
 
-    
+    public PShapeNode(Path p, String bindingVar) {
+        super(null);
+
+        // Whenever a new PropertyShape is parsed, a new Variable will be generated
+        this.bindingVar = bindingVar;    
+        
+        // New empty list of cardinality constraints
+        this.cardinalityConstraints = new HashSet<CardinalityConstraint>();
+        // The Path to reach this new bindingVar
+        
+        this.path = p;
+    }
+
     
 
     @Override

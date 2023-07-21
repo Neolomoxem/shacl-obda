@@ -15,8 +15,6 @@ import java.util.stream.Collectors;
 
 import org.apache.jena.ext.com.google.common.collect.Multimap;
 import org.apache.jena.graph.Node;
-import org.apache.jena.graph.Node_Literal;
-import org.apache.jena.graph.Node_URI;
 import org.apache.jena.shacl.engine.Parameter;
 import org.apache.jena.shacl.engine.constraint.ClassConstraint;
 import org.apache.jena.shacl.engine.constraint.ConstraintComponentSPARQL;
@@ -56,10 +54,12 @@ import ifis.SPARQLGenerator.Query;
 import ifis.logic.AndNode;
 import ifis.logic.ConstrainedSHACLNode;
 import ifis.logic.ConstraintNode;
+import ifis.logic.EqualNode;
 import ifis.logic.NotNode;
 import ifis.logic.OrNode;
 import ifis.logic.PShapeNode;
 import ifis.logic.SHACLNode;
+import ifis.logic.StringPath;
 import ifis.logic.XoneNode;
 
 public class Validation {
@@ -226,6 +226,36 @@ public class Validation {
                         /* 
                          * Add direct constraints to a child ConstraintNode
                          */
+
+                        case ConstraintComponentSPARQL custom -> {
+                            var eqnode = new EqualNode(shape);
+                                getParams(custom, eqnode);
+
+                                var c1 = new ConstraintNode(shape);
+                                var c11 = new ConstraintNode(shape);
+                                var p1 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Parameter>"), sparqlGenerator.getNewVariable());
+                                var p11 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Wert>"), sparqlGenerator.getNewVariable());
+                                
+                                c1.addConstraint(new ClassConstraint(eqnode.param1));
+                                c11.retain = true;
+                                p1.addChild(c1);
+                                p1.addChild(p11);
+                                p11.addChild(c11);
+                                eqnode.addChild(p1);
+                                
+                                var c2 = new ConstraintNode(shape);
+                                var c22 = new ConstraintNode(shape);
+                                var p2 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Parameter>"), sparqlGenerator.getNewVariable());
+                                var p22 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Wert>"), sparqlGenerator.getNewVariable());
+                                c2.addConstraint(new ClassConstraint(eqnode.param2));
+                                c22.retain = true;
+                                p2.addChild(c2);
+                                p2.addChild(p22);
+                                p22.addChild(c22);
+                                eqnode.addChild(p2);
+                            
+                            pnode.addChild(eqnode);
+                        }
                         
                         default -> {
                             cnode.addConstraint(comp);
@@ -254,7 +284,7 @@ public class Validation {
 
                 
                 // If a pshape is present, transform a nodeshape to an ANDNode of a constraintnode and a pshapenode
-                if (nshape.getPropertyShapes().size() > 0 || nshape.getConstraints().stream().filter(c->c instanceof ConstraintOp).count() > 0) {
+                if (nshape.getPropertyShapes().size() > 0 || nshape.getConstraints().stream().filter(c->c instanceof ConstraintOp).count() > 0 || nshape.getConstraints().stream().filter(c->c instanceof ConstraintComponentSPARQL).count() > 0) {
 
                     var andnode = new AndNode(nshape);
                     
@@ -273,6 +303,35 @@ public class Validation {
                             /* 
                             * Add direct constraints to a child ConstraintNode
                             */
+                            case ConstraintComponentSPARQL custom -> {
+                                var eqnode = new EqualNode(shape);
+                                getParams(custom, eqnode);
+
+                                var c1 = new ConstraintNode(shape);
+                                var c11 = new ConstraintNode(shape);
+                                var p1 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Parameter>"), sparqlGenerator.getNewVariable());
+                                var p11 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Wert>"), sparqlGenerator.getNewVariable());
+                                
+                                c1.addConstraint(new ClassConstraint(eqnode.param1));
+                                c11.retain = true;
+                                p1.addChild(c1);
+                                p1.addChild(p11);
+                                p11.addChild(c11);
+                                eqnode.addChild(p1);
+                                
+                                var c2 = new ConstraintNode(shape);
+                                var c22 = new ConstraintNode(shape);
+                                var p2 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Parameter>"), sparqlGenerator.getNewVariable());
+                                var p22 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Wert>"), sparqlGenerator.getNewVariable());
+                                c2.addConstraint(new ClassConstraint(eqnode.param2));
+                                c22.retain = true;
+                                p2.addChild(c2);
+                                p2.addChild(p22);
+                                p22.addChild(c22);
+                                eqnode.addChild(p2);
+                            
+                            cnode.addChild(eqnode);
+                        }
                             
                             default -> {
                                 cnode.addConstraint(comp);
@@ -427,7 +486,13 @@ public class Validation {
      * @return
      */
     private String generatePath(String fromVar, String toVar, Path path) {
+        
         return switch (path) {
+
+            case StringPath stringPath -> {
+                yield fromVar + " "+ stringPath.value +" "+toVar+".";
+            }
+
 
             /*
              * DIRECT PATH
@@ -603,6 +668,7 @@ public class Validation {
             /*
                 * CUSTOM CONSTRAINTS
                 */
+            case ConstraintComponentSPARQL custom -> {}
 
             /*
                 * CARDINALITY, NEGATION
@@ -629,8 +695,76 @@ public class Validation {
         }
     }
 
-    private void handleCustomConstraint(ConstraintComponentSPARQL c, ConstraintNode node, Query subQuery) {
+    private void getParams(ConstraintComponentSPARQL c, EqualNode node) {
+        SparqlComponent customComponent;
+        Multimap<Parameter, Node> parameterMap;
+        try {
 
+            var f1 = c.getClass().getDeclaredField("sparqlConstraintComponent");
+            f1.setAccessible(true);
+            customComponent = (SparqlComponent) f1.get(c);
+
+            var f2 = c.getClass().getDeclaredField("parameterMap");
+            f2.setAccessible(true);
+            parameterMap = (Multimap<Parameter, Node>) f2.get(c);
+
+
+
+
+
+            Node paramEqual1= null, paramEqual2 = null;
+
+            for (var param:parameterMap.keySet()) {
+                System.out.println(param.getSparqlName());
+                if (param.getSparqlName().equals("paramEqual1")) {
+                    paramEqual1 = parameterMap.get(param).iterator().next();
+                }
+                if (param.getSparqlName().equals("paramEqual2")) {
+                    paramEqual2 = parameterMap.get(param).iterator().next();
+
+                }
+            }
+
+            node.param1 = paramEqual1;
+            node.param2 = paramEqual2;
+
+
+            // Per SHACL-Def: The $this template is used to bind valid focus nodes (so in
+            // our case ?x)
+            // selectString = selectString.replaceAll("\\?this", "?"+node.getBindingVar());
+
+            // Apply parameter-map
+            /* for (var param : parameterMap.keys()) {
+                // TODO why is parameter map a multimap?
+                String paramValue = switch (parameterMap.get(param).stream().findFirst().get()) {
+                    case Node_Literal literal:
+                        yield "\"" + literal.getLiteral().getLexicalForm() + "\"";
+                    case Node_URI uri:
+                        yield uri.getURI();
+                    
+
+                    default:
+                        throw new ValidationException("Variable wrong");
+                };
+
+                // selectString = selectString.replaceAll("\\?" + param.getSparqlName(), paramValue);
+            }
+
+            customSelect.addPart(selectString);
+
+            subQuery.addSubQuery(customSelect); */
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new ValidationException("Cannot force access to ConstraintComponentSPARQL's protected fields.");
+        }
+    }
+
+    private void handleCustomConstraint(ConstraintComponentSPARQL c, SHACLNode node, Query subQuery) {
+
+        
+        
+        
         SparqlComponent customComponent;
         Multimap<Parameter, Node> parameterMap;
         try {
@@ -657,34 +791,48 @@ public class Validation {
             // flames
             // But ?x is pretty common so we transfer the problem to ?CUSTOMCONSTRAINT_x
             // If the user tries to use that, give up.
-            print(selectString);
-            print(parameterMap);
-            if (selectString.contains("?CUSTOMCONSTRAINT_x"))
-                throw new ValidationException("Please dont call a variable ?CUSTOMCONSTRAINT_x. Why would you?");
-            selectString = selectString.replaceAll("\\?x", "?CUSTOMCONSTRAINT_x");
+
+            Node paramEqual1= null, paramEqual2 = null;
+
+            for (var param:parameterMap.keySet()) {
+                System.out.println(param.getSparqlName());
+                if (param.getSparqlName().equals("paramEqual1")) {
+                    paramEqual1 = parameterMap.get(param).iterator().next();
+                }
+                if (param.getSparqlName().equals("paramEqual2")) {
+                    paramEqual2 = parameterMap.get(param).iterator().next();
+
+                }
+            }
+
+
+            System.out.println("Attached to params");
+
 
             // Per SHACL-Def: The $this template is used to bind valid focus nodes (so in
             // our case ?x)
-            selectString = selectString.replaceAll("\\?this", "?x");
+            // selectString = selectString.replaceAll("\\?this", "?"+node.getBindingVar());
 
             // Apply parameter-map
-            for (var param : parameterMap.keys()) {
+            /* for (var param : parameterMap.keys()) {
                 // TODO why is parameter map a multimap?
                 String paramValue = switch (parameterMap.get(param).stream().findFirst().get()) {
                     case Node_Literal literal:
                         yield "\"" + literal.getLiteral().getLexicalForm() + "\"";
                     case Node_URI uri:
                         yield uri.getURI();
+                    
+
                     default:
                         throw new ValidationException("Variable wrong");
                 };
 
-                selectString = selectString.replaceAll("\\?" + param.getSparqlName(), paramValue);
+                // selectString = selectString.replaceAll("\\?" + param.getSparqlName(), paramValue);
             }
 
             customSelect.addPart(selectString);
 
-            subQuery.addSubQuery(customSelect);
+            subQuery.addSubQuery(customSelect); */
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -778,7 +926,6 @@ public class Validation {
         // Collect stream for hashmaps
         var filteredBindings = resultsStream.toList();
 
-
         
         /* 
         * CONVERT BINDINGS TO LIST
@@ -786,6 +933,33 @@ public class Validation {
         
 
         var bindingsListed = getBindingsListed(filteredBindings, node);
+
+
+
+
+        if (node.retain) {
+            var map = new HashMap<List<Node>, Set<Node>>();
+        
+            var varHir = genVarHirarchy(node);
+
+            for (var b:bindingsListed) {
+                
+                // [a,b,c,d] => [a, b, c] -> d
+                
+                var sublist = b.subList(0, varHir.size()-1);
+                var l = map.get(sublist);
+
+                if (l == null) {
+                    l = new HashSet<Node>();
+                    map.put(sublist, l);
+                }
+                
+                l.add(b.get(varHir.size()-1));
+            }
+            node.retained = map;
+        }
+
+
         
 
         /* 

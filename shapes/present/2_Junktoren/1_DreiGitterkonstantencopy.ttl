@@ -1,12 +1,11 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix sh:  <http://www.w3.org/ns/shacl#>.
-@prefix ex: <http://example.com/ns#>. 
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>. 
-@prefix urn: <http://fliqz.com/> .
 @prefix : <urn:absolute/prototyp#> . 
 
+# Für jedes verwendete MSM-Material müssen die drei Gitterkonstanten hinterlegt sein.
 
-:paramEqual
+:paramEquality
 	a sh:ConstraintComponent ;
 	sh:parameter [
 		sh:path :paramEqual1 ;
@@ -27,3 +26,13 @@
 			"""
 	] .
 
+
+
+:dreiGitterKonstanten
+	a sh:NodeShape ;
+	sh:targetClass :Material;
+	sh:not [
+		
+		:paramEqual1 :Gitterkonstante_a;
+		:paramEqual2 :Gitterkonstante_b;
+	].

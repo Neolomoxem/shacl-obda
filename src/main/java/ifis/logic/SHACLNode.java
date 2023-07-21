@@ -17,6 +17,7 @@ public abstract class SHACLNode {
 
     protected final ArrayList<SHACLNode> _children;
 
+
     
 
     public Set<List<Node>> validBindings = new HashSet<List<Node>>();
@@ -24,6 +25,10 @@ public abstract class SHACLNode {
     protected Set<List<Node>> baseBindings = null;
 
     protected Set<Node> validTargets = new HashSet<Node>();
+
+    public boolean retain = false;
+    public HashMap<List<Node>, Set<Node>> retained;
+
     
 
     public void setBaseBindings(Set<List<Node>> baseBindings) {

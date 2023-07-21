@@ -5,9 +5,32 @@
 
 # Für jedes verwendete MSM-Material müssen die drei Gitterkonstanten hinterlegt sein.
 
+:paramEqual
+	a sh:ConstraintComponent ;
+	sh:parameter [
+		sh:path :paramEqual1 ;
+	] ;
+	sh:parameter [
+		sh:path :paramEqual2 ;
+	] ;
+	sh:labelTemplate "Values are literals with language \"{$lang}\"" ;
+	sh:propertyValidator [
+		a sh:SPARQLSelectValidator ;
+		sh:message "Values are literals with language \"{?lang}\"" ;
+		sh:select """
+			SELECT DISTINCT $this ?value
+			WHERE {
+				$this $PATH ?value .
+				FILTER (!isLiteral(?value) || !langMatches(lang(?value), $lang))
+			}
+			"""
+	] .
+
+
+
 :dreiGitterKonstanten
 	a sh:NodeShape ;
-	sh:targetClass :MSM-Material;
+	sh:targetClass :Material;
 	sh:property [                 # _:b1
 		sh:path :hat_Parameter;
 		sh:class :Gitterkonstante;
