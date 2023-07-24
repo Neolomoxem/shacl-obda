@@ -178,6 +178,7 @@ public abstract class SHACLNode {
 
     protected void extractValidTargets(){
         this.validTargets = validBindings.stream().map(b->b.get(0)).collect(Collectors.toSet());
+        // if (validTargets == null) validTargets = new HashSet<>();
     }
 
     public ArrayList<SHACLNode> getChildren() {

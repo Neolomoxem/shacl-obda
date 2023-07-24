@@ -29,8 +29,11 @@
 
 
 
-:ParameterName
-	a sh:NodeShape ;
-	sh:targetClass 	:MSM-Material ;
-	:paramEqual1 :Gitterkonstante_a;
-	:paramEqual2 :Gitterkonstante_b .
+:dreiGitterKonstanten
+    a sh:NodeShape ;
+    sh:targetClass :Material;
+    sh:not [
+        
+        :paramEqual1 :Gitterkonstante_a;
+        :paramEqual2 :Gitterkonstante_b;
+    ].

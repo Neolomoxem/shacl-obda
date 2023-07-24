@@ -132,6 +132,7 @@ public class Validation {
         buildTree();
         indentlevel--;
         print("Done.");
+        printTree(tree);
 
         // TODO Remove this
         // cleanUp(tree);
@@ -162,6 +163,12 @@ public class Validation {
     }
 
 
+    private void printTree(SHACLNode node){
+        print(node.toString());
+        indentlevel++;
+        for (var child:node.getChildren()) printTree(child);
+        indentlevel--;
+    }
 
     /*
      * LOGIC TREE METHODS

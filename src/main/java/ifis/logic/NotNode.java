@@ -56,7 +56,7 @@ public class NotNode extends SHACLNode {
     @Override
     public boolean validatesRes(Node atom, Set<SHACLNode> valNodes) {
         // If valid Targets arent extracted from validBindings, do it now and memoize
-        if (validTargets.size() == 0) extractValidTargets();
+        if (validTargets == null) extractValidTargets();
         // If this Node contains, add it to valNodes
 
         if (inverted) {
