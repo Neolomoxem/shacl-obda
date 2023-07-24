@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 import org.apache.jena.graph.Node;
 import org.apache.jena.shacl.engine.constraint.CardinalityConstraint;
+import org.apache.jena.shacl.engine.constraint.ClassConstraint;
 import org.apache.jena.shacl.parser.PropertyShape;
 import org.apache.jena.sparql.path.Path;
 
@@ -24,6 +25,10 @@ public class PShapeNode extends SHACLNode {
     private String bindingVar;        
 
     private Path path;
+    
+    public String classc = null;
+
+    public boolean elevate = true;
     
     public PShapeNode(PropertyShape shape, String bindingVar) {
         
@@ -59,12 +64,15 @@ public class PShapeNode extends SHACLNode {
     @Override
     protected void constructFromChildren() {
 
+        
+
         if (_children.get(0).validBindings.size() == 0) return;
         // If this is the end highest propertyshape, were finished
 
         var childNumVars = _children.get(0).validBindings.iterator().next().size();
 
-        boolean elevate = childNumVars != 1;
+        elevate = childNumVars != 1;
+
 
 
         

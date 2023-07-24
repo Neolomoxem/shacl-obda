@@ -36,7 +36,7 @@ public class ConstraintNode extends ConstrainedSHACLNode {
 
     @Override
     protected void constructFromChildren() {
-        
+        if (_children.size() != 0) this.validBindings = _children.get(0).validBindings;
         
     }
 

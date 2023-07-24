@@ -22,6 +22,8 @@ public final class App {
         String serviceURL = args[1];
         // String filename = "shapes/test.ttl";
 
+        // For now the only way to supply the data.
+
         // Read File        
         Graph shapesGraph = RDFDataMgr.loadGraph(filename);
         Shapes shapes = Shapes.parse(shapesGraph);
@@ -30,9 +32,7 @@ public final class App {
         QueryExecHTTPBuilder bob = QueryExecHTTPBuilder.service(serviceURL);
         // bob.acceptHeader("application/sparql-results+xml");
 
-        // Set up Validation
-        System.out.println("Testestestet");
-        
+        // Set up Validation        
 
         for (var shape : shapes) {
 

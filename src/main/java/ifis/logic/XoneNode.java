@@ -1,6 +1,9 @@
 package ifis.logic;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.apache.jena.graph.Node;
 import org.apache.jena.shacl.parser.Shape;
@@ -10,11 +13,6 @@ public class XoneNode extends SHACLNode{
     
     
 
-    @Override
-    protected void constructFromChildren() {
-        // TODO Auto-generated method stub
-        
-    }
 
     public XoneNode(Shape shape) {
         super(shape);
@@ -72,7 +70,24 @@ public class XoneNode extends SHACLNode{
         return "X͟O͟N͟E͟";
     }
     
+    @Override
+    protected void constructFromChildren() {       
+        // We can assume that all children have had their validBindings constructed
+        // If its in more than one,
+        var uniqueMap = new HashMap<List<Node>, Boolean>();
+        
+        for (var child:_children) {
+            for (var b:child.validBindings) {
+                var c = uniqueMap.get(b);
+                uniqueMap.put(b, c == null ? true : false);
+            }
+        }
+        
+        this.validBindings = uniqueMap.keySet().stream()
+        .filter(b -> uniqueMap.get(b))
+        .collect(Collectors.toSet());
 
+    }
     
 
     

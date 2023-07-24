@@ -5,43 +5,32 @@
 @prefix urn: <http://fliqz.com/> .
 @prefix : <urn:absolute/prototyp#> . 
 
-# Ist jedes Material mindestens ein Symbol?
 
-# Eine Blockierkraft darf nicht einem Elastomermaterial zugeordnet sein.
-
-:A 
-	a sh:NodeShape;
-	sh:targetClass :MSM-Material;
-	sh:property [
-		sh:path :hat_Parameter;
-		sh:class :Gitterkonstante;
-		sh:minCount 3;
-		# sh:node :B;
-		sh:or (
-			[
-				sh:path :hat_Wert;
-				sh:minCount 2;
-				sh:datatype xsd:string;
-			]
-			[
-				sh:class :MSM-Material;
-				sh:property [
-					sh:path :Abdsc;
-					sh:class :Dljkbnfk
-				]
-			]
-		);
-		sh:not [
-			sh:path :hat_Name;
-			sh:hasValue "Gitterkonstante_a";
-		]
+:paramEqual
+	a sh:ConstraintComponent ;
+	sh:parameter [
+		sh:path :paramEqual1 ;
+	] ;
+	sh:parameter [
+		sh:path :paramEqual2 ;
+	] ;
+	sh:labelTemplate "Values are literals with language \"{$lang}\"" ;
+	sh:propertyValidator [
+		a sh:SPARQLSelectValidator ;
+		sh:message "Values are literals with language \"{?lang}\"" ;
+		sh:select """
+			SELECT DISTINCT $this ?value
+			WHERE {
+				$this $PATH ?value .
+				FILTER (!isLiteral(?value) || !langMatches(lang(?value), $lang))
+			}
+			"""
 	] .
 
 
-:B
-	a sh:NodeShape;
-	sh:property [
-		sh:path :ist_Parameter_von;
-		sh:minCount 1;
-		sh:maxCount 1
-	] .
+
+:ParameterName
+	a sh:NodeShape ;
+	sh:targetClass 	:MSM-Material ;
+	:paramEqual1 :Gitterkonstante_a;
+	:paramEqual2 :Gitterkonstante_b .

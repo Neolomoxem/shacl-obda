@@ -229,30 +229,32 @@ public class Validation {
 
                         case ConstraintComponentSPARQL custom -> {
                             var eqnode = new EqualNode(shape);
-                                getParams(custom, eqnode);
+                            getParams(custom, eqnode);
 
-                                var c1 = new ConstraintNode(shape);
-                                var c11 = new ConstraintNode(shape);
-                                var p1 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Parameter>"), sparqlGenerator.getNewVariable());
-                                var p11 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Wert>"), sparqlGenerator.getNewVariable());
-                                
-                                c1.addConstraint(new ClassConstraint(eqnode.param1));
-                                c11.retain = true;
-                                p1.addChild(c1);
-                                p1.addChild(p11);
-                                p11.addChild(c11);
-                                eqnode.addChild(p1);
-                                
-                                var c2 = new ConstraintNode(shape);
-                                var c22 = new ConstraintNode(shape);
-                                var p2 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Parameter>"), sparqlGenerator.getNewVariable());
-                                var p22 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Wert>"), sparqlGenerator.getNewVariable());
-                                c2.addConstraint(new ClassConstraint(eqnode.param2));
-                                c22.retain = true;
-                                p2.addChild(c2);
-                                p2.addChild(p22);
-                                p22.addChild(c22);
-                                eqnode.addChild(p2);
+                            var c1 = new ConstraintNode(shape);
+                            var p1 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Parameter>"), sparqlGenerator.getNewVariable());
+                            var p11 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Wert>"), sparqlGenerator.getNewVariable());
+                            
+                            p1.classc = wrap(eqnode.param1.getURI());
+                            c1.retain = true;
+                            
+
+                            p1.addChild(p11);
+                            p11.addChild(c1);
+                            eqnode.addChild(p1);
+                            
+                            var c2 = new ConstraintNode(shape);
+                            var p2 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Parameter>"), sparqlGenerator.getNewVariable());
+                            var p22 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Wert>"), sparqlGenerator.getNewVariable());
+                            
+
+                            p2.classc = wrap(eqnode.param2.getURI());
+                            c2.retain = true;
+                            
+
+                            p2.addChild(p22);
+                            p22.addChild(c2);
+                            eqnode.addChild(p2);
                             
                             pnode.addChild(eqnode);
                         }
@@ -305,30 +307,33 @@ public class Validation {
                             */
                             case ConstraintComponentSPARQL custom -> {
                                 var eqnode = new EqualNode(shape);
-                                getParams(custom, eqnode);
+                            getParams(custom, eqnode);
 
-                                var c1 = new ConstraintNode(shape);
-                                var c11 = new ConstraintNode(shape);
-                                var p1 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Parameter>"), sparqlGenerator.getNewVariable());
-                                var p11 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Wert>"), sparqlGenerator.getNewVariable());
-                                
-                                c1.addConstraint(new ClassConstraint(eqnode.param1));
-                                c11.retain = true;
-                                p1.addChild(c1);
-                                p1.addChild(p11);
-                                p11.addChild(c11);
-                                eqnode.addChild(p1);
-                                
-                                var c2 = new ConstraintNode(shape);
-                                var c22 = new ConstraintNode(shape);
-                                var p2 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Parameter>"), sparqlGenerator.getNewVariable());
-                                var p22 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Wert>"), sparqlGenerator.getNewVariable());
-                                c2.addConstraint(new ClassConstraint(eqnode.param2));
-                                c22.retain = true;
-                                p2.addChild(c2);
-                                p2.addChild(p22);
-                                p22.addChild(c22);
-                                eqnode.addChild(p2);
+                            var c1 = new ConstraintNode(shape);
+                            var p1 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Parameter>"), sparqlGenerator.getNewVariable());
+                            var p11 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Wert>"), sparqlGenerator.getNewVariable());
+                            
+                            p1.classc = wrap(eqnode.param1.getURI());
+                            c1.retain = true;
+                            
+
+                            p1.addChild(p11);
+                            p11.addChild(c1);
+                            eqnode.addChild(p1);
+                            
+                            var c2 = new ConstraintNode(shape);
+                            var p2 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Parameter>"), sparqlGenerator.getNewVariable());
+                            var p22 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Wert>"), sparqlGenerator.getNewVariable());
+                            
+
+                            p2.classc = wrap(eqnode.param2.getURI());
+                            c2.retain = true;
+                            
+
+                            p2.addChild(p22);
+                            p22.addChild(c2);
+                            eqnode.addChild(p2);
+                            
                             
                             cnode.addChild(eqnode);
                         }
@@ -457,6 +462,7 @@ public class Validation {
                     // Add path from previous to new value nodes
                     query.addPart(generatePath("?"+from, "?"+pnode.getBindingVar(), pnode.getPath()));
                     from = pnode.getBindingVar();
+                    if (pnode.classc != null) query.addTriple("?"+pnode.getBindingVar(), "a", pnode.classc);
 
                 }
                 case ConstraintNode cnode -> {
@@ -946,7 +952,7 @@ public class Validation {
                 
                 // [a,b,c,d] => [a, b, c] -> d
                 
-                var sublist = b.subList(0, varHir.size()-1);
+                var sublist = b.subList(0, varHir.size()-2);
                 var l = map.get(sublist);
 
                 if (l == null) {
@@ -1002,6 +1008,7 @@ public class Validation {
         if (bindingsListed.size() == 0) return bindingsListed;
         
         var numVars   = bindingsListed.iterator().next().size();
+
         
         /* 
          * APPLY CARDINALITY LOGIC
@@ -1027,6 +1034,19 @@ public class Validation {
         var minc = minc2;
 
         var cardinalBindings = new HashSet<List<Node>>();
+
+        if (numVars==1) {
+            var rightAmount = true;
+            if (minc != null) {
+                 if (bindingsListed.size() < minc.getMinCount()) rightAmount = false;
+            }
+            if (maxc != null) {
+                 if (bindingsListed.size() > maxc.getMaxCount()) rightAmount = false;
+            }
+
+            return rightAmount? bindingsListed : new HashSet<List<Node>>();
+            
+        }
 
         if (minc == null && maxc == null) {
             

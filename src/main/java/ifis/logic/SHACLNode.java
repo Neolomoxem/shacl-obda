@@ -24,7 +24,7 @@ public abstract class SHACLNode {
 
     protected Set<List<Node>> baseBindings = null;
 
-    protected Set<Node> validTargets = new HashSet<Node>();
+    protected Set<Node> validTargets = null;
 
     public boolean retain = false;
     public HashMap<List<Node>, Set<Node>> retained;
@@ -168,7 +168,7 @@ public abstract class SHACLNode {
     // A bit slower, meta information for Report
     public boolean validatesRes(Node atom, Set<SHACLNode> valNodes) {
         // If valid Targets arent extracted from validBindings, do it now and memoize
-        if (validTargets.size() == 0) extractValidTargets();
+        if (validTargets == null) extractValidTargets();
         // If this Node contains, add it to valNodes
         if (validTargets.contains(atom)) valNodes.add(this);
         // Check the children

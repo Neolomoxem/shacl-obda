@@ -17,14 +17,14 @@ public class EqualNode extends SHACLNode{
 
     @Override
     protected void constructFromChildren() {
-        var c1 = _children.get(0)._children.get(1)._children.get(0).retained;
-        var c2 = _children.get(1)._children.get(1)._children.get(0).retained;
+        var c1 = _children.get(0)._children.get(0)._children.get(0).retained;
+        var c2 = _children.get(1)._children.get(0)._children.get(0).retained;
 
-        for (var b:c1.keySet()) {
+        for (var b:_children.get(0).validBindings) {
             var c1_vals = c1.get(b);
             var c2_vals = c2.get(b);
             
-            if (c1_vals == c2_vals) {
+            if (c1_vals.equals(c2_vals)) {
                 validBindings.add(b);
             }
         }
