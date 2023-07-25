@@ -1,11 +1,11 @@
 package ifis.logic;
 
 import org.apache.jena.graph.Node;
-import org.apache.jena.shacl.engine.constraint.ClassConstraint;
 import org.apache.jena.shacl.parser.Shape;
-import org.apache.jena.sparql.path.P_Link;
 
 public class EqualNode extends SHACLNode{
+
+    public boolean smallerThan = false;
     
     public EqualNode(Shape shape) {
         super(shape);
@@ -24,16 +24,28 @@ public class EqualNode extends SHACLNode{
             var c1_vals = c1.get(b);
             var c2_vals = c2.get(b);
             
-            if (c1_vals.equals(c2_vals)) {
-                validBindings.add(b);
+            if (smallerThan) {
+                var smaller = true;
+                for (var bc1:c1_vals) {
+                    for (var bc2:c2_vals) {
+                        if (Float.valueOf(bc1.getLiteralValue().toString()) > Float.valueOf(bc2.getLiteralValue().toString())) smaller = false; 
+                    }
+                }
+                if (smaller) validBindings.add(b);
+            } else {
+                if (c1_vals.equals(c2_vals)) {
+                    validBindings.add(b);
+                }
             }
+
+
         }
         
     }
 
     @Override
     public String getReportString() {
-        return "EQUALS";
+        return smallerThan ? "SMALLER OR EQUAL" : "EQUAL";
     }
 
     @Override

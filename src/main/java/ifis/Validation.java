@@ -134,9 +134,7 @@ public class Validation {
         print("Done.");
         printTree(tree);
 
-        // TODO Remove this
-        // cleanUp(tree);
-        
+
         /*
         * POPULATE
         */
@@ -733,6 +731,14 @@ public class Validation {
                     paramEqual1 = parameterMap.get(param).iterator().next();
                 }
                 if (param.getSparqlName().equals("paramEqual2")) {
+                    paramEqual2 = parameterMap.get(param).iterator().next();
+
+                }
+                if (param.getSparqlName().equals("paramSmallEq1")) {
+                    paramEqual1 = parameterMap.get(param).iterator().next();
+                    node.smallerThan = true;
+                }
+                if (param.getSparqlName().equals("paramSmallEq2")) {
                     paramEqual2 = parameterMap.get(param).iterator().next();
 
                 }
