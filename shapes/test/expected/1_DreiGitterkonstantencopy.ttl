@@ -1,0 +1,1085 @@
+🔍 VALIDATION REPORT:
+Total targets: 90 | ❌ INVALID: 1 | ✅ VALID: 89
+
+
+
+✅ <urn:absolute/prototyp#880>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PZT-43>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#14M-Martensit>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━✅━ <hat_Parameter> ?a
+                ┗━✅━ <hat_Wert> ?b
+                   ┗━✅━⬤ > 
+             ┗━✅━ <hat_Parameter> ?c
+                ┗━✅━ <hat_Wert> ?d
+                   ┗━✅━⬤ > 
+
+
+✅ <urn:absolute/prototyp#Sonox_P502>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PZT-42>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#Sonox_P508>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PIC155>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#844>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#Ni2MnGa>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#Type_III>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PCrN-4>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PZT503>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#M1224>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PZT807>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#Sonox_P5>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PIC144>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#BaTiO3>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#Sonox_P505>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PZT-52>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#Elastomer_2>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#M202>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#854>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#M420>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#Sonox_P4>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PIC300>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PZT-5X>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#M1100>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PZT-53>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#MSM_test2>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PZT5K1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PIC184>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#842>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PZT401>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PIC151>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#Sonox_P8>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#Elastomer_3>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#M1876>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#851>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PIC241>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PIC252>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#dummy_stress_strain>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PZT-82>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#Elastomermaterial_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#S2glas>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PZT5H1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#Type_I>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PZT804>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PBaS-4>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#M1832>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PZT5A4>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PZT406>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PIC181>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PLiS-51>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#material_test_MSM>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#841>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#NM-Martensit>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━✅━ <hat_Parameter> ?a
+                ┗━✅━ <hat_Wert> ?b
+                   ┗━✅━⬤ > 
+             ┗━✅━ <hat_Parameter> ?c
+                ┗━✅━ <hat_Wert> ?d
+                   ┗━✅━⬤ > 
+
+
+✅ <urn:absolute/prototyp#840>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PIC152>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#Elektrodenmaterial_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PIC700>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#Sonox_P504>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PZT-41>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#NiTiCu>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#Elastomer_4>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#M1599>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PZT5A1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PIC255>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PSnN-5>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#M1334>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PZT-51>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#850>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PIC110>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#Sonox_P53>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#M524.5>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#Elastomer_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PZT5A2>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#NiCo2918>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#860>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+❌ <urn:absolute/prototyp#10M-Martensit>:
+    ┗━❌━N͟O͟T͟
+       ┗━✅━⬤ > 
+          ┗━✅━EQUAL
+             ┗━✅━ <hat_Parameter> ?a
+                ┗━✅━ <hat_Wert> ?b
+                   ┗━✅━⬤ > 
+             ┗━✅━ <hat_Parameter> ?c
+                ┗━✅━ <hat_Wert> ?d
+                   ┗━✅━⬤ > 
+
+
+✅ <urn:absolute/prototyp#855>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PIC153>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#881>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PZT802>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PZT403>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PZT-5H>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#PZT507>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#Sonox_P1_LF>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#M455>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#NiTi>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+
+✅ <urn:absolute/prototyp#Type_II>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━⬤ > 
+          ┗━❌━EQUAL
+             ┗━❌━ <hat_Parameter> ?a
+                ┗━❌━ <hat_Wert> ?b
+                   ┗━❌━⬤ > 
+             ┗━❌━ <hat_Parameter> ?c
+                ┗━❌━ <hat_Wert> ?d
+                   ┗━❌━⬤ > 
+
+

@@ -1,0 +1,34 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sh:  <http://www.w3.org/ns/shacl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>. 
+@prefix : <urn:absolute/prototyp#> . 
+
+# Die Blockierkraft sollte z.B. immer mit dem Aktuationsquerschnitt und entweder mit der anliegenden elektrischen Spannung oder dem elektrischen Feld hinterlegt sein, ansonsten ist der Wert nicht aussagekräftig.
+
+:testShape
+	a sh:NodeShape ;
+	sh:targetClass 	:Element_einer_Materialklasse;
+
+	sh:not [
+		sh:and (
+			[
+				sh:path :hat_Parameter;
+				sh:class :Blockierkraft
+			]
+			[
+				sh:not [
+					sh:or (
+						[
+							sh:path	:hat_Parameter;
+							sh:class :elektrisches_Feld
+						]
+						[
+							sh:path :hat_Parameter;
+							sh:class :elektrische_Spannung
+						]
+					)
+				]
+			]
+		)
+	].
+	

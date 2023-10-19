@@ -1,0 +1,11 @@
+🔍 VALIDATION REPORT:
+Total targets: 1 | ❌ INVALID: 0 | ✅ VALID: 1
+
+
+
+✅ <urn:absolute/prototyp#Elastomermaterial_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━ <hat_Parameter> ?a
+          ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+
+

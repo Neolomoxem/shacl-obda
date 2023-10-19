@@ -1,0 +1,455 @@
+🔍 VALIDATION REPORT:
+Total targets: 90 | ❌ INVALID: 87 | ✅ VALID: 3
+
+
+
+❌ <urn:absolute/prototyp#860>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#851>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#Elastomermaterial_1>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#NiTi>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PZT-52>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#M1876>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#dummy_stress_strain>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PIC110>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PZT401>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#881>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#880>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#NiTiCu>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#850>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#Elastomer_1>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PZT5A4>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#854>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PIC152>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#M1100>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PSnN-5>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#NiCo2918>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#842>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PZT-5X>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PZT-43>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PIC151>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PZT5A2>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PBaS-4>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#Elastomer_4>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PIC700>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#M1599>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PZT-5H>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#Sonox_P505>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PIC155>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PZT507>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PZT-53>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#Type_III>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#Type_II>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#M202>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PZT-51>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#Sonox_P53>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#Elastomer_2>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#Type_I>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#855>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#844>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PIC144>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PZT5H1>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#M1832>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PIC241>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PZT503>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#M420>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#Sonox_P504>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#S2glas>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#M1224>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#M524.5>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PIC252>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+✅ <urn:absolute/prototyp#NM-Martensit>:
+    ┗━✅━ <hat_Parameter> ?a
+       ┗━✅━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#Sonox_P8>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PCrN-4>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#Elastomer_3>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PIC153>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PLiS-51>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+✅ <urn:absolute/prototyp#10M-Martensit>:
+    ┗━✅━ <hat_Parameter> ?a
+       ┗━✅━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PIC255>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#840>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#material_test_MSM>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PZT807>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PZT-42>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#841>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#Sonox_P508>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#Sonox_P5>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#Elektrodenmaterial_1>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+✅ <urn:absolute/prototyp#14M-Martensit>:
+    ┗━✅━ <hat_Parameter> ?a
+       ┗━✅━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PIC181>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#BaTiO3>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PZT5K1>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#MSM_test2>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PZT804>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#M1334>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PZT-41>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#M455>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#Sonox_P502>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PZT5A1>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PZT802>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PIC184>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PZT406>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#Ni2MnGa>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PZT403>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#Sonox_P4>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PZT-82>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#Sonox_P1_LF>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+
+❌ <urn:absolute/prototyp#PIC300>:
+    ┗━❌━ <hat_Parameter> ?a
+       ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Gitterkonstante>]minCount[3]maxCount[3]
+
+

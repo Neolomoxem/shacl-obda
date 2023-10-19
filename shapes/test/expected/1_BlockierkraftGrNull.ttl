@@ -1,0 +1,125 @@
+🔍 VALIDATION REPORT:
+Total targets: 24 | ❌ INVALID: 2 | ✅ VALID: 22
+
+
+
+❌ <urn:absolute/prototyp#cp_mod_Blockierkraft_calc_Blockierkraft_Bsp_Bimorpher_Biegeaktor_Parallelschaltung_0>:
+    ┗━❌━ <hat_Wert> ?a
+       ┗━❌━⬤ > minExclusive[0]
+
+
+✅ <urn:absolute/prototyp#cp_mod_Blockierkraft_Blockierkraft_parallel_Akt_Stapelaktor_1_11>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > minExclusive[0]
+
+
+✅ <urn:absolute/prototyp#cp_mod_lineare_interpolation_Blockierkraft_Blockierkraft_Interpolation_Druck-Zug-Stick_2_201>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > minExclusive[0]
+
+
+✅ <urn:absolute/prototyp#cp_mod_Piezo_Multilayer_Biegeaktor_in_Parallelschaltung_Bsp_Biegeaktor_Parallelschaltung_Blockierkraft>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > minExclusive[0]
+
+
+✅ <urn:absolute/prototyp#cp_mod_lineare_interpolation_Blockierkraft_Blockierkraft_Interpolation_Druck-Zug-Stick_2_701>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > minExclusive[0]
+
+
+✅ <urn:absolute/prototyp#cp_mod_Blockierkraft_Akt_zu_block_Stapelaktor_1_11>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > minExclusive[0]
+
+
+✅ <urn:absolute/prototyp#cp_mod_Blockierkraft_calc_Blockierkraft_Bsp_Unimorpher_Biegeaktor_0>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > minExclusive[0]
+
+
+✅ <urn:absolute/prototyp#cp_mod_Blockierkraft_Blockierkraft_parallel_Akt_Stapelaktor_1_33>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > minExclusive[0]
+
+
+✅ <urn:absolute/prototyp#cp_mod_lineare_interpolation_Blockierkraft_Blockierkraft_Interpolation_Druck-Zug-Stick_2_51>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > minExclusive[0]
+
+
+✅ <urn:absolute/prototyp#cp_mod_lineare_interpolation_Blockierkraft_Blockierkraft_Interpolation_Druck-Zug-Stick_2_71>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > minExclusive[0]
+
+
+✅ <urn:absolute/prototyp#cp_mod_Blockierkraft_Akt_zu_block_Stapelaktor_1_33>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > minExclusive[0]
+
+
+✅ <urn:absolute/prototyp#cp_mod_Blockierkraft_Blockierkraft_Draht_Druck-Zug-Stick_2_0>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > minExclusive[0]
+
+
+✅ <urn:absolute/prototyp#cp_mod_Blockierkraft_calc_Blockierkraft_Bsp_Biegeaktor_Parallelschaltung_0>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > minExclusive[0]
+
+
+✅ <urn:absolute/prototyp#cp_mod_Blockierkraft_Blockierkraft_parallel_Akt_Stapelaktor_1_1111>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > minExclusive[0]
+
+
+✅ <urn:absolute/prototyp#cp_mod_Blockierkraft_Blockierkraft_parallel_Akt_Stapelaktor_1_22>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > minExclusive[0]
+
+
+✅ <urn:absolute/prototyp#cp_mod_Blockierkraft_Akt_zu_block_Stapelaktor_1_171>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > minExclusive[0]
+
+
+✅ <urn:absolute/prototyp#cp_mod_Blockierkraft_Blockierkraft_Draht_NiTiCu_20_0>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > minExclusive[0]
+
+
+✅ <urn:absolute/prototyp#cp_mod_Blockierkraft_Akt_zu_block_Stapelaktor_1_22>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > minExclusive[0]
+
+
+✅ <urn:absolute/prototyp#cp_mod_Unimorpher_piezo_Biegeaktor_Bsp_Unimorpher_Biegeaktor_Blockierkraft>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > minExclusive[0]
+
+
+✅ <urn:absolute/prototyp#cp_mod_Blockierkraft_Blockierkraft_parallel_Akt_Stapelaktor_1_171>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > minExclusive[0]
+
+
+✅ <urn:absolute/prototyp#cp_mod_Blockierkraft_Akt_zu_block_Stapelaktor_1_1111>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > minExclusive[0]
+
+
+✅ <urn:absolute/prototyp#cp_mod_lineare_interpolation_Blockierkraft_Blockierkraft_Interpolation_Druck-Zug-Stick_2_91>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > minExclusive[0]
+
+
+✅ <urn:absolute/prototyp#cp_mod_piezo_Scheibenaktor_Bsp_Piezoelektrischer_Scheibenaktor_Blockierkraft>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > minExclusive[0]
+
+
+❌ <urn:absolute/prototyp#cp_mod_Blockierkraft_calc_Blockierkraft_Bsp_Trimorpher_Biegeaktor_Parallelschaltung_0>:
+    ┗━❌━ <hat_Wert> ?a
+       ┗━❌━⬤ > minExclusive[0]
+
+

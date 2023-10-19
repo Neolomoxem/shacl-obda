@@ -1,0 +1,20 @@
+🔍 VALIDATION REPORT:
+Total targets: 3 | ❌ INVALID: 0 | ✅ VALID: 3
+
+
+
+✅ <urn:absolute/prototyp#testparam_NM-Martensit_Kristallstruktur>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > DatatypeConstraint[xsd:decimal]
+
+
+✅ <urn:absolute/prototyp#testparam_10M-Martensit_Kristallstruktur>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > DatatypeConstraint[xsd:decimal]
+
+
+✅ <urn:absolute/prototyp#testparam_14M-Martensit_Kristallstruktur>:
+    ┗━✅━ <hat_Wert> ?a
+       ┗━✅━⬤ > DatatypeConstraint[xsd:decimal]
+
+

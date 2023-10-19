@@ -1,0 +1,105 @@
+🔍 VALIDATION REPORT:
+Total targets: 10 | ❌ INVALID: 7 | ✅ VALID: 3
+
+
+
+❌ <urn:absolute/prototyp#Ni2MnGa_sample_1>:
+    ┗━❌━A͟N͟D͟
+       ┗━❌━ <hat_Parameter> ?a
+          ┗━❌━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_a>]maxCount[1]
+       ┗━❌━ <hat_Parameter> ?b
+          ┗━❌━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_b>]maxCount[1]
+       ┗━❌━ <hat_Parameter> ?c
+          ┗━❌━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_c>]maxCount[1]
+
+
+❌ <urn:absolute/prototyp#sample_test_MSM_1>:
+    ┗━❌━A͟N͟D͟
+       ┗━❌━ <hat_Parameter> ?a
+          ┗━❌━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_a>]maxCount[1]
+       ┗━❌━ <hat_Parameter> ?b
+          ┗━❌━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_b>]maxCount[1]
+       ┗━❌━ <hat_Parameter> ?c
+          ┗━❌━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_c>]maxCount[1]
+
+
+❌ <urn:absolute/prototyp#sample_dummy_stress_strain>:
+    ┗━❌━A͟N͟D͟
+       ┗━❌━ <hat_Parameter> ?a
+          ┗━❌━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_a>]maxCount[1]
+       ┗━❌━ <hat_Parameter> ?b
+          ┗━❌━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_b>]maxCount[1]
+       ┗━❌━ <hat_Parameter> ?c
+          ┗━❌━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_c>]maxCount[1]
+
+
+❌ <urn:absolute/prototyp#Ni2MnGa>:
+    ┗━❌━A͟N͟D͟
+       ┗━❌━ <hat_Parameter> ?a
+          ┗━❌━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_a>]maxCount[1]
+       ┗━❌━ <hat_Parameter> ?b
+          ┗━❌━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_b>]maxCount[1]
+       ┗━❌━ <hat_Parameter> ?c
+          ┗━❌━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_c>]maxCount[1]
+
+
+❌ <urn:absolute/prototyp#MSM_test2>:
+    ┗━❌━A͟N͟D͟
+       ┗━❌━ <hat_Parameter> ?a
+          ┗━❌━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_a>]maxCount[1]
+       ┗━❌━ <hat_Parameter> ?b
+          ┗━❌━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_b>]maxCount[1]
+       ┗━❌━ <hat_Parameter> ?c
+          ┗━❌━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_c>]maxCount[1]
+
+
+✅ <urn:absolute/prototyp#10M-Martensit>:
+    ┗━✅━A͟N͟D͟
+       ┗━✅━ <hat_Parameter> ?a
+          ┗━✅━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_a>]maxCount[1]
+       ┗━✅━ <hat_Parameter> ?b
+          ┗━✅━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_b>]maxCount[1]
+       ┗━✅━ <hat_Parameter> ?c
+          ┗━✅━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_c>]maxCount[1]
+
+
+✅ <urn:absolute/prototyp#NM-Martensit>:
+    ┗━✅━A͟N͟D͟
+       ┗━✅━ <hat_Parameter> ?a
+          ┗━✅━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_a>]maxCount[1]
+       ┗━✅━ <hat_Parameter> ?b
+          ┗━✅━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_b>]maxCount[1]
+       ┗━✅━ <hat_Parameter> ?c
+          ┗━✅━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_c>]maxCount[1]
+
+
+❌ <urn:absolute/prototyp#dummy_stress_strain>:
+    ┗━❌━A͟N͟D͟
+       ┗━❌━ <hat_Parameter> ?a
+          ┗━❌━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_a>]maxCount[1]
+       ┗━❌━ <hat_Parameter> ?b
+          ┗━❌━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_b>]maxCount[1]
+       ┗━❌━ <hat_Parameter> ?c
+          ┗━❌━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_c>]maxCount[1]
+
+
+✅ <urn:absolute/prototyp#14M-Martensit>:
+    ┗━✅━A͟N͟D͟
+       ┗━✅━ <hat_Parameter> ?a
+          ┗━✅━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_a>]maxCount[1]
+       ┗━✅━ <hat_Parameter> ?b
+          ┗━✅━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_b>]maxCount[1]
+       ┗━✅━ <hat_Parameter> ?c
+          ┗━✅━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_c>]maxCount[1]
+
+
+❌ <urn:absolute/prototyp#material_test_MSM>:
+    ┗━❌━A͟N͟D͟
+       ┗━❌━ <hat_Parameter> ?a
+          ┗━❌━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_a>]maxCount[1]
+       ┗━❌━ <hat_Parameter> ?b
+          ┗━❌━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_b>]maxCount[1]
+       ┗━❌━ <hat_Parameter> ?c
+          ┗━❌━⬤ > minCount[1]ClassConstraint[<urn:absolute/prototyp#Gitterkonstante_c>]maxCount[1]
+
+

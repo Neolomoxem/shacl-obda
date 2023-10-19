@@ -1,0 +1,50 @@
+🔍 VALIDATION REPORT:
+Total targets: 9 | ❌ INVALID: 0 | ✅ VALID: 9
+
+
+
+✅ <urn:absolute/prototyp#10M-Martensit_Gitterkonstante_b>:
+    ┗━✅━ <hat_Name> ?a
+       ┗━✅━⬤ > MinLengthConstraint[17]MaxLengthConstraint[17]Pattern[^Gitterkonstante [abc]$]
+
+
+✅ <urn:absolute/prototyp#10M-Martensit_Gitterkonstante_a>:
+    ┗━✅━ <hat_Name> ?a
+       ┗━✅━⬤ > MinLengthConstraint[17]MaxLengthConstraint[17]Pattern[^Gitterkonstante [abc]$]
+
+
+✅ <urn:absolute/prototyp#14M-Martensit_Gitterkonstante_a>:
+    ┗━✅━ <hat_Name> ?a
+       ┗━✅━⬤ > MinLengthConstraint[17]MaxLengthConstraint[17]Pattern[^Gitterkonstante [abc]$]
+
+
+✅ <urn:absolute/prototyp#14M-Martensit_Gitterkonstante_b>:
+    ┗━✅━ <hat_Name> ?a
+       ┗━✅━⬤ > MinLengthConstraint[17]MaxLengthConstraint[17]Pattern[^Gitterkonstante [abc]$]
+
+
+✅ <urn:absolute/prototyp#NM-Martensit_Gitterkonstante_a>:
+    ┗━✅━ <hat_Name> ?a
+       ┗━✅━⬤ > MinLengthConstraint[17]MaxLengthConstraint[17]Pattern[^Gitterkonstante [abc]$]
+
+
+✅ <urn:absolute/prototyp#14M-Martensit_Gitterkonstante_c>:
+    ┗━✅━ <hat_Name> ?a
+       ┗━✅━⬤ > MinLengthConstraint[17]MaxLengthConstraint[17]Pattern[^Gitterkonstante [abc]$]
+
+
+✅ <urn:absolute/prototyp#10M-Martensit_Gitterkonstante_c>:
+    ┗━✅━ <hat_Name> ?a
+       ┗━✅━⬤ > MinLengthConstraint[17]MaxLengthConstraint[17]Pattern[^Gitterkonstante [abc]$]
+
+
+✅ <urn:absolute/prototyp#NM-Martensit_Gitterkonstante_b>:
+    ┗━✅━ <hat_Name> ?a
+       ┗━✅━⬤ > MinLengthConstraint[17]MaxLengthConstraint[17]Pattern[^Gitterkonstante [abc]$]
+
+
+✅ <urn:absolute/prototyp#NM-Martensit_Gitterkonstante_c>:
+    ┗━✅━ <hat_Name> ?a
+       ┗━✅━⬤ > MinLengthConstraint[17]MaxLengthConstraint[17]Pattern[^Gitterkonstante [abc]$]
+
+

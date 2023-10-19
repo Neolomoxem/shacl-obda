@@ -9,11 +9,13 @@
 	a sh:NodeShape ;
 	sh:targetClass :Parameter ;
 	sh:property [                 # _:b1
-		sh:path :hat_Symbol ;
-		sh:class :piezoelektrische_Ladungskonstante;
-		sh:minCount 1;
-		sh:severity sh:Violation ;
-		sh:message "Kein Symbol!"@de ;
+		sh:path :A ;
+		sh:class :CLASSA;
+		sh:property [
+			sh:path :B;
+			sh:class :CLASSB;
+			sh:minCount 1;
+		]
 	] .
 
 

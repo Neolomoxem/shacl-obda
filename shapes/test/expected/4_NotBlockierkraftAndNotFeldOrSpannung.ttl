@@ -1,0 +1,1903 @@
+🔍 VALIDATION REPORT:
+Total targets: 146 | ❌ INVALID: 4 | ✅ VALID: 142
+
+
+
+✅ <urn:absolute/prototyp#PZT-5H>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#NiTi>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#NiTiCu>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#M1599>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Multi_Lage_Bsp_Biege_Parallel_6>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Bsp_Dickenschwinger>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Druck-Zug-Stick_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Type_II>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PZT5A4>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Sonox_P5>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Multi_Lage_Bsp_Bimorpher_Parallel_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#842>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Piezoelektrischer_Stapelaktor_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Drahtaktor_NiTiCu20>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PZT5A1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PZT406>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PIC151>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#sample1_Elastomer1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PZT5K1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PCrN-4>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Type_I>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Sonox_P4>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Sonox_P505>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#NM-Martensit>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+❌ <urn:absolute/prototyp#Bsp_Piezoelektrischer_Scheibenaktor>:
+    ┗━❌━N͟O͟T͟
+       ┗━✅━A͟N͟D͟
+          ┗━✅━ <hat_Parameter> ?a
+             ┗━✅━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Elastomer_2>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Bsp_Biegeaktor_Parallelschaltung>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━✅━ <hat_Parameter> ?a
+             ┗━✅━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━❌━N͟O͟T͟
+             ┗━✅━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━✅━ <hat_Parameter> ?c
+                   ┗━✅━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#851>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Ni2MnGa>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#M202>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PIC153>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PIC300>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PZT507>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PSnN-5>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#NiTi_G.Rau>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Sonox_P8>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PBaS-4>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PIC700>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Multi_Lage_Bsp_Trimorpher_Parallel_2>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PZT-51>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PZT-52>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#NiTi%236_450>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Elastomer_3>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PIC241>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PZT-41>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Multi_Lage_Bsp_Trimorpher_Parallel_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#880>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Multi_Lage_Bsp_Trimorpher_Parallel_3>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Multi_Lage_Bsp_Unimorpher_Biege_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#M455>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Multi_Lage_Bsp_Bimorpher_Parallel_2>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Transversaler_Laengsschwinger_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#sample_dummy_stress_strain>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PIC144>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Drahtaktor_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Bsp_Unimorpher_Biegeaktor>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━✅━ <hat_Parameter> ?a
+             ┗━✅━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━❌━N͟O͟T͟
+             ┗━✅━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━✅━ <hat_Parameter> ?c
+                   ┗━✅━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PZT5A2>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PZT802>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Probe_m_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Multi_Lage_Bsp_Scheibenaktor>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━❌━N͟O͟T͟
+             ┗━✅━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━✅━ <hat_Parameter> ?c
+                   ┗━✅━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Drahtaktor_NiTi%236>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#NiTi%236>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Wandlerfolie_2>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PIC152>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#S2glas>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Multi_Lage_Bsp_Unimorpher_Biege_2>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Bsp_Trimorpher_Biegeaktor_Parallelschaltung>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━✅━ <hat_Parameter> ?a
+             ┗━✅━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━❌━N͟O͟T͟
+             ┗━✅━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━✅━ <hat_Parameter> ?c
+                   ┗━✅━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Multi_Lage_Bsp_Biege_Parallel_2>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#M1224>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Probe_m_2>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Sonox_P53>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PZT5H1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#NiCo2918>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Multi_Lage_Bsp_Biege_Parallel_4>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#M1100>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Drahtaktor_Grau>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Longitudinaler_Laengsschwinger_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Elektrodenmaterial_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#material_test_MSM>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Radialschwinger_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Sonox_P508>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#10M-Martensit>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#844>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PZT807>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Sonox_P504>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#855>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#NiTi%236_500>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Multi_Lage_Bsp_Biege_Parallel_7>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#840>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#14M-Martensit>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Ni2MnGa_sample_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#M1876>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PZT-53>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Drahtaktor_NiTi%236_450>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Type_III>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#881>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Elastomer_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#860>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Wandlerfolie_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+❌ <urn:absolute/prototyp#Stapelaktor_1>:
+    ┗━❌━N͟O͟T͟
+       ┗━✅━A͟N͟D͟
+          ┗━✅━ <hat_Parameter> ?a
+             ┗━✅━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#BaTiO3>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PZT-82>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Bsp_Bimorpher_Biegeaktor_Parallelschaltung>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━✅━ <hat_Parameter> ?a
+             ┗━✅━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━❌━N͟O͟T͟
+             ┗━✅━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━✅━ <hat_Parameter> ?c
+                   ┗━✅━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PZT503>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#850>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#841>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Probe_m_5>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PIC252>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Elastomer_4>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Probe_m_4>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Elastomermaterial_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+❌ <urn:absolute/prototyp#Druck-Zug-Stick_2>:
+    ┗━❌━N͟O͟T͟
+       ┗━✅━A͟N͟D͟
+          ┗━✅━ <hat_Parameter> ?a
+             ┗━✅━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#M524.5>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PIC255>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#sample_test_MSM_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Multilayer_Lage_2>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Sonox_P1_LF>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#M420>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PZT401>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PLiS-51>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Multilayer_Lage_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Wandlersystem_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+❌ <urn:absolute/prototyp#NiTiCu_20>:
+    ┗━❌━N͟O͟T͟
+       ┗━✅━A͟N͟D͟
+          ┗━✅━ <hat_Parameter> ?a
+             ┗━✅━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Drahtaktor_NiTi%236_500>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PZT-5X>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PIC155>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Drahtaktor_Smartflex>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Multi_Lage_Bsp_Biege_Parallel_3>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#854>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PZT403>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PIC110>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#dummy_stress_strain>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PZT804>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PIC181>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Multi_Lage_Bsp_Biege_Parallel_5>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PZT-43>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#M1832>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Smartflex_legM>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Sonox_P502>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PZT-42>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#M1334>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Piezoelektrischer_Scheibenaktor_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#PIC184>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#MSM_test2>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Multi_Lage_Bsp_Biege_Parallel_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
+✅ <urn:absolute/prototyp#Dickenscherschwinger_1>:
+    ┗━✅━N͟O͟T͟
+       ┗━❌━A͟N͟D͟
+          ┗━❌━ <hat_Parameter> ?a
+             ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#Blockierkraft>]
+          ┗━✅━N͟O͟T͟
+             ┗━❌━O͟R͟
+                ┗━❌━ <hat_Parameter> ?b
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrisches_Feld>]
+                ┗━❌━ <hat_Parameter> ?c
+                   ┗━❌━⬤ > ClassConstraint[<urn:absolute/prototyp#elektrische_Spannung>]
+
+
