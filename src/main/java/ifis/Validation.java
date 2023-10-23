@@ -208,11 +208,12 @@ public class Validation {
         tree.setParent(null);
     }
 
+
+
     private SHACLNode shapeToTree(Shape shape) {
         return switch (shape) {
             case PropertyShape pshape -> {
 
-                // Create PathNode with fresh variable
                 var pnode = new PShapeNode(pshape, sparqlGenerator.getNewVariable());
                 var cnode = new ConstraintNode(pshape);
 
@@ -231,6 +232,7 @@ public class Validation {
                         /* 
                          * Add direct constraints to a child ConstraintNode
                          */
+
 
                         case ConstraintComponentSPARQL custom -> {
                             var eqnode = new EqualNode(shape);
@@ -264,6 +266,8 @@ public class Validation {
                             pnode.addChild(eqnode);
                         }
                         
+                        
+                        
                         default -> {
                             cnode.addConstraint(comp);
                         }
@@ -276,7 +280,7 @@ public class Validation {
                 }
 
                 for (var subShape : pshape.getPropertyShapes()) {
-                    // For all following propertyshapes
+                    // For all following propertyshapes 
                     // add them as children to the current PropertyNode
                     pnode.addChild(shapeToTree(subShape));
                 }
@@ -467,11 +471,15 @@ public class Validation {
                     // Add path from previous to new value nodes
                     query.addPart(generatePath("?"+from, "?"+pnode.getBindingVar(), pnode.getPath()));
                     from = pnode.getBindingVar();
+                    
                     if (pnode.classc != null) query.addTriple("?"+pnode.getBindingVar(), "a", pnode.classc);
-
+                    
+                    // Engineconstraints
+                    for (var engineconstraint : pnode.getEngineConstraints()) {
+                        // TODO
+                    }
                 }
                 case ConstraintNode cnode -> {
-                    
                     
                     /* Add all the constraint logic */
                     for (var c:cnode.getConstraints()) {
@@ -550,18 +558,17 @@ public class Validation {
 
     }
 
+
     private void addSPARQLForConstraint(Constraint c, ConstrainedSHACLNode node, Query subQuery) {
         var bindingVar = node.getBindingVar();
         switch (c) {
-
             /*
                 * MAIN CONSTRAINTS
                 */
 
-            case ClassConstraint classConstraint -> {
-                subQuery.addTriple("?" + bindingVar, "a", wrap(classConstraint.getExpectedClass().getURI()));
-            }
-
+                case ClassConstraint classConstraint -> {
+                    subQuery.addTriple("?" + bindingVar, "a", wrap(classConstraint.getExpectedClass().getURI()));
+                }
             /*
                 * STRING BASED CONSTRAINTS
                 */

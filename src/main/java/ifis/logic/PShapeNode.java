@@ -1,35 +1,23 @@
 package ifis.logic;
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.apache.jena.graph.Node;
-import org.apache.jena.shacl.engine.constraint.CardinalityConstraint;
-import org.apache.jena.shacl.engine.constraint.ClassConstraint;
+import org.apache.jena.shacl.parser.Constraint;
 import org.apache.jena.shacl.parser.PropertyShape;
 import org.apache.jena.sparql.path.Path;
 
-import ifis.ValidationException;
-
 /* A PathNode is esentially a PropertyShape. It represents all the Valuenodes of a PShape and how to reach them */
 public class PShapeNode extends SHACLNode {
-    
-    public Set<CardinalityConstraint> getCardinalityConstraints() {
-        return cardinalityConstraints;
-    }
-
-    private final Set<CardinalityConstraint> cardinalityConstraints;
 
     private String bindingVar;        
-
     private Path path;
-    
     public String classc = null;
-
     public boolean elevate = true;
+    private HashSet<Constraint> engineConstraints = new HashSet<>();
     
+
     public PShapeNode(PropertyShape shape, String bindingVar) {
         
         super(shape);
@@ -37,8 +25,6 @@ public class PShapeNode extends SHACLNode {
         // Whenever a new PropertyShape is parsed, a new Variable will be generated
         this.bindingVar = bindingVar;    
         
-        // New empty list of cardinality constraints
-        this.cardinalityConstraints = new HashSet<CardinalityConstraint>();
         // The Path to reach this new bindingVar
         
         this.path = shape.getPath();
@@ -53,7 +39,6 @@ public class PShapeNode extends SHACLNode {
         this.bindingVar = bindingVar;    
         
         // New empty list of cardinality constraints
-        this.cardinalityConstraints = new HashSet<CardinalityConstraint>();
         // The Path to reach this new bindingVar
         
         this.path = p;
@@ -93,9 +78,25 @@ public class PShapeNode extends SHACLNode {
 
     }
 
+    @Override
+    public boolean validates(Node atom) {
+        // Since a propertyshape is basically an AND-Node, it validates, iff all its children validate
+        for (var childNode:_children) {
+            if (!childNode.validates(atom)) return false;
+        }
+        return true;
+    }
+
+    /* 
+     * GETTERS & SETTERS
+     */
 
 
+    public Path getPath() {
+        return path;
+    }
 
+    
     @Override
     public String getBindingVar() {
         return bindingVar;
@@ -107,26 +108,15 @@ public class PShapeNode extends SHACLNode {
         if (path instanceof StringPath) return " " +  (((StringPath)path).value.replaceAll("urn:absolute/prototyp#", "")) + " ?"+bindingVar; 
         return " " +  ((PropertyShape) shape).getPath().toString().replaceAll("urn:absolute/prototyp#", "") + " ?"+bindingVar;
     }
-    
-    @Override
-    public boolean validates(Node atom) {
-        // Since a propertyshape is basically an AND-Node, it validates, iff all its children validate
-        for (var childNode:_children) {
-            if (!childNode.validates(atom)) return false;
-        }
-        return true;
+
+    public HashSet<Constraint> getEngineConstraints() {
+        return engineConstraints;
     }
 
-    
-
-
-    public Path getPath() {
-        return path;
+    public void addEngineConstraint(Constraint c) {
+        engineConstraints.add(c);
     }
 
-    public void addCardinalityConstraint(CardinalityConstraint c){
-        this.cardinalityConstraints.add(c);
-    }
     
 
 }
