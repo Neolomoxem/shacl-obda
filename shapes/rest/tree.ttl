@@ -1,0 +1,36 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sh:  <http://www.w3.org/ns/shacl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>. 
+@prefix : <urn:absolute/prototyp#> . 
+
+# Eine Blockierkraft darf nicht einem Elastomermaterial zugeordnet sein.
+
+:ExplainShape
+    a sh:NodeShape ;
+    sh:targetClass :A ;
+    sh:or (
+        [
+            sh:not [
+                sh:path :Path_A;
+                sh:class :B;
+                sh:xone (
+                    [
+                        sh:path :Path_B;
+                        sh:class :C;
+                        sh:minCount 2
+                    ]
+                    [
+                        sh:not [
+                            sh:path :Path_B;
+                            sh:class :C;
+
+                        ]
+                    ]
+                ) 
+                
+            ]
+        ]
+        [
+            sh:class :D
+        ]
+    ).

@@ -211,6 +211,7 @@ public class Validation {
 
 
     private SHACLNode shapeToTree(Shape shape) {
+
         return switch (shape) {
             case PropertyShape pshape -> {
 
@@ -345,9 +346,10 @@ public class Validation {
                             
                             
                             cnode.addChild(eqnode);
-                        }
+                            }
                             
-                            default -> {
+                            
+                        default -> {
                                 cnode.addConstraint(comp);
                             }
                         }
@@ -446,9 +448,6 @@ public class Validation {
     private Query generateQuery(SHACLNode node) {
         
         var lineage = node.getLineage();
-
-        
-        // Init new empty Query
         var query = sparqlGenerator.newQuery();
 
         // For the target-definition
@@ -474,10 +473,11 @@ public class Validation {
                     
                     if (pnode.classc != null) query.addTriple("?"+pnode.getBindingVar(), "a", pnode.classc);
                     
-                    // Engineconstraints
-                    for (var engineconstraint : pnode.getEngineConstraints()) {
-                        // TODO
-                    }
+                    /* 
+                     * ENGINE CONSTRAINTS
+                     */
+                    pnode.getEngineConstraints().forEach((c) -> addSPARQLForEngineConstraint(c, pnode, query));
+
                 }
                 case ConstraintNode cnode -> {
                     
@@ -555,6 +555,21 @@ public class Validation {
                 throw new ValidationException("Weird paths are happening");
             }
         };
+
+    }
+
+    private void addSPARQLForEngineConstraint(Constraint constraint, PShapeNode node, Query subQuery) {
+        var bVar = node.getBindingVar();
+
+        switch(constraint) {
+            case ClassConstraint classConstraint -> {
+                subQuery.addTriple("?" + bVar, "a", wrap(classConstraint.getExpectedClass().getURI()));
+            }
+            default -> {
+
+            }
+        }
+
 
     }
 

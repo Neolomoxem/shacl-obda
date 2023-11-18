@@ -38,7 +38,7 @@ class AppTest {
         
     }
 
-    @Test
+/*     @Test
     void updateExpectedResults() throws Exception {
          var inputDir = Paths.get(INPUT_DIR);
 
@@ -64,7 +64,7 @@ class AppTest {
 
             })
             ;
-    }
+    } */
 
 
     @Test
