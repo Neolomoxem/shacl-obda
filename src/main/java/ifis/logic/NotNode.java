@@ -1,12 +1,11 @@
 package ifis.logic;
 
-import java.util.List;
 import java.util.Set;
 
 import org.apache.jena.graph.Node;
 import org.apache.jena.shacl.parser.Shape;
 
-import ifis.ValidationException;
+import ifis.exception.ValidationException;
 
 public class NotNode extends SHACLNode {
 

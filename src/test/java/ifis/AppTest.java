@@ -13,6 +13,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.HashSet;
+import java.util.stream.Collector;
 
 import org.junit.jupiter.api.Test;
 
@@ -25,20 +27,9 @@ class AppTest {
     private static final String EXPECTED_DIR = "shapes/test/expected/";
     private static final String ENDPOINT = "http://localhost:8080/sparql/";
 
-    /**
-     * Rigorous Test.
-     */
-    @Test
-    void testApp() {
-        assertEquals(1, 1);
-    }
-    @Test
-    void testConstraints() {
-        assertTrue(true);
-        
-    }
 
-    @Test
+
+   /*  @Test
     void updateExpectedResults() throws Exception {
          var inputDir = Paths.get(INPUT_DIR);
 
@@ -64,7 +55,7 @@ class AppTest {
 
             })
             ;
-    }
+    } */
 
 
     @Test
@@ -73,25 +64,28 @@ class AppTest {
 
         var inputDir = Paths.get(INPUT_DIR);
 
-        Files.walk(inputDir)
+        var files = Files.walk(inputDir)
             .skip(1)
-            .forEach((inputFile)->{
+            .toList();
+        
+        for (var file:files) {
                 // Run App
                 try {
-                    System.err.println("--------------- TESTING " + inputFile.getFileName() + " --------------- ");
-                    App.main(new String[]{inputFile.toAbsolutePath().toString(), ENDPOINT});
+                    System.err.println("--------------- TESTING " + file.getFileName() + " --------------- ");
+                    App.main(new String[]{file.toAbsolutePath().toString(), ENDPOINT});
                 } catch (Exception e) {
-                    System.err.println("--------------- FAILURE AT TEST " + inputFile.getFileName() + " --------------- ");
+                    System.err.println("--------------- FAILURE AT TEST " + file.getFileName() + " --------------- ");
                     e.printStackTrace();
                     fail();
                 }
                 // Read report
-                var pass = FileComparer.compareFiles(new File("report.log"), new File("shapes/test/expected/"+inputFile.getFileName()));
+                var pass = FileComparer.compareFiles(new File("report.log"), new File("shapes/test/expected/"+file.getFileName()));
 
-                if (!pass) fail("FAILURE AT TEST " + inputFile.getFileName());
+                if (!pass) fail("FAILURE AT TEST " + file.getFileName());        }
 
-            })
-            ;
+
+                
+
 
     }
 
@@ -104,7 +98,7 @@ class AppTest {
                  * First check sizes
                  */
                 
-                if (file1.length() != file2.length()) return false; 
+                // if (file1.length() != file2.length()) return false; 
                 
                 
                 

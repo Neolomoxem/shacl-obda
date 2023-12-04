@@ -10,7 +10,6 @@ import org.apache.jena.shacl.parser.Shape;
 
 public class AndNode extends SHACLNode {
 
-    protected Set<Node> validAtoms;
 
     public AndNode(Shape shape) {
         super(shape);

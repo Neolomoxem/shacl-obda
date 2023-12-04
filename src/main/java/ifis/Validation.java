@@ -49,10 +49,12 @@ import org.apache.jena.sparql.path.P_Inverse;
 import org.apache.jena.sparql.path.P_Link;
 import org.apache.jena.sparql.path.P_Seq;
 import org.apache.jena.sparql.path.Path;
+import org.apache.jena.sparql.pfunction.library.alt;
 
 import ifis.SPARQLGenerator.Query;
+import ifis.exception.InternalValidationException;
+import ifis.exception.ValidationException;
 import ifis.logic.AndNode;
-import ifis.logic.ConstrainedSHACLNode;
 import ifis.logic.ConstraintNode;
 import ifis.logic.EqualNode;
 import ifis.logic.NotNode;
@@ -63,14 +65,20 @@ import ifis.logic.StringPath;
 import ifis.logic.XoneNode;
 
 public class Validation {
-    private final Shape shape;                      // Input 
+    private final Shape shape;                      // Input
     private final List<String> report;              // Output in String
     private final SPARQLGenerator sparqlGenerator;  // Takes care of Variables
     private final QueryExecHTTPBuilder endpoint;    // The SPARQL is queried against this
     private SHACLNode tree;                         // From the input we generate a tree of SHACLNodes
-    private Set<ValidationResult> results;          
+    private Set<ValidationResult> results;
     private boolean isEvaluated = false;
     private String focusVar;
+    public String getFocusVar() {
+        return focusVar;
+    }
+
+
+
     private int indentlevel = 0;                    // Indentation Level used for prettier printing
 
     public boolean isEvaluated() {
@@ -118,7 +126,7 @@ public class Validation {
     /**
      * Validates a specific shape by constructing the logic tree and populating the
      * property nodes.
-     * 
+     *
      * @param shape The shape to validate.
      */
     public void validateShape(NodeShape shape) {
@@ -143,11 +151,11 @@ public class Validation {
         populateTree(tree);
         indentlevel--;
         print("Nodes populated.");
-        
+
         /*
         * CONSTRUCT BINDINGS IN TREE
         */
-        
+
         print("Constructing valid bindings in tree.");
         indentlevel++;
         tree.construct();
@@ -160,7 +168,6 @@ public class Validation {
 
     }
 
-
     private void printTree(SHACLNode node){
         print(node.toString());
         indentlevel++;
@@ -169,27 +176,12 @@ public class Validation {
     }
 
     /*
-     * LOGIC TREE METHODS
+     * TREE BUILDING
      */
-
-    private void cleanUp(SHACLNode node) {
-        for (var child:node.getChildren()) {
-            cleanUp(child);
-
-            if (child instanceof ConstraintNode) {
-                if (((ConstraintNode) child).getConstraints().size() ==0) {
-
-                    if (child.getChildren().size() <= 1) {
-                        node.suspend(child);
-                    }
-                }
-            }
-        }
-    }
 
     private void buildTree() {
         // Root node
-        
+
 
 
         if (shape.getConstraints().size() + shape.getPropertyShapes().size() > 1) {
@@ -200,7 +192,7 @@ public class Validation {
                 andnode.addChild(shapeToTree(child));
             }
             tree = andnode;
-            
+
         } else {
             tree = shapeToTree(shape);
         }
@@ -208,28 +200,40 @@ public class Validation {
         tree.setParent(null);
     }
 
-
-
     private SHACLNode shapeToTree(Shape shape) {
-        return switch (shape) {
-            case PropertyShape pshape -> {
 
-                var pnode = new PShapeNode(pshape, sparqlGenerator.getNewVariable());
+        return switch (shape) {
+
+            case PropertyShape pshape   -> { yield pShapeToTree(pshape);}
+            case NodeShape nshape       -> { yield nodeShapeToTree(nshape);}
+
+            default -> throw new ValidationException(
+                    "There is a new kind of shape. If you see this error you are most likely from the future. Please note that this tool was written in 2023, back when we only knew NodeShapes and PropertyShapes! Can you imagine?");
+
+        };
+    }
+
+    private PShapeNode pShapeToTree(PropertyShape pshape) {
+        var pnode = new PShapeNode(pshape, sparqlGenerator.getNewVariable());
                 var cnode = new ConstraintNode(pshape);
 
-                /* 
-                 * For all constraints of the shape
-                 */
                 for (var comp : pshape.getConstraints()) {
                     switch (comp) {
-                        /* 
+                        /*
                          * Add junctive Constraints as children
                          */
                         case ConstraintOp opcomp -> {
                             pnode.addChild(createOpNode(opcomp, pshape));
                         }
 
-                        /* 
+                        /*
+                         * ENGINE CONSTRAINTS
+                         */
+                        case ClassConstraint c -> {
+                            pnode.addEngineConstraint(c);
+                        }
+
+                        /*
                          * Add direct constraints to a child ConstraintNode
                          */
 
@@ -241,33 +245,33 @@ public class Validation {
                             var c1 = new ConstraintNode(shape);
                             var p1 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Parameter>"), sparqlGenerator.getNewVariable());
                             var p11 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Wert>"), sparqlGenerator.getNewVariable());
-                            
-                            p1.classc = wrap(eqnode.param1.getURI());
+
+                            p1.classc = Util.wrap(eqnode.param1.getURI());
                             c1.retain = true;
-                            
+
 
                             p1.addChild(p11);
                             p11.addChild(c1);
                             eqnode.addChild(p1);
-                            
+
                             var c2 = new ConstraintNode(shape);
                             var p2 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Parameter>"), sparqlGenerator.getNewVariable());
                             var p22 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Wert>"), sparqlGenerator.getNewVariable());
-                            
 
-                            p2.classc = wrap(eqnode.param2.getURI());
+
+                            p2.classc = Util.wrap(eqnode.param2.getURI());
                             c2.retain = true;
-                            
+
 
                             p2.addChild(p22);
                             p22.addChild(c2);
                             eqnode.addChild(p2);
-                            
+
                             pnode.addChild(eqnode);
                         }
-                        
-                        
-                        
+
+
+
                         default -> {
                             cnode.addConstraint(comp);
                         }
@@ -280,102 +284,87 @@ public class Validation {
                 }
 
                 for (var subShape : pshape.getPropertyShapes()) {
-                    // For all following propertyshapes 
+                    // For all following propertyshapes
                     // add them as children to the current PropertyNode
                     pnode.addChild(shapeToTree(subShape));
                 }
 
-                yield pnode;
-            }
-            case NodeShape nshape -> {
+                return pnode;
+    }
 
-
-
-                var cnode = new ConstraintNode(nshape);
-
-                
-                // If a pshape is present, transform a nodeshape to an ANDNode of a constraintnode and a pshapenode
-                if (nshape.getPropertyShapes().size() > 0 || nshape.getConstraints().stream().filter(c->c instanceof ConstraintOp).count() > 0 || nshape.getConstraints().stream().filter(c->c instanceof ConstraintComponentSPARQL).count() > 0) {
-
-                    var andnode = new AndNode(nshape);
-                    
-                    /* 
-                    * For all constraints of the shape
+    private SHACLNode nodeShapeToTree(NodeShape nshape) {
+        var cnode = new ConstraintNode(nshape);
+        if (nshape.getPropertyShapes().size() > 0 || nshape.getConstraints().stream().filter(c->c instanceof ConstraintOp).count() > 0 || nshape.getConstraints().stream().filter(c->c instanceof ConstraintComponentSPARQL).count() > 0) {
+            var andnode = new AndNode(nshape);
+            for (var comp : nshape.getConstraints()) {
+                switch (comp) {
+                    /*
+                    * Add junctive Constraints as children
                     */
-                    for (var comp : nshape.getConstraints()) {
-                        switch (comp) {
-                            /* 
-                            * Add junctive Constraints as children
-                            */
-                            case ConstraintOp opcomp -> {
-                                andnode.addChild(createOpNode(opcomp, nshape));
-                            }
-
-                            /* 
-                            * Add direct constraints to a child ConstraintNode
-                            */
-                            case ConstraintComponentSPARQL custom -> {
-                                var eqnode = new EqualNode(shape);
-                            getParams(custom, eqnode);
-
-                            var c1 = new ConstraintNode(shape);
-                            var p1 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Parameter>"), sparqlGenerator.getNewVariable());
-                            var p11 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Wert>"), sparqlGenerator.getNewVariable());
-                            
-                            p1.classc = wrap(eqnode.param1.getURI());
-                            c1.retain = true;
-                            
-
-                            p1.addChild(p11);
-                            p11.addChild(c1);
-                            eqnode.addChild(p1);
-                            
-                            var c2 = new ConstraintNode(shape);
-                            var p2 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Parameter>"), sparqlGenerator.getNewVariable());
-                            var p22 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Wert>"), sparqlGenerator.getNewVariable());
-                            
-
-                            p2.classc = wrap(eqnode.param2.getURI());
-                            c2.retain = true;
-                            
-
-                            p2.addChild(p22);
-                            p22.addChild(c2);
-                            eqnode.addChild(p2);
-                            
-                            
-                            cnode.addChild(eqnode);
-                        }
-                            
-                            default -> {
-                                cnode.addConstraint(comp);
-                            }
-                        }
-                    }
-                    if (cnode.getChildren().size() != 0) andnode.addChild(cnode);
-    
-                    for (var pshape : shape.getPropertyShapes()) {
-                        var child = shapeToTree(pshape);
-                        andnode.addChild(child);
+                    case ConstraintOp opcomp -> {
+                        andnode.addChild(createOpNode(opcomp, nshape));
                     }
 
-                    if (andnode.getChildren().size() == 1) yield andnode.getChildren().get(0);
+                    /*
+                    * Add direct constraints to a child ConstraintNode
+                    */
+                    case ConstraintComponentSPARQL custom -> {
+                        var eqnode = new EqualNode(shape);
+                    getParams(custom, eqnode);
 
-                    yield andnode;
+                    var c1 = new ConstraintNode(shape);
+                    var p1 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Parameter>"), sparqlGenerator.getNewVariable());
+                    var p11 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Wert>"), sparqlGenerator.getNewVariable());
 
-                } else {
-                    for (var comp:nshape.getConstraints()) {
-                        cnode.addConstraint(comp);
-                    }
-                    yield cnode;
+                    p1.classc = Util.wrap(eqnode.param1.getURI());
+                    c1.retain = true;
+
+
+                    p1.addChild(p11);
+                    p11.addChild(c1);
+                    eqnode.addChild(p1);
+
+                    var c2 = new ConstraintNode(shape);
+                    var p2 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Parameter>"), sparqlGenerator.getNewVariable());
+                    var p22 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Wert>"), sparqlGenerator.getNewVariable());
+
+
+                    p2.classc = Util.wrap(eqnode.param2.getURI());
+                    c2.retain = true;
+
+
+                    p2.addChild(p22);
+                    p22.addChild(c2);
+                    eqnode.addChild(p2);
+
+
+                    cnode.addChild(eqnode);
                 }
 
-                
+                    default -> {
+                        cnode.addConstraint(comp);
+                    }
+                }
             }
-            default -> throw new ValidationException(
-                    "There is a new kind of shape. If you see this error you are most likely from the future. Please note that this tool was written in 2023, back when we only knew NodeShapes and PropertyShapes! Can you imagine?");
+            if (cnode.getChildren().size() != 0) andnode.addChild(cnode);
 
-        };
+            for (var pshape : shape.getPropertyShapes()) {
+                var child = shapeToTree(pshape);
+                andnode.addChild(child);
+            }
+
+            if (andnode.getChildren().size() == 1) return andnode.getChildren().get(0);
+
+            return andnode;
+
+        } else {
+            for (var comp:nshape.getConstraints()) {
+                cnode.addConstraint(comp);
+            }
+            return cnode;
+        }
+
+
     }
 
     private SHACLNode createOpNode(ConstraintOp c, Shape shape) {
@@ -408,15 +397,16 @@ public class Validation {
 
     /* We populate the leaves of the tree. */
     private void populateTree(SHACLNode node) {
-        
+        var hasNoChildren = node.getChildren().size()  == 0;
+
         if (node instanceof NotNode) {
             populateBaseBindings((NotNode)node);
         }
 
-        if (node.getChildren().size() == 0) {
+        if (hasNoChildren) {
             // Anchor
-            populateNode((ConstrainedSHACLNode) node);
-            
+            populateNode(node);
+
         } else {
             // Recurse for all child nodes.
             for (var childNode:node.getChildren()) {
@@ -432,22 +422,23 @@ public class Validation {
 
     private void populateBaseBindings(SHACLNode node) {
         var query = generateQuery(node);
+
         var bindings = getBindingsListed(executeQuery(query).stream().collect(Collectors.toList()), node);
-        
+
         node.setBaseBindings(bindings);
     }
 
     /**
      * Generates a SPARQL query string for a property node.
-     * 
+     *
      * @param node The property node for which to generate the query.
      * @return The generated SPARQL query string.
      */
     private Query generateQuery(SHACLNode node) {
-        
+
         var lineage = node.getLineage();
 
-        
+
         // Init new empty Query
         var query = sparqlGenerator.newQuery();
 
@@ -465,22 +456,22 @@ public class Validation {
 
         for (int ancestorIndex = lineage.size()-1; ancestorIndex >= 0; ancestorIndex-- ) {
             var ancestor = lineage.get(ancestorIndex);
-          
+
             switch (ancestor) {
                 case PShapeNode pnode -> {
                     // Add path from previous to new value nodes
-                    query.addPart(generatePath("?"+from, "?"+pnode.getBindingVar(), pnode.getPath()));
+                    query.addTriple("?"+from, generatePath(pnode.getPath()),"?"+pnode.getBindingVar());
                     from = pnode.getBindingVar();
-                    
+
                     if (pnode.classc != null) query.addTriple("?"+pnode.getBindingVar(), "a", pnode.classc);
-                    
+
                     // Engineconstraints
                     for (var engineconstraint : pnode.getEngineConstraints()) {
-                        // TODO
+                        addSPARQLForEngineConstraint(engineconstraint, pnode, query);
                     }
                 }
                 case ConstraintNode cnode -> {
-                    
+
                     /* Add all the constraint logic */
                     for (var c:cnode.getConstraints()) {
                         addSPARQLForConstraint(c, cnode, query);
@@ -501,15 +492,15 @@ public class Validation {
     /**
      * Recursively resolves the path and returns a string that can be used in a
      * query to fetch all value nodes described by it
-     * 
+     *
      * @return
      */
-    private String generatePath(String fromVar, String toVar, Path path) {
-        
+    private String generatePath(Path path) {
+
         return switch (path) {
 
             case StringPath stringPath -> {
-                yield fromVar + " "+ stringPath.value +" "+toVar+".";
+                yield stringPath.value;
             }
 
 
@@ -517,19 +508,14 @@ public class Validation {
              * DIRECT PATH
              */
             case P_Link linkPath -> {
-                // Just create a direct path from toVar to fromVar
-                yield asTriple(fromVar, wrap(linkPath.getNode().getURI()), toVar);
-                // query.addTriple(fromVar, wrap(cpath.getNode().getURI()), toVar);
+                yield Util.wrap(linkPath.getNode().getURI());
             }
 
             /*
              * ALTERNATIVE PATH
              */
             case P_Alt altPath -> {
-                // Recurse and UNION
-                yield "{ " + generatePath(fromVar, toVar, altPath.getLeft()) +
-                        " }\nUNION\n{ " +
-                        generatePath(fromVar, toVar, altPath.getRight()) + "}\n";
+                yield "(" + generatePath(altPath.getLeft()) + ")|(" + generatePath(altPath.getRight()) + ")";
             }
 
             /*
@@ -537,51 +523,63 @@ public class Validation {
              */
             case P_Inverse inversePath -> {
                 // Just switch toVar and fromVar
-                yield generatePath(toVar, fromVar, inversePath.getSubPath());
+                yield "^("+generatePath(inversePath.getSubPath())+")";
             }
 
             /*
              * SEQUENCE PATH
              */
             case P_Seq seqPath -> {
-                // A pure seqPath is (counter-intuetively) structured like this:
+                // A pure seqPath is (counter-intuitively) structured like this:
                 // (((A, B), C), D) --> .getRight() is a P_Link and .getLeft() a P_Seq
-                yield generatePath(fromVar, toVar + "L", seqPath.getLeft()) + "\n" +
-                        generatePath(toVar + "L", toVar, seqPath.getRight());
+                yield "("+generatePath(seqPath.getLeft()) + ")/(" + generatePath(seqPath.getRight())+")";
             }
 
             default -> {
                 // Shouldnt happen. Naturally.
-                throw new ValidationException("Weird paths are happening");
+                throw new InternalValidationException("Weird paths are happening");
             }
         };
 
     }
 
 
-    private void addSPARQLForConstraint(Constraint c, ConstrainedSHACLNode node, Query subQuery) {
+    private void addSPARQLForEngineConstraint(Constraint constraint, PShapeNode node , Query subQuery) {
         var bindingVar = node.getBindingVar();
+        switch (constraint) {
+            case ClassConstraint classConstraint -> {
+                    subQuery.addTriple("?" + bindingVar, "a", Util.wrap(classConstraint.getExpectedClass().getURI()));
+                }
+            default -> {
+                throw new InternalValidationException("EngineConstraint not supported!");
+            }
+
+        }
+    }
+
+    private void addSPARQLForConstraint(Constraint c, ConstraintNode cnode, Query subQuery) {
+        var bindingVar = cnode.getBindingVar();
         switch (c) {
             /*
                 * MAIN CONSTRAINTS
                 */
 
-                case ClassConstraint classConstraint -> {
-                    subQuery.addTriple("?" + bindingVar, "a", wrap(classConstraint.getExpectedClass().getURI()));
-                }
+            case ClassConstraint classConstraint -> {
+                subQuery.addTriple("?" + bindingVar, "a", Util.wrap(classConstraint.getExpectedClass().getURI()));
+            }
             /*
                 * STRING BASED CONSTRAINTS
                 */
             case StrMinLengthConstraint strMinLengthConstraint -> {
                 var minLen = strMinLengthConstraint.getMinLength();
-                node.addBindingFilter((s) -> s.filter((b) -> {
+                cnode.addBindingFilter((s) -> s.filter((b) -> {
                     var val = b.get(bindingVar).getLiteralValue();
                     return val instanceof String && ((String) val).length() >= minLen;
                 }));
             }
             case StrMaxLengthConstraint strMaxLengthConstraint -> {
                 var maxLen = strMaxLengthConstraint.getMaxLength();
-                node.addBindingFilter((s) -> s.filter((b) -> {
+                cnode.addBindingFilter((s) -> s.filter((b) -> {
                     var val = b.get(bindingVar).getLiteralValue();
                     return val instanceof String && ((String) val).length() >= maxLen;
                 }));
@@ -589,7 +587,7 @@ public class Validation {
             case PatternConstraint patternConstraint -> {
                 var patternString = patternConstraint.getPattern();
                 Pattern pattern = Pattern.compile(patternString);
-                node.addBindingFilter((s) -> s.filter((b) -> {
+                cnode.addBindingFilter((s) -> s.filter((b) -> {
                     var val = b.get(bindingVar).getLiteralValue();
                     return val instanceof String && pattern.matcher((String) val).matches();
                 }));
@@ -602,7 +600,7 @@ public class Validation {
 
                 var minVal = minExC.getNodeValue().getFloat();
                 print(minVal);
-                node.addBindingFilter((s) -> s.filter((b) -> {
+                cnode.addBindingFilter((s) -> s.filter((b) -> {
                     if (!b.get(bindingVar).isLiteral())
                         return false;
                     try {
@@ -618,7 +616,7 @@ public class Validation {
 
                 var minVal = minInC.getNodeValue().getFloat();
                 print(minVal);
-                node.addBindingFilter((s) -> s.filter((b) -> {
+                cnode.addBindingFilter((s) -> s.filter((b) -> {
                     if (!b.get(bindingVar).isLiteral())
                         return false;
                     try {
@@ -634,7 +632,7 @@ public class Validation {
 
                 var maxVal = maxExC.getNodeValue().getFloat();
                 print(maxVal);
-                node.addBindingFilter((s) -> s.filter((b) -> {
+                cnode.addBindingFilter((s) -> s.filter((b) -> {
                     if (!b.get(bindingVar).isLiteral())
                         return false;
                     try {
@@ -650,7 +648,7 @@ public class Validation {
 
                 var maxVal = maxInC.getNodeValue().getFloat();
                 print(maxVal);
-                node.addBindingFilter((s) -> s.filter((b) -> {
+                cnode.addBindingFilter((s) -> s.filter((b) -> {
                     if (!b.get(bindingVar).isLiteral())
                         return false;
                     try {
@@ -669,16 +667,16 @@ public class Validation {
 
             case HasValueConstraint hasValueConstraint -> {
                 var expectedVal = hasValueConstraint.getValue();
-                node.addBindingFilter((s) -> s.filter((b) -> b.get(bindingVar).equals(expectedVal)));
+                cnode.addBindingFilter((s) -> s.filter((b) -> b.get(bindingVar).equals(expectedVal)));
             }
             case InConstraint inConstraint -> {
                 var list = inConstraint.getValues();
-                node.addBindingFilter((s) -> s.filter((b) -> list.contains(b.get(bindingVar))));
+                cnode.addBindingFilter((s) -> s.filter((b) -> list.contains(b.get(bindingVar))));
             }
 
             case DatatypeConstraint datatypeConstraint -> {
                 var datatype = datatypeConstraint.getDatatypeURI();
-                node.addBindingFilter(
+                cnode.addBindingFilter(
                         (s) -> s.filter(
                                 (binding) -> binding.get(bindingVar).getLiteralDatatypeURI().equals(datatype)));
             }
@@ -767,7 +765,7 @@ public class Validation {
                         yield "\"" + literal.getLiteral().getLexicalForm() + "\"";
                     case Node_URI uri:
                         yield uri.getURI();
-                    
+
 
                     default:
                         throw new ValidationException("Variable wrong");
@@ -788,9 +786,9 @@ public class Validation {
 
     private void handleCustomConstraint(ConstraintComponentSPARQL c, SHACLNode node, Query subQuery) {
 
-        
-        
-        
+
+
+
         SparqlComponent customComponent;
         Multimap<Parameter, Node> parameterMap;
         try {
@@ -847,7 +845,7 @@ public class Validation {
                         yield "\"" + literal.getLiteral().getLexicalForm() + "\"";
                     case Node_URI uri:
                         yield uri.getURI();
-                    
+
 
                     default:
                         throw new ValidationException("Variable wrong");
@@ -869,14 +867,13 @@ public class Validation {
 
     }
 
-
-    /* 
+    /*
      * VALIDATION
      */
 
      private Set<ValidationResult> validate() {
 
-        /* 
+        /*
          * GET ALL TARGETS
          */
         // Fetch all atoms mentioned by the target definiton
@@ -885,7 +882,7 @@ public class Validation {
         var targets = executeQuery(sparqlGenerator.generateTargetQuery(shape.getTargets().iterator().next(), focusVar));
         System.out.println("Receives %d Targets".formatted(targets.size()));
 
-        /* 
+        /*
          * CHECK IF ATOMS VALIDATE
          */
         // For every single atom in the targets, perform 'lookup' in the sets of
@@ -909,69 +906,84 @@ public class Validation {
 
     }
 
-    /*
-     * REPORT GENERATION
-     */
+    private void populateNode(SHACLNode node) {
 
-    private void populateNode(ConstrainedSHACLNode node) {
-        
         print("> Populating Node "+node.toString()+"\n");
         indentlevel++;
 
-        /* 
+        /*
          * GENERATE QUERY
          */
-         
-         var query = generateQuery(node);
-         
 
-        /* 
+        var query = generateQuery(node);
+
+
+        /*
          * EXECUTE QUERY
          */
 
         print("> Running query.");
-        long startTime = System.nanoTime();
         var results       = executeQuery(query);
-        
 
+        switch (node) {
+            case PShapeNode pnode:
+                return;
+
+            case ConstraintNode cnode:
+                handleInMemoryConstraint(cnode, results);
+                break;
+
+            default:
+                throw new InternalValidationException("Cant populate this node directly "+node.toString());
+        }
+
+        if (node instanceof PShapeNode) {
+            // We can return, since there is no in memory computation necessary.
+            // Iff the node is PSHAPENode, there should be no constraints or only engine constraints.
+            // Otherwise there would be children and popoulateNode would not get called on it.
+            return;
+        }
+
+
+        indentlevel--;
+
+    }
+
+    private void handleInMemoryConstraint(ConstraintNode node, List<Binding> results ) {
 
         // Initiate strem for Bindingfilters
         var resultsStream = results.stream();
 
-        
-        /* 
+
+        /*
         * APPLY BINDING FILTERS
         */
-        
+
         // Apply Binding filters (Datatype, Value Range, ...)
         print("> Applying BindingFilters.");
         for (var filter : node.getBindingFilters()) {
             resultsStream = filter.apply(resultsStream);
         }
-        
+
         // Collect stream for hashmaps
         var filteredBindings = resultsStream.toList();
 
-        
-        /* 
+
+        /*
         * CONVERT BINDINGS TO LIST
         */
-        
 
         var bindingsListed = getBindingsListed(filteredBindings, node);
 
-
-
-
         if (node.retain) {
             var map = new HashMap<List<Node>, Set<Node>>();
-        
-            var varHir = genVarHirarchy(node);
+
+            var varHir = Util.genVarHirarchy(node, this);
 
             for (var b:bindingsListed) {
-                
+
                 // [a,b,c,d] => [a, b, c] -> d
-                
+
                 var sublist = b.subList(0, varHir.size()-2);
                 var l = map.get(sublist);
 
@@ -979,58 +991,33 @@ public class Validation {
                     l = new HashSet<Node>();
                     map.put(sublist, l);
                 }
-                
+
                 l.add(b.get(varHir.size()-1));
             }
             node.retained = map;
         }
 
-
-        
-
-        /* 
+        /*
          * COUNT FOR CARDINALITY CONSTRAINTS
          */
 
         bindingsListed = filterCardinality(bindingsListed, node);
-        
-        /* 
-         * CONVERT TO FIRST LEVEL MAPPING: [a,b,c,d] => [a, b, c] -> d
-         */
-       
-        /* var map = new HashMap<List<Node>, Set<Node>>();
-        
-        var varHir = genVarHirarchy(node);
 
-        for (var b:bindingsListed) {
-            
-            // [a,b,c,d] => [a, b, c] -> d
-            
-            var sublist = b.subList(0, varHir.size()-1);
-            var l = map.get(sublist);
-
-            if (l == null) {
-                l = new HashSet<Node>();
-                map.put(sublist, l);
-            }
-            
-            l.add(b.get(varHir.size()-1));
-        } */
 
         node.validBindings = bindingsListed;
-        
+
         indentlevel--;
 
     }
 
-    private Set<List<Node>> filterCardinality(Set<List<Node>> bindingsListed, ConstrainedSHACLNode node) {
-        
+    private Set<List<Node>> filterCardinality(Set<List<Node>> bindingsListed, ConstraintNode node) {
+
         if (bindingsListed.size() == 0) return bindingsListed;
-        
+
         var numVars   = bindingsListed.iterator().next().size();
 
-        
-        /* 
+
+        /*
          * APPLY CARDINALITY LOGIC
          */
         MaxCount maxc2 = null;
@@ -1065,11 +1052,11 @@ public class Validation {
             }
 
             return rightAmount? bindingsListed : new HashSet<List<Node>>();
-            
+
         }
 
         if (minc == null && maxc == null) {
-            
+
             var bMeta = new HashSet<List<Node>>();
 
             for (var b:bindingsListed) {
@@ -1080,18 +1067,18 @@ public class Validation {
             return bMeta;
 
 
-            
+
 
         };
 
-        /* 
+        /*
          * GENERATE COUNTMAP
          */
-        
+
         Map<List<Node>, Integer> countmap = new HashMap<>();
 
         for (var b:bindingsListed) {
-            
+
             var sublist   = b.subList(0, numVars-1);
             var count     = countmap.get(sublist);
             if (count == null) {
@@ -1100,7 +1087,7 @@ public class Validation {
             countmap.put(sublist, count + 1);
         }
 
-        /* 
+        /*
          * ONLY MAX
          */
 
@@ -1121,22 +1108,22 @@ public class Validation {
             for (var b:node.getBaseBindings()) {
                 baseBindingsMeta.add(b.subList(0, numVars-1));
             }
-            
+
             // Remove all mentioned bindings with higher count
             for (var b:cardinalBindings) {
                 var count     = countmap.get(b);
                 if (count > maxc.getMaxCount()) cardinalBindings.remove(b);
             }
 
-            
+
             return baseBindingsMeta;
 
 
-            
+
 
         }
 
-        /* 
+        /*
          * MIN FILTERING
          */
         if (minc != null) {
@@ -1149,9 +1136,9 @@ public class Validation {
             }
         }
 
-        
 
-        /* 
+
+        /*
          * MAX FILTERING
          */
         if (maxc != null) {
@@ -1163,14 +1150,15 @@ public class Validation {
                 if (count > maxc.getMaxCount()) cardinalBindings.remove(sublist);
             }
         }
-        
+
         return cardinalBindings;
     }
 
     private Set<List<Node>> getBindingsListed(List<Binding> filteredBindings, SHACLNode node) {
-        long startTime2 = System.nanoTime();
 
-        var varHir = genVarHirarchy(node);
+
+        var varHir = Util.genVarHirarchy(node, this);
+        long startTime2 = System.nanoTime();
 
         Set<List<Node>> o = filteredBindings.stream()
             .map(b->{
@@ -1180,38 +1168,28 @@ public class Validation {
                 }
                 return l;
             }).collect(Collectors.toSet());
-        
+
         long endTime2 = System.nanoTime();
         long duration2 = (endTime2 - startTime2);
-        
+
         print("> Generated Listviews in "+duration2/1000000 +"ms.");
         return o;
-    }
+}
 
-    private List<String> genVarHirarchy(SHACLNode node) {
-        List<String> varHirachyIM = node.getLineage()
-            .stream()
-            .filter(ancestor -> ancestor instanceof PShapeNode)
-            .map(ancestor->ancestor.getBindingVar())
-            .toList();
-
-        var varHirachy = new ArrayList<>(varHirachyIM);
-        // Add the base target var to the hirachy as top level
-        varHirachy.add(focusVar);
-
-        return varHirachy;
-    }
+    /*
+     * REPORT GENERATION
+     */
 
     private HashMap<String, HashMap<Node, List<Node>>> buildHashes(List<Binding> filteredBindings, SHACLNode node) {
-        
-        
-        /* 
+
+
+        /*
          * GENERATE VAR HIRARCHY
          */
-        var varHirachy = genVarHirarchy(node);
-        
-        
-        /* 
+        var varHirachy = Util.genVarHirarchy(node, this);
+
+
+        /*
          * INIT EMPTY HASHMAP PER VAR
          */
 
@@ -1232,7 +1210,7 @@ public class Validation {
                 if (bVar.equals(varHirachy.get(varHirachy.size()-1))) return;
                 // Get successor variable
                 var prevVar = varHirachy.get(varHirachy.indexOf(bVar)+1);
-                
+
                 // Get HashMap for this variable
                 var bMap = hashes.get(bVar);
 
@@ -1244,8 +1222,8 @@ public class Validation {
                         // Get value of succesor var in this binding
                         Node valueV2 = b.get(prevVar);
 
-                        var prevList = bMap.get(valueV1); 
-                        
+                        var prevList = bMap.get(valueV1);
+
                         // If there are no previous successors, create new list and link
                         if (prevList == null) {
                             prevList = new ArrayList<Node>();
@@ -1254,7 +1232,7 @@ public class Validation {
 
                         // Finally, add value of successor var to list of successors.
                         prevList.add(valueV2);
-                                   
+
                     });
             });
 
@@ -1262,31 +1240,18 @@ public class Validation {
     }
 
     private String generateReportEntry(ValidationResult res) {
-        
+
         String s = "";
 
         s += res.isValid() ? "✅ " : "❌ ";
-        s += wrap(res.getAtom().getURI()) + ":\n";
-        s += drawTreeNode(tree, res, 1);
-
-        return s;
-    }
-
-    private String drawTreeNode(SHACLNode node, ValidationResult res, int indentlevel) {
-        var valid = res.getValidatingNodes().contains(node);
-        var s = indent(indentlevel, "┗━");
-        s += valid ? "✅━" : "❌━";
-        s += node.getReportString();
-        s += node.getChildren()
-                .stream()
-                .map((childNode) -> drawTreeNode(childNode, res, indentlevel + 1))
-                .reduce("", (acc, str) -> acc + "\n" + str);
+        s += Util.wrap(res.getAtom().getURI()) + ":\n";
+        s += Util.drawTreeNode(tree, res, 1);
 
         return s;
     }
 
     public void saveReport(String file) {
-        
+
         print("Generating report.");
 
         // Generate stats
@@ -1310,8 +1275,6 @@ public class Validation {
 
     }
 
-    // TODO Add JSON reports
-
     /*
      * HELPER FUNCTIONS
      */
@@ -1319,7 +1282,7 @@ public class Validation {
     /**
      * Executes a SPARQL query against the SPARQL endpoint and filters the results
      * based on constraints.
-     * 
+     *
      * @param query The SPARQL query to execute.
      * @return The filtered query results.
      */
@@ -1329,42 +1292,19 @@ public class Validation {
 
         print("\n------------------- Running the following query: ------------------------");
         print(sparql);
-        
+
         long startTime = System.nanoTime();
         var bindings = endpoint.query(sparql).select().stream().collect(Collectors.toList());
         long endTime = System.nanoTime();
         long duration = (endTime - startTime);
-        
+
         print("----- Received "+bindings.size()+" rows in "+duration/1000000 +"ms. ------\n\n");
         indentlevel--;
         return bindings;
     }
 
     /**
-     * Just concatenates the triple into a sparql statement ended with a dot.
-     * TODO is it a statement?
-     * 
-     * @param sub
-     * @param pred
-     * @param obj
-     * @return
-     */
-    public static String asTriple(String sub, String pred, String obj) {
-        return sub + " " + pred + " " + obj + ".";
-    }
-
-    /**
-     * Wraps the string with '<' and '>'
-     * 
-     * @param toWrap
-     * @return
-     */
-    public static String wrap(String toWrap) {
-        return "<" + toWrap + ">";
-    }
-
-    /**
-     * 
+     *
      * @param node
      * @param c
      * @param s
@@ -1377,42 +1317,11 @@ public class Validation {
         return node;
     }
 
-    /**
-     * Gets the first constraint in CONSTRAINTS that is of class KLASSE
-     * 
-     * @param constraints
-     * @param klasse
-     * @return
-     */
-    private Optional<Constraint> get(HashSet<Constraint> constraints, Class klasse) {
-        return constraints
-                .stream()
-                .filter((c) -> klasse.isInstance(c))
-                .findFirst();
-    }
-
-    /**
-     * Returns level-amount tabs
-     * 
-     * @param level the amount of tabs
-     * @return intendation as a string
-     */
-    private String indent(int level, String toIndent) {
-        var s = " ";
-        for (int i = 0; i < level; i++) {
-            s += "   ";
-        }
-        return s + toIndent;
-    }
-
     private void print(String s){
         for (var line:s.split("\n")){
-
-            System.out.println(indent(indentlevel, line));
+            System.out.println(Util.indent(indentlevel, line));
         }
     }
-
-
 
     private void print(Object o){
         print(o.toString());

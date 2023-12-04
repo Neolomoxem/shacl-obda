@@ -11,39 +11,28 @@ import org.apache.jena.graph.Node;
 import org.apache.jena.shacl.parser.Constraint;
 import org.apache.jena.shacl.parser.Shape;
 
-import ifis.ValidationException;
+import ifis.exception.ValidationException;
 
 public abstract class SHACLNode {
 
-    protected final ArrayList<SHACLNode> _children;
-
-
-    
-
     public Set<List<Node>> validBindings = new HashSet<List<Node>>();
-
-    protected Set<List<Node>> baseBindings = null;
-
-    protected Set<Node> validTargets = null;
-
     public boolean retain = false;
     public HashMap<List<Node>, Set<Node>> retained;
 
-    
-
-    public void setBaseBindings(Set<List<Node>> baseBindings) {
-        this.baseBindings = baseBindings;
-    }
-
-
+    protected final ArrayList<SHACLNode> _children;
+    protected final Shape shape;
+    protected Set<List<Node>> baseBindings = null;
+    protected Set<Node> validTargets = null;
     protected SHACLNode parent;
-
     // List of all parents up to the root, starts with the direct parent
     // Gets filled in if a query is ever generated for this SHACLNode
     protected List<SHACLNode> lineage;
 
-    protected final Shape shape;
     private boolean populated;
+
+    public void setBaseBindings(Set<List<Node>> baseBindings) {
+        this.baseBindings = baseBindings;
+    }
 
     /* 
      * Takes a Set of valid bindings (lists of nodes) and creates a mapping of lower varcount>: [a,b,c,d] => [a, b, c] -> [d,...]
@@ -100,7 +89,7 @@ public abstract class SHACLNode {
         
     }
 
-    
+
     public boolean isPopulated() {
         return populated;
     }
@@ -129,14 +118,10 @@ public abstract class SHACLNode {
         this.lineage = lineage;
     }
 
-    
     // In order to construct normalized PropertyNodes we have to pass on constraints from parent shapes.
-    
     public SHACLNode getParent() {
         return parent;
     }
-
-
 
     public String getBindingVar() {
         // Walk up the tree until you find a bindingvar in a PShapeNode
@@ -189,12 +174,8 @@ public abstract class SHACLNode {
         return shape;
     }
 
-
     public abstract String getReportString();
 
-    public ArrayList<SHACLNode> get_children() {
-        return _children;
-    }
 
     public Set<List<Node>> getValidBindings() {
         return validBindings;

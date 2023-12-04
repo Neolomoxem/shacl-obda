@@ -36,10 +36,14 @@ public final class App {
 
         for (var shape : shapes) {
 
+
             var val = new Validation(shape, bob);
     
             // Execute Validation on Shapes
+            var before = System.nanoTime();
             val.exec();
+            var after = System.nanoTime();
+            System.out.println("Validation took: "+ String.valueOf(after-before) +" nanoseconds");
 
             val.saveReport("report.log");
         }

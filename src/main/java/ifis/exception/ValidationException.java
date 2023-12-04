@@ -1,4 +1,4 @@
-package ifis;
+package ifis.exception;
 
 public class ValidationException extends RuntimeException{
 

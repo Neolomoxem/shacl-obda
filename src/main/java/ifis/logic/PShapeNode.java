@@ -44,12 +44,11 @@ public class PShapeNode extends SHACLNode {
         this.path = p;
     }
 
-    
-
     @Override
     protected void constructFromChildren() {
 
-        
+        // If there are no children, the validBindings have been populated per Query.
+        if (_children.size() == 0) return;   
 
         if (_children.get(0).validBindings.size() == 0) return;
         // If this is the end highest propertyshape, were finished
@@ -90,13 +89,10 @@ public class PShapeNode extends SHACLNode {
     /* 
      * GETTERS & SETTERS
      */
-
-
     public Path getPath() {
         return path;
     }
 
-    
     @Override
     public String getBindingVar() {
         return bindingVar;
