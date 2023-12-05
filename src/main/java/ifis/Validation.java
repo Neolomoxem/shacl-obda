@@ -572,93 +572,36 @@ public class Validation {
                 */
             case StrMinLengthConstraint strMinLengthConstraint -> {
                 var minLen = strMinLengthConstraint.getMinLength();
-                cnode.addBindingFilter((s) -> s.filter((b) -> {
-                    var val = b.get(bindingVar).getLiteralValue();
-                    return val instanceof String && ((String) val).length() >= minLen;
-                }));
+                subQuery.addFilter("STRLEN(?"+bindingVar+") <= "+minLen);
+
             }
             case StrMaxLengthConstraint strMaxLengthConstraint -> {
                 var maxLen = strMaxLengthConstraint.getMaxLength();
-                cnode.addBindingFilter((s) -> s.filter((b) -> {
-                    var val = b.get(bindingVar).getLiteralValue();
-                    return val instanceof String && ((String) val).length() >= maxLen;
-                }));
+                subQuery.addFilter("STRLEN(?"+bindingVar+") <= "+maxLen);
             }
             case PatternConstraint patternConstraint -> {
-                var patternString = patternConstraint.getPattern();
-                Pattern pattern = Pattern.compile(patternString);
-                cnode.addBindingFilter((s) -> s.filter((b) -> {
-                    var val = b.get(bindingVar).getLiteralValue();
-                    return val instanceof String && pattern.matcher((String) val).matches();
-                }));
+                subQuery.addFilter("REGEX(?"+bindingVar+", \""+patternConstraint.getPattern()+"\")");
             }
             /*
                 * VALUE RANGE CONSTRAINTS
                 */
 
             case ValueMinExclusiveConstraint minExC -> {
-
                 var minVal = minExC.getNodeValue().getFloat();
-                print(minVal);
-                cnode.addBindingFilter((s) -> s.filter((b) -> {
-                    if (!b.get(bindingVar).isLiteral())
-                        return false;
-                    try {
-                        var val = Double.parseDouble(b.get(bindingVar).getLiteralValue().toString());
-                        return val > minVal;
-                    } catch (Exception e) {
-                        return false;
-                    }
+                subQuery.addFilter("?"+bindingVar+" > " + minVal);
 
-                }));
             }
             case ValueMinInclusiveConstraint minInC -> {
-
                 var minVal = minInC.getNodeValue().getFloat();
-                print(minVal);
-                cnode.addBindingFilter((s) -> s.filter((b) -> {
-                    if (!b.get(bindingVar).isLiteral())
-                        return false;
-                    try {
-                        var val = Double.parseDouble(b.get(bindingVar).getLiteralValue().toString());
-                        return val >= minVal;
-                    } catch (Exception e) {
-                        return false;
-                    }
-
-                }));
+                subQuery.addFilter("?"+bindingVar+" >= " + minVal);
             }
             case ValueMaxExclusiveConstraint maxExC -> {
-
                 var maxVal = maxExC.getNodeValue().getFloat();
-                print(maxVal);
-                cnode.addBindingFilter((s) -> s.filter((b) -> {
-                    if (!b.get(bindingVar).isLiteral())
-                        return false;
-                    try {
-                        var val = Double.parseDouble(b.get(bindingVar).getLiteralValue().toString());
-                        return val < maxVal;
-                    } catch (Exception e) {
-                        return false;
-                    }
-
-                }));
+                subQuery.addFilter("?"+bindingVar+" < " + maxVal);
             }
             case ValueMaxInclusiveConstraint maxInC -> {
-
                 var maxVal = maxInC.getNodeValue().getFloat();
-                print(maxVal);
-                cnode.addBindingFilter((s) -> s.filter((b) -> {
-                    if (!b.get(bindingVar).isLiteral())
-                        return false;
-                    try {
-                        var val = Double.parseDouble(b.get(bindingVar).getLiteralValue().toString());
-                        return val <= maxVal;
-                    } catch (Exception e) {
-                        return false;
-                    }
-
-                }));
+                subQuery.addFilter("?"+bindingVar+" <= " + maxVal);
             }
 
             /*
@@ -676,9 +619,7 @@ public class Validation {
 
             case DatatypeConstraint datatypeConstraint -> {
                 var datatype = datatypeConstraint.getDatatypeURI();
-                cnode.addBindingFilter(
-                        (s) -> s.filter(
-                                (binding) -> binding.get(bindingVar).getLiteralDatatypeURI().equals(datatype)));
+                subQuery.addFilter("DATATYPE(?"+bindingVar+") = "+Util.wrap(datatype));
             }
 
             /*

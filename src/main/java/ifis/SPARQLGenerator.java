@@ -92,9 +92,10 @@ public class SPARQLGenerator {
     }
 
     class Query {
-        public final List<String> triples;
-        public final List<String> parts;
-        public final List<String> filters;
+        private final List<String> triples;
+        private final List<String> parts;
+        private final List<String> filters;
+        private final List<String> havings;
 
 
         private final ArrayList<Query> subQueries;
@@ -103,11 +104,11 @@ public class SPARQLGenerator {
          * @param sg SPARQLGenerator that gets assigned when getting a new Query from it
          */
         public Query(SPARQLGenerator sg) {
-            triples = new ArrayList<String>();
-            filters = new ArrayList<String>();
-            parts = new ArrayList<String>();
-
-            subQueries = new ArrayList<>();
+            triples     = new ArrayList<>();
+            filters     = new ArrayList<>();
+            parts       = new ArrayList<>();
+            havings     = new ArrayList<>();
+            subQueries  = new ArrayList<>();
         }
 
         /* Parts are preformatted Strings that just get added into the query*/
@@ -120,14 +121,19 @@ public class SPARQLGenerator {
             return this;
         }
 
-        public Query addFilter(String var, String filter) {
-            // TODO add filter string construction
+        public Query addFilter(String filter) {
+            this.filters.add(filter);
+            return this;
+        }
+
+        public Query addHaving(String having) {
+            havings.add(having);
             return this;
         }
         
 
         public String getSparqlString(String vars) {
-            var sparql = "SELECT DISTINCT "+vars+" WHERE {";
+            var sparql = "SELECT DISTINCT "+ vars +" WHERE {";
                 
             // Add preformatted 'parts'
             sparql += parts
@@ -136,8 +142,8 @@ public class SPARQLGenerator {
 
             // Add triples
             sparql += triples
-                .stream()
-                .reduce("", (acc, triple) -> acc + "\n" + triple + ".");
+                        .stream()
+                        .reduce("", (acc, triple) -> acc + "\n" + triple + ".");
 
 
             // Add subqueries
@@ -146,7 +152,14 @@ public class SPARQLGenerator {
                         .map((subQuery) -> "\n{\n" + subQuery.getSparqlString("*") + "\n}")
                         .reduce("", (subQuery, acc) -> acc + "\n" + subQuery);
 
-            // TODO add filter string construction
+            // add filter
+            sparql += filters
+                        .stream()
+                        .map((filter) -> "FILTER("+filter+").")
+                        .reduce("", (subQuery, acc) -> acc + "\n" + subQuery);
+            
+            
+
             sparql += "\n}";
             
             
