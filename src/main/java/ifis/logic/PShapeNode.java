@@ -7,6 +7,7 @@ import org.apache.jena.graph.Node;
 import org.apache.jena.shacl.parser.Constraint;
 import org.apache.jena.shacl.parser.PropertyShape;
 import org.apache.jena.sparql.path.Path;
+import ifis.SPARQLGenerator.Query;
 
 /* A PathNode is esentially a PropertyShape. It represents all the Valuenodes of a PShape and how to reach them */
 public class PShapeNode extends SHACLNode {
@@ -16,7 +17,16 @@ public class PShapeNode extends SHACLNode {
     public String classc = null;
     public boolean elevate = true;
     private HashSet<Constraint> engineConstraints = new HashSet<>();
+    private Query countQuery;
     
+
+    public Query getCountQuery() {
+        return countQuery;
+    }
+
+    public void setCountQuery(Query countQuery) {
+        this.countQuery = countQuery;
+    }
 
     public PShapeNode(PropertyShape shape, String bindingVar) {
         
@@ -104,6 +114,11 @@ public class PShapeNode extends SHACLNode {
         if (path instanceof StringPath) return " " +  (((StringPath)path).value.replaceAll("urn:absolute/prototyp#", "")) + " ?"+bindingVar; 
         return " " +  ((PropertyShape) shape).getPath().toString().replaceAll("urn:absolute/prototyp#", "") + " ?"+bindingVar;
     }
+
+    @Override 
+    public PShapeNode getPShape() {
+        return this;
+    } 
 
     public HashSet<Constraint> getEngineConstraints() {
         return engineConstraints;

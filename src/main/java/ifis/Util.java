@@ -3,12 +3,41 @@ package ifis;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang3.NotImplementedException;
+import org.apache.jena.shacl.engine.Target;
+
 import ifis.logic.PShapeNode;
 import ifis.logic.SHACLNode;
 
 public final class Util {
 
+    public static String triple(String s, String p, String o) {
+        return s + " " + p + " " + o + " ."; 
+    }
+    
+    public static String generateTargetString(Target target, String focusVar) {
 
+        return switch (target.getTargetType()) {
+            case targetClass:
+                yield triple("?"+focusVar, "a", wrap(target.getObject().toString()));
+            
+            case targetSubjectsOf:
+                yield triple("?"+focusVar, wrap(target.getObject().toString()), "?ignore");
+
+            case targetObjectsOf:
+                yield triple("?ignore", wrap(target.getObject().toString()), "?"+focusVar);
+
+            case implicitClass:
+                yield triple("?"+focusVar, "a", wrap(target.getObject().toString()));
+
+            case targetNode:
+                // TODO add targetNode target
+            case targetExtension:
+                // TODO add targetExtension target
+                throw new NotImplementedException("Targettype '"+target.getTargetType().toString()+"' is not supported yet");
+            
+        };
+    }
 
 
     public static List<String> genVarHirarchy(SHACLNode node, Validation val) {

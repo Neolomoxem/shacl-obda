@@ -11,4 +11,18 @@ SELECT DISTINCT ?X, ?Y, ?Z, ?W WHERE {
     ?x a 
     
 
-}
+
+};
+
+ SELECT DISTINCT * () {
+    ?target a :Gitterkonstante_a;
+            ^:hat_Parameter ?a .
+    
+    ?a  a :MSM-Material;
+    OPTIONAL {
+        ?a :hat_Parameter ?b;
+        ?b a :Gitterkonstante_b;
+        FILTER(?b == 12)
+    }
+    BIND (EXISTS(?a :hat_Parameter ?b) AS ?exists)
+ } GROUP BY ?target ?a

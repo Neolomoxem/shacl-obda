@@ -1,7 +1,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix sh:  <http://www.w3.org/ns/shacl#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>. 
-@prefix : <urn:absolute/prototyp#> . 
+@prefix :	 <urn:absolute/prototyp#> . 
 
 # Jeder Parameter braucht einen Namen
 
@@ -14,5 +14,6 @@
 		sh:property [
 			sh:path :hat_Parameter;
 			sh:class :Gitterkonstante_b;
+			sh:hasValue 12;
 		]
 	] .

@@ -129,6 +129,11 @@ public abstract class SHACLNode {
         return parent.getBindingVar();
     }
 
+    public PShapeNode getPShape() {
+        if (parent == null) return null;
+        return parent.getPShape();
+    }
+
     public SHACLNode(Shape shape) {
         this.shape = shape;
 

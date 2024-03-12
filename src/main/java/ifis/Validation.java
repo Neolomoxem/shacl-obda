@@ -1,5 +1,6 @@
 package ifis;
 
+
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -8,9 +9,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Set;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import org.apache.jena.ext.com.google.common.collect.Multimap;
@@ -49,7 +48,6 @@ import org.apache.jena.sparql.path.P_Inverse;
 import org.apache.jena.sparql.path.P_Link;
 import org.apache.jena.sparql.path.P_Seq;
 import org.apache.jena.sparql.path.Path;
-import org.apache.jena.sparql.pfunction.library.alt;
 
 import ifis.SPARQLGenerator.Query;
 import ifis.exception.InternalValidationException;
@@ -63,6 +61,10 @@ import ifis.logic.PShapeNode;
 import ifis.logic.SHACLNode;
 import ifis.logic.StringPath;
 import ifis.logic.XoneNode;
+
+import static java.lang.StringTemplate.STR;
+import static org.fusesource.jansi.Ansi.*;
+import static org.fusesource.jansi.Ansi.Color.*;
 
 public class Validation {
     private final Shape shape;                      // Input
@@ -197,15 +199,25 @@ public class Validation {
             tree = shapeToTree(shape);
         }
 
-        tree.setParent(null);
+        // Right now, this seems to be the most elegant way of doing this.
+        insertEmptyConstraintNodes(tree);
+    }
+
+    private void insertEmptyConstraintNodes(SHACLNode node) {
+        var hasNoChildren = node.getChildren().size() == 0;
+        var isConstraintNode = node instanceof ConstraintNode;
+        
+        if (hasNoChildren && !isConstraintNode) node.addChild(new ConstraintNode(null));
+
+        for (var child : node.getChildren()) insertEmptyConstraintNodes(child);
     }
 
     private SHACLNode shapeToTree(Shape shape) {
 
         return switch (shape) {
 
-            case PropertyShape pshape   -> { yield pShapeToTree(pshape);}
-            case NodeShape nshape       -> { yield nodeShapeToTree(nshape);}
+            case PropertyShape pshape   -> pShapeToTree(pshape);
+            case NodeShape nshape       -> nodeShapeToTree(nshape);
 
             default -> throw new ValidationException(
                     "There is a new kind of shape. If you see this error you are most likely from the future. Please note that this tool was written in 2023, back when we only knew NodeShapes and PropertyShapes! Can you imagine?");
@@ -215,81 +227,80 @@ public class Validation {
 
     private PShapeNode pShapeToTree(PropertyShape pshape) {
         var pnode = new PShapeNode(pshape, sparqlGenerator.getNewVariable());
-                var cnode = new ConstraintNode(pshape);
+        var cnode = new ConstraintNode(pshape);
 
-                for (var comp : pshape.getConstraints()) {
-                    switch (comp) {
-                        /*
-                         * Add junctive Constraints as children
-                         */
-                        case ConstraintOp opcomp -> {
-                            pnode.addChild(createOpNode(opcomp, pshape));
-                        }
-
-                        /*
-                         * ENGINE CONSTRAINTS
-                         */
-                        case ClassConstraint c -> {
-                            pnode.addEngineConstraint(c);
-                        }
-
-                        /*
-                         * Add direct constraints to a child ConstraintNode
-                         */
-
-
-                        case ConstraintComponentSPARQL custom -> {
-                            var eqnode = new EqualNode(shape);
-                            getParams(custom, eqnode);
-
-                            var c1 = new ConstraintNode(shape);
-                            var p1 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Parameter>"), sparqlGenerator.getNewVariable());
-                            var p11 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Wert>"), sparqlGenerator.getNewVariable());
-
-                            p1.classc = Util.wrap(eqnode.param1.getURI());
-                            c1.retain = true;
-
-
-                            p1.addChild(p11);
-                            p11.addChild(c1);
-                            eqnode.addChild(p1);
-
-                            var c2 = new ConstraintNode(shape);
-                            var p2 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Parameter>"), sparqlGenerator.getNewVariable());
-                            var p22 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Wert>"), sparqlGenerator.getNewVariable());
-
-
-                            p2.classc = Util.wrap(eqnode.param2.getURI());
-                            c2.retain = true;
-
-
-                            p2.addChild(p22);
-                            p22.addChild(c2);
-                            eqnode.addChild(p2);
-
-                            pnode.addChild(eqnode);
-                        }
-
-
-
-                        default -> {
-                            cnode.addConstraint(comp);
-                        }
-                    }
+        for (var c : pshape.getConstraints()) {
+            switch (c) {
+                /*
+                    * Add junctive Constraints as children
+                    */
+                case ConstraintOp opcomp -> {
+                    pnode.addChild(createOpNode(opcomp, pshape));
                 }
 
-                // If there were no direct constraints, we dont have to add the constraintnode
-                if (cnode.getConstraints().size() > 0) {
-                    pnode.addChild(cnode);
+                /*
+                    * ENGINE CONSTRAINTS
+                    */
+                case ClassConstraint cc -> {
+                    pnode.addEngineConstraint(cc);
                 }
 
-                for (var subShape : pshape.getPropertyShapes()) {
-                    // For all following propertyshapes
-                    // add them as children to the current PropertyNode
-                    pnode.addChild(shapeToTree(subShape));
-                }
+                case ConstraintComponentSPARQL custom -> {
+                    var eqnode = new EqualNode(shape);
+                    getParams(custom, eqnode);
 
-                return pnode;
+                    var c1 = new ConstraintNode(shape);
+                    var p1 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Parameter>"), sparqlGenerator.getNewVariable());
+                    var p11 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Wert>"), sparqlGenerator.getNewVariable());
+
+                    p1.classc = Util.wrap(eqnode.param1.getURI());
+                    c1.retain = true;
+
+
+                    p1.addChild(p11);
+                    p11.addChild(c1);
+                    eqnode.addChild(p1);
+
+                    var c2 = new ConstraintNode(shape);
+                    var p2 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Parameter>"), sparqlGenerator.getNewVariable());
+                    var p22 = new PShapeNode(new StringPath("<urn:absolute/prototyp#hat_Wert>"), sparqlGenerator.getNewVariable());
+
+
+                    p2.classc = Util.wrap(eqnode.param2.getURI());
+                    c2.retain = true;
+
+
+                    p2.addChild(p22);
+                    p22.addChild(c2);
+                    eqnode.addChild(p2);
+
+                    pnode.addChild(eqnode);
+                }
+                
+                /*
+                * Add direct constraints to a child ConstraintNode
+                */
+
+                
+                
+                default -> {
+                    cnode.addConstraint(c);
+                }
+            }
+        }
+
+        // If there were no direct constraints, we dont have to add the constraintnode
+        if (cnode.getConstraints().size() > 0) {
+            pnode.addChild(cnode);
+        }
+
+        for (var subShape : pshape.getPropertyShapes()) {
+            // For all following propertyshapes
+            // add them as children to the current PropertyNode
+            pnode.addChild(shapeToTree(subShape));
+        }
+
+        return pnode;
     }
 
     private SHACLNode nodeShapeToTree(NodeShape nshape) {
@@ -396,36 +407,173 @@ public class Validation {
      */
 
     /* We populate the leaves of the tree. */
+    /* Recursive */
     private void populateTree(SHACLNode node) {
-        var hasNoChildren = node.getChildren().size()  == 0;
+        var hasNoChildren = node.getChildren().size() == 0;
 
-        if (node instanceof NotNode) {
-            populateBaseBindings((NotNode)node);
-        }
-
+        
+        switch (node) {
+            case PShapeNode pnode:
+                // populatePShape(pnode);
+                break;
+                
+                case ConstraintNode cnode:
+                populateLeaf(cnode);
+                break;
+                
+                case NotNode nnode:
+                break;
+                
+                default: break;
+            }     
+            
+            
+        //  ANCHOR
         if (hasNoChildren) {
-            // Anchor
-            populateNode(node);
-
-        } else {
-            // Recurse for all child nodes.
-            for (var childNode:node.getChildren()) {
-                populateTree(childNode);
-            }
+            // populateLeaf(node);  
+            return;
         }
-
+        // Recurse for all child nodes.
+        for (var childNode:node.getChildren()) {
+            populateTree(childNode);
+        }
     }
 
     /*
      * QUERY GENERATION
      */
 
+    private void populateLeaf(ConstraintNode node) {
+
+        var query = generateValidQuery(node);
+        
+        executeQuery(query);
+        
+
+    }
+
+    private Query generateValidQuery(ConstraintNode node) {
+        var query = sparqlGenerator.newQuery();
+        
+        addQueryPath(node, query);
+        
+        /* Add all the constraint logic */
+        for (var c:node.getConstraints()) {
+            addSPARQLForConstraint(c, node, query);
+        }
+
+        // BIND ?exists
+        var path = generatePath(node.getPShape().getPath());
+        var inmostVar = query.getPathVars().get(query.getPathVars().size() - 1);
+        var upperVar = query.getPathVars().get(query.getPathVars().size() - 2);
+        query.addPart(STR."BIND(EXISTS(?\{upperVar} \{path} ?\{inmostVar}) AS ?exists) .");
+
+
+        // Create a String of all path Vars except the last one
+        String pathVarProjection = "";
+        for (var v:query.getPathVars().subList(0, query.getPathVars().size()-1)) {
+            pathVarProjection += "?" + v + " ";
+        }
+
+
+        query.setProjection(STR."?exists \{pathVarProjection} (COUNT(?\{query.getInmostVar()}) AS ?count)");
+        query.addOuterPart(STR."GROUP BY \{pathVarProjection}");
+
+        return query;   
+
+    }
+
+    private void populatePShape(PShapeNode node) {
+
+        var query = generateCountQuery(node);
+        var bindings = executeQuery(query);
+        var x = transformToPropertyMap(bindings);
+        
+    }
+
+
+
+    private Map<Node, Integer> transformToPropertyMap(List<Binding> bindings) {
+        var map = new HashMap<Node, Integer>();
+        for (var b : bindings) {
+            map.put(b.get("FOCUS"), (Integer) b.get("VALUE").getLiteralValue());
+        }
+
+
+        return map;
+    }
+
+    private Query generateCountQuery(PShapeNode node) {
+        var query = sparqlGenerator.newQuery();
+        
+        addQueryPath(node, query);
+
+        var bindingVar = node.getBindingVar();
+        var parentVar = node.getParent() != null ? node.getParent().getBindingVar() : "targets";
+        
+        // query.setProjection("?" + parentVar + " COUNT(?" +bindingVar+")");
+        query.setProjection(STR."(?\{parentVar} AS ?FOCUS) (COUNT(?\{bindingVar}) AS ?VALUE)");
+        query.addOuterPart(STR."GROUP BY ?\{parentVar}");
+        
+        return query;
+    }
+
     private void populateBaseBindings(SHACLNode node) {
         var query = generateQuery(node);
 
         var bindings = getBindingsListed(executeQuery(query).stream().collect(Collectors.toList()), node);
-
+        
         node.setBaseBindings(bindings);
+    }
+
+    private void addQueryPath(SHACLNode node, Query query) {
+        var lineage = node.getLineage();
+
+        for (var target:this.shape.getTargets()) {
+            query.addPart(Util.generateTargetString(target, focusVar));
+        }
+
+        
+        lineage.add(0, node);
+        
+        var parentPShape = node.getPShape();
+
+        var from = focusVar;
+        query.pushPathVar(from);
+        for (int ancestorIndex = lineage.size()-1; ancestorIndex >= 0; ancestorIndex-- ) {
+            var ancestor = lineage.get(ancestorIndex);
+
+            if (ancestor == parentPShape) {
+                var pnode = (PShapeNode) ancestor;
+                // Add path from previous to new value nodes
+                query.addOptionalPart(Util.asTriple("?"+from, generatePath(pnode.getPath()),"?"+pnode.getBindingVar()));
+                from = pnode.getBindingVar();
+                query.pushPathVar(from);
+                
+
+                // Engineconstraints
+                for (var engineconstraint : pnode.getEngineConstraints()) {
+                    query.addOptionalPart(getSPARQLForEngineConstraint(engineconstraint, pnode, query));
+                }
+
+                continue;
+            }
+
+            if (ancestor instanceof PShapeNode) {
+                var pnode = (PShapeNode) ancestor;
+                // Add path from previous to new value nodes
+                query.addTriple("?"+from, generatePath(pnode.getPath()),"?"+pnode.getBindingVar());
+                from = pnode.getBindingVar();
+                query.pushPathVar(from);
+
+                // Engineconstraints
+                for (var engineconstraint : pnode.getEngineConstraints()) {
+                    query.addPart(getSPARQLForEngineConstraint(engineconstraint, pnode, query));
+                }
+            }
+        }
+        query.setInmostVar(from);
+        
     }
 
     /**
@@ -434,6 +582,7 @@ public class Validation {
      * @param node The property node for which to generate the query.
      * @return The generated SPARQL query string.
      */
+    
     private Query generateQuery(SHACLNode node) {
 
         var lineage = node.getLineage();
@@ -445,7 +594,7 @@ public class Validation {
         // For the target-definition
         // TODO this doesnt actually work for more than one Targetdef.
         for (var target:this.shape.getTargets()) {
-            query.addSubQuery(sparqlGenerator.generateTargetQuery(target, focusVar));
+            query.addPart(Util.generateTargetString(target, focusVar));
         }
 
 
@@ -467,7 +616,7 @@ public class Validation {
 
                     // Engineconstraints
                     for (var engineconstraint : pnode.getEngineConstraints()) {
-                        addSPARQLForEngineConstraint(engineconstraint, pnode, query);
+                        getSPARQLForEngineConstraint(engineconstraint, pnode, query);
                     }
                 }
                 case ConstraintNode cnode -> {
@@ -544,17 +693,17 @@ public class Validation {
     }
 
 
-    private void addSPARQLForEngineConstraint(Constraint constraint, PShapeNode node , Query subQuery) {
+    private String getSPARQLForEngineConstraint(Constraint constraint, PShapeNode node , Query subQuery) {
         var bindingVar = node.getBindingVar();
-        switch (constraint) {
+        return switch (constraint) {
             case ClassConstraint classConstraint -> {
-                    subQuery.addTriple("?" + bindingVar, "a", Util.wrap(classConstraint.getExpectedClass().getURI()));
+                    yield Util.asTriple("?" + bindingVar, "a", Util.wrap(classConstraint.getExpectedClass().getURI()));
                 }
             default -> {
                 throw new InternalValidationException("EngineConstraint not supported!");
             }
 
-        }
+        };
     }
 
     private void addSPARQLForConstraint(Constraint c, ConstraintNode cnode, Query subQuery) {
@@ -820,7 +969,9 @@ public class Validation {
         // Fetch all atoms mentioned by the target definiton
         // write query
         // Get targets
-        var targets = executeQuery(sparqlGenerator.generateTargetQuery(shape.getTargets().iterator().next(), focusVar));
+        var q = sparqlGenerator.newQuery();
+        q.addPart(Util.generateTargetString(shape.getTargets().iterator().next(), focusVar));
+        var targets = executeQuery(q);
         System.out.println("Receives %d Targets".formatted(targets.size()));
 
         /*
@@ -847,7 +998,7 @@ public class Validation {
 
     }
 
-    private void populateNode(SHACLNode node) {
+    private void populateNode__old(SHACLNode node) {
 
         print("> Populating Node "+node.toString()+"\n");
         indentlevel++;
@@ -1229,17 +1380,18 @@ public class Validation {
      */
     private List<Binding> executeQuery(Query query) {
         indentlevel++;
-        var sparql = query.getSparqlString("*");
+        var sparql = query.getSparqlString();
 
-        print("\n------------------- Running the following query: ------------------------");
+        print(ansi().bgYellow().a("\n\n------------------- Running the following query: ------------------------"));
         print(sparql);
+        print(ansi().reset());
 
         long startTime = System.nanoTime();
         var bindings = endpoint.query(sparql).select().stream().collect(Collectors.toList());
         long endTime = System.nanoTime();
         long duration = (endTime - startTime);
 
-        print("----- Received "+bindings.size()+" rows in "+duration/1000000 +"ms. ------\n\n");
+        print(ansi().fgGreen().a("\n----- Received "+bindings.size()+" rows in "+duration/1000000 +"ms. ------\n\n").reset());
         indentlevel--;
         return bindings;
     }
