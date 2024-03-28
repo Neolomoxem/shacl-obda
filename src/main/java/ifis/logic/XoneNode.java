@@ -77,13 +77,13 @@ public class XoneNode extends SHACLNode{
         var uniqueMap = new HashMap<List<Node>, Boolean>();
         
         for (var child:_children) {
-            for (var b:child.validBindings) {
+            for (var b:child.validFocus) {
                 var c = uniqueMap.get(b);
                 uniqueMap.put(b, c == null ? true : false);
             }
         }
         
-        this.validBindings = uniqueMap.keySet().stream()
+        this.validFocus = uniqueMap.keySet().stream()
         .filter(b -> uniqueMap.get(b))
         .collect(Collectors.toSet());
 

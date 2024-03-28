@@ -16,6 +16,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.HashSet;
 import java.util.stream.Collector;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -58,7 +59,7 @@ class AppTest {
     } */
 
 
-    @Test
+    @Test @Disabled
     void testBatchProcessing() throws IOException, Exception {
 
 

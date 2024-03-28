@@ -4,6 +4,8 @@ import org.apache.jena.graph.Graph;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.shacl.Shapes;
 import org.apache.jena.sparql.exec.http.QueryExecHTTPBuilder;
+import org.fusesource.jansi.AnsiConsole;
+
 
 /**
  * Hello world!
@@ -17,7 +19,10 @@ public final class App {
      * @param args The arguments of the program.
      */
     public static void main(String[] args) throws Exception{
-    
+
+        // Colored output wrapper
+        AnsiConsole.systemInstall();
+
         String filename = args[0];
         String serviceURL = args[1];
         // String filename = "shapes/test.ttl";
@@ -47,6 +52,8 @@ public final class App {
 
             val.saveReport("report.log");
         }
+
+        AnsiConsole.systemUninstall();
 
     }
 

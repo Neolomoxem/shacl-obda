@@ -1,6 +1,7 @@
 package ifis.logic;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.apache.jena.graph.Node;
 import org.apache.jena.shacl.parser.Shape;
@@ -20,23 +21,27 @@ public class NotNode extends SHACLNode {
     @Override
     protected void constructFromChildren() {
         if (_children.size() != 1) throw new ValidationException("More than one child under a NOT");
-        var childBindings = _children.get(0).validBindings;
+        var childFocus = _children.get(0).validFocus;
 
 
-        if (parent instanceof AndNode && parent._children.size() != 1) {
-            // If the parent is an AndNode we can just mark these nodes as negated and leave it to be parsed
-            this.inverted = true;
-            this.validBindings = childBindings;
-        } else {
+        validFocus =
+            getPShape()
+            .getCountMap()
+            .entrySet()
+            .stream()
+            .parallel()
+            .filter(entry -> {
+                var focus = entry.getKey();
+                var count = entry.getValue();
+            
+                // Focus nodes which have no value nodes are superior
+                if (count == 0) return true;
 
-            // In this case the baseline query has been run
-            for (var b:childBindings) {
-                baseBindings.remove(b);
-            }
+                return !childFocus.contains(focus);
+            })
+            .map(entry -> entry.getKey())
+            .collect(Collectors.toSet());
 
-            validBindings = baseBindings;
-
-        }
 
 
     }
