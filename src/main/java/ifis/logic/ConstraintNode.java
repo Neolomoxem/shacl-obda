@@ -47,7 +47,6 @@ public class ConstraintNode extends SHACLNode {
     // Determines the set of valid Focus by using the parent PShape
     protected void constructFromChildren() {
 
-
         validFocus =
             getPShape()
             .getCountMap()

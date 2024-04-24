@@ -162,6 +162,11 @@ public class SPARQLGenerator {
                     .stream()
                     .reduce("", (acc, part) -> acc + "\n\t" + part);
 
+            sparql += filters
+            .stream()
+            .map((filter) -> "\n\t\tFILTER(" + filter + ").")
+            .reduce("", (subQuery, acc) -> acc + "\n" + subQuery);
+    
             /*
              * // Add subqueries
              * sparql += subQueries
@@ -180,10 +185,7 @@ public class SPARQLGenerator {
                     .reduce("", (acc, part) -> acc + "\n\t\t" + part);
 
             // add filter
-            sparql += filters
-                    .stream()
-                    .map((filter) -> "\n\t\tFILTER(" + filter + ").")
-                    .reduce("", (subQuery, acc) -> acc + "\n" + subQuery);
+
 
             if (optionalParts.size() > 0) {
                 sparql += "\n\t}";

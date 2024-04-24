@@ -50,6 +50,7 @@ import org.apache.jena.shacl.parser.Shape;
 import org.apache.jena.sparql.core.Var;
 import org.apache.jena.sparql.engine.binding.Binding;
 import org.apache.jena.sparql.exec.http.QueryExecHTTPBuilder;
+import org.apache.jena.sparql.function.library.print;
 import org.apache.jena.sparql.path.P_Alt;
 import org.apache.jena.sparql.path.P_Inverse;
 import org.apache.jena.sparql.path.P_Link;
@@ -467,6 +468,7 @@ public class Validation {
 
         var mode = node.getMode();
 
+        print("VALID QUERY");
         if (mode == Mode.COUNTS) {    
             // A query counting the number of valid nodes per focus node gets written
             var query       = generateValidQueryCOUNTS(node);
@@ -508,7 +510,7 @@ public class Validation {
         
         // Write the path of vars from ?targets to this leaf node (focus)
         // with the value node being wrapped in OPTIONAL
-        addQueryPath(node, query);
+        addQueryPath(node, query, false);
         
         // The logic validating constraint components gets added (FILTER statements)
         for (var c:node.getConstraints()) addSPARQLForConstraint(c, node, query);
@@ -536,7 +538,7 @@ public class Validation {
         
         // Write the path of vars from ?targets to this leaf node (focus)
         // with the value node being wrapped in OPTIONAL
-        addQueryPath(node, query);
+        addQueryPath(node, query, false);
         
         // The logic validating constraint components gets added (FILTER statements)
         for (var c:node.getConstraints()) addSPARQLForConstraint(c, node, query);
@@ -561,6 +563,7 @@ public class Validation {
     private void populatePShape(PShapeNode node) {
 
         var query    =     generateCountQuery(node);
+        print("PROPERTY QUERY");
         var bindings =     executeQuery(query);
         var countMap =     Util.getCountMap(node, bindings);
         
@@ -575,7 +578,7 @@ public class Validation {
         
         // Write the path of vars from ?targets to this leaf node (focus)
         // with the value node being wrapped in OPTIONAL
-        addQueryPath(node, query);
+        addQueryPath(node, query, true);
         
         var focusProjection = query.getFocusProjection();
 
@@ -588,7 +591,7 @@ public class Validation {
 
     }
 
-    private void addQueryPath(SHACLNode node, Query query) {
+    private void addQueryPath(SHACLNode node, Query query, boolean useOptional) {
         var lineage = node.getLineage();
 
         for (var target:this.shape.getTargets()) {
@@ -608,14 +611,24 @@ public class Validation {
             if (ancestor == parentPShape) {
                 var pnode = (PShapeNode) ancestor;
                 // Add path from previous to new value nodes
-                query.addOptionalPart(Util.asTriple("?"+from, generatePath(pnode.getPath()),"?"+pnode.getBindingVar()));
+                if (useOptional) {
+                    query.addOptionalPart(Util.asTriple("?"+from, generatePath(pnode.getPath()),"?"+pnode.getBindingVar()));
+                } else {
+                    query.addTriple("?"+from, generatePath(pnode.getPath()),"?"+pnode.getBindingVar());
+
+                }
                 from = pnode.getBindingVar();
                 query.pushPathVar(from);
                 
 
                 // Engineconstraints
                 for (var engineconstraint : pnode.getEngineConstraints()) {
-                    query.addOptionalPart(getSPARQLForEngineConstraint(engineconstraint, pnode, query));
+                    if (useOptional) {
+                        query.addOptionalPart(getSPARQLForEngineConstraint(engineconstraint, pnode, query));
+                    } else {
+                        query.addPart(getSPARQLForEngineConstraint(engineconstraint, pnode, query));
+                    }
+                        
                 }
 
                 continue;
@@ -1025,13 +1038,25 @@ public class Validation {
         /*
          * GET ALL TARGETS
          */
-        // Fetch all atoms mentioned by the target definiton
-        // write query
-        // Get targets
-        var q = sparqlGenerator.newQuery();
-        q.addPart(Util.generateTargetString(shape.getTargets().iterator().next(), "targets"));
-        var targets = executeQuery(q);
-        System.out.println("Receives %d Targets".formatted(targets.size()));
+
+        List<Node> targets;
+
+        switch (tree) {
+            case PShapeNode pShape -> {
+                targets = pShape.getCountMap().keySet().stream().map((k->k.get(0))).collect(Collectors.toList());
+            }
+
+            default -> {
+
+                print("TARGET QUERY");
+                var q = sparqlGenerator.newQuery();
+                q.addPart(Util.generateTargetString(shape.getTargets().iterator().next(), "targets"));
+                targets = executeQuery(q).stream().map((binding) -> binding.get("targets")).collect(Collectors.toList());
+                System.out.println("Receives %d Targets".formatted(targets.size()));
+            }
+        }
+
+        
 
         /*
          * CHECK IF ATOMS VALIDATE
@@ -1044,7 +1069,6 @@ public class Validation {
         return targets
                 .stream()
                 .parallel()
-                .map((binding) -> binding.get("targets"))
                 .map((atom) -> {
 
                     var valNodes = new HashSet<SHACLNode>();
