@@ -120,7 +120,7 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.0</version>
         <configuration>
-          <release>21</release>
+          <release>22</release>
           <compilerArgs>--enable-preview</compilerArgs>
         </configuration>
       </plugin>
