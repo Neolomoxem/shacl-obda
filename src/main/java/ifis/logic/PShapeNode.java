@@ -7,6 +7,7 @@ import org.apache.jena.graph.Node;
 import org.apache.jena.shacl.parser.Constraint;
 import org.apache.jena.shacl.parser.PropertyShape;
 import org.apache.jena.sparql.path.Path;
+import ifis.SPARQLGenerator.Query;
 
 /* A PathNode is esentially a PropertyShape. It represents all the Valuenodes of a PShape and how to reach them */
 public class PShapeNode extends SHACLNode {
@@ -16,7 +17,16 @@ public class PShapeNode extends SHACLNode {
     public String classc = null;
     public boolean elevate = true;
     private HashSet<Constraint> engineConstraints = new HashSet<>();
+    private Query countQuery;
     
+
+    public Query getCountQuery() {
+        return countQuery;
+    }
+
+    public void setCountQuery(Query countQuery) {
+        this.countQuery = countQuery;
+    }
 
     public PShapeNode(PropertyShape shape, String bindingVar) {
         
@@ -50,10 +60,10 @@ public class PShapeNode extends SHACLNode {
         // If there are no children, the validBindings have been populated per Query.
         if (_children.size() == 0) return;   
 
-        if (_children.get(0).validBindings.size() == 0) return;
+        if (_children.get(0).validFocus.size() == 0) return;
         // If this is the end highest propertyshape, were finished
 
-        var childNumVars = _children.get(0).validBindings.iterator().next().size();
+        var childNumVars = _children.get(0).validFocus.iterator().next().size();
 
         elevate = childNumVars != 1;
 
@@ -70,10 +80,13 @@ public class PShapeNode extends SHACLNode {
 
         
 
-        validBindings = elevate ? sub.validBindings
-            .stream()
-            .map(b->b.subList(0, childNumVars-1))
-            .collect(Collectors.toSet()) : sub.validBindings;
+        validFocus =
+            elevate ? 
+                sub.validFocus
+                .stream()
+                .map(b->b.subList(0, childNumVars-1))
+                .collect(Collectors.toSet())
+            : sub.validFocus;
 
     }
 
@@ -104,6 +117,11 @@ public class PShapeNode extends SHACLNode {
         if (path instanceof StringPath) return " " +  (((StringPath)path).value.replaceAll("urn:absolute/prototyp#", "")) + " ?"+bindingVar; 
         return " " +  ((PropertyShape) shape).getPath().toString().replaceAll("urn:absolute/prototyp#", "") + " ?"+bindingVar;
     }
+
+    @Override 
+    public PShapeNode getPShape() {
+        return this;
+    } 
 
     public HashSet<Constraint> getEngineConstraints() {
         return engineConstraints;
