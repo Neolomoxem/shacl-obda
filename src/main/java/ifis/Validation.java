@@ -295,7 +295,7 @@ public class Validation {
         }
 
         for (var subShape : pshape.getPropertyShapes()) {
-            // For all following propertyshapes
+            // For all following pro`pertyshapes
             // add them as children to the current PropertyNode
             pnode.addChild(shapeToTree(subShape));
         }

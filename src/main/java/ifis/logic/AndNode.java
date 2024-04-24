@@ -2,7 +2,6 @@ package ifis.logic;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.apache.jena.graph.Node;
@@ -30,9 +29,6 @@ public class AndNode extends SHACLNode {
 
     }
 
-
-    
-
     @Override
     protected void constructFromChildren() {
         
@@ -50,22 +46,22 @@ public class AndNode extends SHACLNode {
         var childWSmallestSet2 = notNots.get(0);
 
         // We can assume that all children have had their validBindings constructed
-        for (var child:notNots) childWSmallestSet2 = child.validBindings.size() < childWSmallestSet2.validBindings.size() ? child : childWSmallestSet2;
+        for (var child:notNots) childWSmallestSet2 = child.validFocus.size() < childWSmallestSet2.validFocus.size() ? child : childWSmallestSet2;
 
         final var childWSmallestSet = childWSmallestSet2;
 
             
         // Now we can construct
-        validBindings = childWSmallestSet.validBindings.stream()
+        validFocus = childWSmallestSet.validFocus.stream()
             .filter(b->{
                 // First check all notNots
                 for (var other:notNots) {
                     if (other == childWSmallestSet) continue;
-                    if (!other.validBindings.contains(b)) return false;
+                    if (!other.validFocus.contains(b)) return false;
                 }
                 // Then check all nots, as inverted Lists
                 for (var not:nots) {
-                    if (not.validBindings.contains(b)) return false;
+                    if (not.validFocus.contains(b)) return false;
                 }
                 return true;
             })

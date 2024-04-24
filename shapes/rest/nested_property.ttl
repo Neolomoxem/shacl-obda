@@ -11,9 +11,12 @@
 	sh:property [                 
 		sh:path [sh:inversePath :hat_Parameter];           
 		sh:class :MSM-Material;
-		sh:property [
+		sh:qualifiedValueShape [
 			sh:path :hat_Parameter;
 			sh:class :Gitterkonstante_b;
-			sh:hasValue 12;
-		]
+			# sh:hasValue 12;
+		];
+		# sh:qualifiedMaxCount 1;
+		sh:qualifiedMinCount 1;
+		
 	] .

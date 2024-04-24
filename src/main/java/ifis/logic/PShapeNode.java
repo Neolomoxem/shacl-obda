@@ -60,10 +60,10 @@ public class PShapeNode extends SHACLNode {
         // If there are no children, the validBindings have been populated per Query.
         if (_children.size() == 0) return;   
 
-        if (_children.get(0).validBindings.size() == 0) return;
+        if (_children.get(0).validFocus.size() == 0) return;
         // If this is the end highest propertyshape, were finished
 
-        var childNumVars = _children.get(0).validBindings.iterator().next().size();
+        var childNumVars = _children.get(0).validFocus.iterator().next().size();
 
         elevate = childNumVars != 1;
 
@@ -80,10 +80,13 @@ public class PShapeNode extends SHACLNode {
 
         
 
-        validBindings = elevate ? sub.validBindings
-            .stream()
-            .map(b->b.subList(0, childNumVars-1))
-            .collect(Collectors.toSet()) : sub.validBindings;
+        validFocus =
+            elevate ? 
+                sub.validFocus
+                .stream()
+                .map(b->b.subList(0, childNumVars-1))
+                .collect(Collectors.toSet())
+            : sub.validFocus;
 
     }
 

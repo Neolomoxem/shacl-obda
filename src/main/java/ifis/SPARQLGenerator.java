@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.jena.shacl.engine.Target;
+import ifis.SPARQLGenerator.Query;
+
 
 public class SPARQLGenerator {
 
@@ -181,7 +182,7 @@ public class SPARQLGenerator {
             // add filter
             sparql += filters
                     .stream()
-                    .map((filter) -> "\nFILTER(" + filter + ").")
+                    .map((filter) -> "\n\t\tFILTER(" + filter + ").")
                     .reduce("", (subQuery, acc) -> acc + "\n" + subQuery);
 
             if (optionalParts.size() > 0) {
@@ -223,6 +224,14 @@ public class SPARQLGenerator {
 
         public List<String> getHavings() {
             return havings;
+        }
+
+        String getFocusProjection() {
+            String focusProjection = "";
+            for (var v:getPathVars().subList(0, getPathVars().size()-1)){
+                focusProjection += "?" + v + " ";
+            }
+            return focusProjection;
         }
 
     }

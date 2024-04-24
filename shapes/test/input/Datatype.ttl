@@ -9,7 +9,7 @@
 :KristallstrukturShape
 	a sh:NodeShape ;
 	sh:targetClass :Kristallstruktur ;
-    sh:property [	
+        sh:property [	
             sh:path :hat_Wert;
             sh:datatype xsd:decimal
-    ].
+        ].

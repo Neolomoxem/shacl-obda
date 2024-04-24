@@ -36,7 +36,7 @@ public class OrNode extends SHACLNode {
     protected void constructFromChildren() {       
         // We can assume that all children have had their validBindings constructed
         for (var child:_children) {
-            validBindings.addAll(child.validBindings);
+            validFocus.addAll(child.validFocus);
         }        
     }
 
