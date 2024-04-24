@@ -60,7 +60,7 @@ public abstract class SHACLNode {
     public Mode getMode() {
         return switch (mode) {
             case INHERIT:
-                yield (parent.getMode());
+                yield parent != null ? (parent.getMode()) : Mode.COUNTS;
             default:
                 yield mode;
         };
