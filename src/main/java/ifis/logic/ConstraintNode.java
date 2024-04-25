@@ -100,6 +100,7 @@ public class ConstraintNode extends SHACLNode {
     }
 
     protected final Set<Constraint> constraints;
+    
     // Filters to be applied in validation, these are different from sparql filters!
     private final HashSet<BindingFilter> bindingFilters;
     public List<Binding> filteredBindings;

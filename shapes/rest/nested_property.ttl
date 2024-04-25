@@ -1,22 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix sh:  <http://www.w3.org/ns/shacl#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>. 
-@prefix :	 <urn:absolute/prototyp#> . 
+@prefix : <urn:absolute/prototyp#> . 
 
-# Jeder Parameter braucht einen Namen
+# Für jedes verwendete MSM-Material müssen die drei Gitterkonstanten hinterlegt sein.
 
-:ParameterName
+:ImplicitAnd
 	a sh:NodeShape ;
-	sh:targetClass 	:Gitterkonstante_a;
-	sh:property [                 
-		sh:path [sh:inversePath :hat_Parameter];           
-		sh:class :MSM-Material;
-		sh:qualifiedValueShape [
-			sh:path :hat_Parameter;
-			sh:class :Gitterkonstante_b;
-			# sh:hasValue 12;
-		];
-		# sh:qualifiedMaxCount 1;
-		sh:qualifiedMinCount 1;
-		
+	sh:targetClass :MSM-Material;
+	sh:property [                 # _:b1
+		sh:path :hat_Parameter;
+		sh:class :Gitterkonstante_a;
+		sh:minCount 1;
+		sh:maxCount 1;
+	];
+	sh:property [                 # _:b1
+		sh:path :hat_Parameter;
+		sh:class :Gitterkonstante_b;
+		sh:minCount 1;
+		sh:maxCount 1;
+		sh:property [
+			sh:path :hat_Wert;
+			sh:minCount 1;
+		]
+	];
+	sh:property [                 # _:b1
+		sh:path :hat_Parameter;
+		sh:class :Gitterkonstante_c;
+		sh:minCount 1;
+		sh:maxCount 1;
 	] .

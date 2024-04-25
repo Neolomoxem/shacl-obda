@@ -50,7 +50,18 @@ public abstract class SHACLNode {
 
     private boolean populated;
 
+    private List<Node> targetNodes;
     
+
+
+    public List<Node> getTargetNodes() {
+        return targetNodes;
+    }
+
+
+    public void setTargetNodes(List<Node> targetNodes) {
+        this.targetNodes = targetNodes;
+    }
 
 
     /**

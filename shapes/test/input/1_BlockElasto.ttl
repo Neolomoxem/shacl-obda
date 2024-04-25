@@ -8,7 +8,9 @@
 :BlockElasto
     a sh:NodeShape ;
     sh:targetClass :Elastomermaterial ;
-    sh:not [
+    sh:property [
         sh:path :hat_Parameter ;
-        sh:class :Blockierkraft;
+        sh:not [
+            sh:class :Blockierkraft;
+        ]
     ] .
