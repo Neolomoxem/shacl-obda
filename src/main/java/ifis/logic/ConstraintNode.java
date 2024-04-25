@@ -58,8 +58,8 @@ public class ConstraintNode extends SHACLNode {
                 var count       = entry.getValue();
                 var validCount  = this.countMap.get(focus);
                 
-                // A focus is trivially valid if it has no values
-                if (count == 0) return true;
+                // A focus is trivially valid if it has no values, and no minimum cardinality
+                if (count == 0 && !(min != null && min.getMinCount() > 0)) return true;
 
                 // If a focus node (with values, from here on out) has no valid value nodes it cannot be valid
                 if (countMap == null) return false;
@@ -90,7 +90,13 @@ public class ConstraintNode extends SHACLNode {
     @Override
     public String getReportString() {
 
-        var s = new StringBuilder("⬤ > ");
+        var s = new StringBuilder("⬤ ");
+        
+        if (min != null) s.append(STR."Min: \{min.getMinCount()} ");
+        if (max != null) s.append(STR."Max: \{max.getMaxCount()} ");
+
+        s.append("> ");
+
         for (var c : constraints) {
             s.append(c.toString());
         }

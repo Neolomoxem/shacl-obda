@@ -220,7 +220,7 @@ public class Validation {
     private PShapeNode pShapeToTree(PropertyShape pshape) {
         var pnode = new PShapeNode(pshape, sparqlGenerator.getNewVariable());
         var cnode = new ConstraintNode(pshape);
-
+        
         boolean hasConstraints = false;
         for (var c : pshape.getConstraints()) {
             switch (c) {
@@ -245,6 +245,7 @@ public class Validation {
                     // Write cardinality to new QualifiedNode
                     QualifiedNode qnode = new QualifiedNode(pshape, qs.qMin(), qs.qMax());
 
+                    // Change processing mode to nodes
                     qnode.setMode(Mode.NODES);
 
                     // Handle the subshape
@@ -253,6 +254,14 @@ public class Validation {
                     // Add as child to the node
                     pnode.addChild(qnode);
 
+                }
+
+                case MinCount mc -> {
+                    cnode.min = mc;
+                }
+
+                case MaxCount mc -> {
+                    cnode.max = mc;
                 }
 
                 /*
@@ -311,16 +320,18 @@ public class Validation {
             pnode.addChild(cnode);
         }
 
-        for (var subShape : pshape.getPropertyShapes()) {
-            // For all following propertyshapes
-            // add them as children to the current PropertyNode
+        // For all following propertyshapes
+        // add them as children to the current PropertyNode
+        for (var subShape : pshape.getPropertyShapes())
             pnode.addChild(shapeToTree(subShape));
-        }
 
         return pnode;
     }
 
     private SHACLNode nodeShapeToTree(NodeShape nshape) {
+
+        // ! Here be dragons
+
         var cnode = new ConstraintNode(nshape);
         if (nshape.getPropertyShapes().size() > 0
                 || nshape.getConstraints().stream().filter(c -> c instanceof ConstraintOp).count() > 0
@@ -444,7 +455,6 @@ public class Validation {
         // Recursively populate nodes
         populateNode(tree);
     }
-
 
     private void populateNode(SHACLNode node) {
 
