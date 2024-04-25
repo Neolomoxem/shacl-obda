@@ -1,5 +1,6 @@
 package ifis.logic;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -28,7 +29,24 @@ public class NotNode extends SHACLNode {
     }
 
     private Set<List<Node>> getValidFocusWithTargets() {
-        return null;
+        var child = _children.get(0);
+
+        // get root targets
+        var targetNodes = this.getRootNode().targetNodes; 
+
+        // Es sollten die targetNodes populiert sein
+        return targetNodes
+            .stream()
+            .parallel()
+            .map(target -> {
+                // Nicht schön aber selten.
+                var templist = new ArrayList<Node>();
+                templist.add(target);
+                return templist;
+            })
+            .filter(target -> (child.validFocus.contains(target)))
+            .collect(Collectors.toSet());
+        
     }
 
     private Set<List<Node>> getValidFocusWithPropertyMap() {

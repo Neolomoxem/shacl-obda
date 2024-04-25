@@ -220,7 +220,7 @@ public class Validation {
     private PShapeNode pShapeToTree(PropertyShape pshape) {
         var pnode = new PShapeNode(pshape, sparqlGenerator.getNewVariable());
         var cnode = new ConstraintNode(pshape);
-        
+
         boolean hasConstraints = false;
         for (var c : pshape.getConstraints()) {
             switch (c) {
@@ -404,8 +404,12 @@ public class Validation {
                 andnode.addChild(child);
             }
 
-            if (andnode.getChildren().size() == 1)
-                return andnode.getChildren().get(0);
+            if (andnode.getChildren().size() == 1) {
+                var onlyChild = andnode.getChildren().get(0);
+                onlyChild.setParent(null);
+                return onlyChild;
+
+            }
 
             return andnode;
 
@@ -1083,11 +1087,23 @@ public class Validation {
 
     private List<Node> getTargetsByQuery() {
         List<Node> targets;
+
+        // New empty query
         print("TARGET QUERY");
         var q = sparqlGenerator.newQuery();
-        q.addPart(Util.generateTargetString(shape.getTargets().iterator().next(), "targets"));
-        targets = executeQuery(q).stream().map((binding) -> binding.get("targets")).collect(Collectors.toList());
+
+        // Add target definition
+        q.addPart(
+                Util.generateTargetString(
+                        shape.getTargets().iterator().next(),
+                        "targets"));
+
+        // Execute query
+        targets = executeQuery(q)
+            .stream()
+            .map((binding) -> binding.get("targets")).collect(Collectors.toList());
         System.out.println("Receives %d Targets".formatted(targets.size()));
+        
         return targets;
     }
 

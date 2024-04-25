@@ -50,7 +50,7 @@ public abstract class SHACLNode {
 
     private boolean populated;
 
-    private List<Node> targetNodes;
+    protected List<Node> targetNodes;
     
 
 
@@ -123,6 +123,10 @@ public abstract class SHACLNode {
 
     public void setLineage(List<SHACLNode> lineage) {
         this.lineage = lineage;
+    }
+
+    public SHACLNode getRootNode() {
+        return (this.getParent() == null) ? this : this.parent.getRootNode();
     }
 
     // In order to construct normalized PropertyNodes we have to pass on constraints from parent shapes.
